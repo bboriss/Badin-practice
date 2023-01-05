@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:display=swap");
+
+$yellowColor: #ff9933;
+$grayColor: #505050;
+$lightgray: #bebebe;
+
+@mixin card {
+  width: 400px;
+  height: 450px;
+  margin-top: -100px;
+  margin-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #f5f5f5;
+}
+
+.section__one {
+  height: 80vh;
+  //   image properties
+  background-image: url("https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    h1 {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 80px;
+      font-weight: 1200;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .button {
+    margin: 50px;
+
+    button {
+      align-items: center;
+      background-color: $yellowColor;
+      border: none;
+      color: #fff;
+      letter-spacing: 3px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      height: 48px;
+      justify-content: center;
+      min-width: 140px;
+      padding: 20px 40px 35px 40px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
+
+.section__two {
+  .card__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card {
+      @include card();
+    }
+
+    .card1 {
+      background-color: $yellowColor;
+      align-items: center;
+      justify-content: space-around;
+
+      img {
+        width: 80px;
+      }
+
+      h3 {
+        font-size: 25px;
+        color: #f5f5f5;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+
+      .text__one {
+        font-size: 20px;
+        margin: 0px 35px 30px 15px;
+        text-align: center;
+        font-family: "Source Sans Pro", sans-serif;
+        color: #f5f5f5;
+      }
+    }
+
+    .card2 {
+      background-color: #505050;
+      align-items: center;
+      justify-content: space-around;
+      padding-top: 20px;
+
+      h3 {
+        font-size: 25px;
+        color: #f5f5f5;
+        font-family: "Source Sans Pro", sans-serif;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        font-family: "Source Sans Pro", sans-serif;
+        width: 300px;
+      }
+
+      label {
+        color: $lightgray;
+      }
+
+      input {
+        height: 35px;
+        background: transparent;
+        border: 1px solid $lightgray;
+        padding-left: 10px;
+      }
+
+      .button {
+        button {
+          align-items: center;
+          background-color: $yellowColor;
+          border: none;
+          color: #fff;
+          letter-spacing: 3px;
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 400;
+          height: 48px;
+          justify-content: center;
+          width: 100%;
+          min-width: 140px;
+          padding: 12px 35px 12px 35px;
+          text-align: center;
+          text-decoration: none;
+        }
+      }
+    }
+    .card3 {
+      background-color: #ff9933;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .title {
+    h1 {
+      font-size: 50px !important;
+    }
+  }
+
+  .section__two {
+    .card__container {
+      //   display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 100%;
+      }
+
+      .card1 {
+        background-color: $yellowColor;
+        align-items: center;
+        justify-content: space-around;
+
+        .text__one {
+          font-size: 20px;
+          margin: 0px 35px 30px 15px;
+          text-align: center;
+          font-family: "Source Sans Pro", sans-serif;
+          color: #f5f5f5;
+        }
+      }
+    }
+  }
+}

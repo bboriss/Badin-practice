@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
+
+$greenColor: #aee6bf;
+$grayColor: #a4a4a4;
+
+body,
+html {
+  background-color: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+
+  .cart__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .cart {
+      height: 700px;
+      width: 25%;
+      position: relative;
+      min-width: 370px;
+
+      .image {
+        height: 60%;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+          // object-fit: cover;
+        }
+      }
+
+      .info {
+        background-color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        bottom: 0;
+        right: 0;
+        height: 50%;
+        width: 85%;
+        min-height: 330px;
+        min-width: 270px;
+
+        .title {
+          margin: 20px 20px 20px 6px;
+        }
+
+        .details {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .details__line {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .icon {
+          margin: 6px;
+          img {
+            color: $grayColor;
+            height: 28px;
+            width: 28px;
+            opacity: 0.5;
+          }
+        }
+
+        div {
+          color: $grayColor;
+          font-size: large;
+        }
+
+        .green__line {
+          color: $greenColor;
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  opacity: 1;
+  color: black;
+  font-weight: 600;
+}
+
+.button {
+  background-color: $greenColor;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: 800;
+  padding: 10px 15px 10px 15px;
+  font-size: 18px;
+  align-self: flex-start;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.second__section {
+  height: 220px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    color: $greenColor;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 900;
+  }
+
+  h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 20px;
+  }
+}
+
+// MEDIA QUERIES
+
+@media only screen and (max-width: 600px) {
+  .cart {
+    width: 90% !important ;
+  }
+}

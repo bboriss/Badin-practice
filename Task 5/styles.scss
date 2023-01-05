@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+
+$lightgray: #e8e8e8;
+$font_gray: #787878;
+$lightblue: #99b3ff;
+$darkblue: #1a53ff;
+
+@mixin percentage($percentage) {
+  background-color: $darkblue;
+  height: 15px;
+  width: $percentage;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  width: 100%;
+  background-color: $lightgray;
+  padding: 20px;
+
+  text-align: center;
+
+  .picture {
+    width: 260px;
+    height: 300px;
+    margin: auto;
+    background-image: url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .main__info {
+    padding: 18px;
+    p {
+      font-size: 18px;
+      margin: 10px;
+      color: $font_gray;
+      b {
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .font_gray {
+    color: $font_gray;
+  }
+
+  .skill {
+    padding: 15px;
+    .tech__container {
+      justify-content: space-between;
+      .tech {
+        margin: 20px 70px;
+
+        .tech__text {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .diagram {
+          background-color: $lightblue;
+          height: 15px;
+
+          .diagram__fill__html {
+            @include percentage(85%);
+          }
+
+          .diagram__fill__css {
+            @include percentage(75%);
+          }
+
+          .diagram__fill__php {
+            @include percentage(50%);
+          }
+
+          .diagram__fill__js {
+            @include percentage(90%);
+          }
+        }
+      }
+    }
+  }
+
+  .about {
+    .title {
+      span {
+        padding: 4px;
+        border-bottom: 3px solid #1a53ff;
+      }
+    }
+
+    .text {
+      margin: 30px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: $lightgray;
+  }
+
+  .main {
+    width: 65%;
+    height: 80%px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    padding: 25px 5px 10px 5px;
+    min-width: 800px;
+
+    // grid
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.4fr 0.6fr;
+    grid-template-areas:
+      "pic_info about"
+      "skill about";
+
+    .top_left_container {
+      grid-area: pic_info;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .picture {
+        width: 150px;
+        height: 200px;
+        margin-left: 30px;
+      }
+    }
+
+    .skill {
+      grid-area: skill;
+      margin: 0;
+      padding-top: 15px;
+
+      .tech__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        .tech {
+          margin: 0;
+          width: 90%;
+        }
+      }
+    }
+
+    .about {
+      grid-area: about;
+    }
+  }
+}

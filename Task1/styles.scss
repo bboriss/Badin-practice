@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-family: "Oswald", monospace;
+  font-size: 65px;
+}
+
+.title div {
+  font-family: "Oswald", monospace;
+  margin-bottom: 80px;
+  margin-top: 20px;
+  max-width: 35vw;
+  text-align: center;
+  font-size: large;
+  color: rgb(186, 186, 186);
+}
+
+.cart__container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+  height: 600px;
+  width: 400px;
+}
+
+.upper__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 550px;
+  width: 400px;
+  gap: 30px;
+}
+
+.image {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cart__title__price {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Oswald", monospace;
+  font-size: large;
+}
+
+.cart__title__price p {
+  color: red;
+}
+
+.cart_description {
+  font-family: "Oswald", monospace;
+  color: #5b5b5b;
+}
+
+button {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+@media only screen and (max-width: 750px) {
+  .title h1 {
+    font-size: 40px;
+    min-width: none;
+  }
+
+  .title div {
+    margin-bottom: 50px;
+    font-size: medium;
+  }
+}
