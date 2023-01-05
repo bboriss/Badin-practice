@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f0f0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+main h3 {
+  font-weight: 300;
+  font-size: 22px;
+  text-align: center;
+}
+main h1 {
+  text-align: center;
+  font-size: 55px;
+  font-weight: 900;
+}
+main .card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .card-container .logo-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: center;
+}
+main .card-container .logo-container .logo {
+  width: 90px;
+  height: 140px;
+  padding: 10px;
+}
+main .card-container .logo-container .logo img {
+  width: 100%;
+}
+main .card-container .logo-container .text-container {
+  width: 270px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 4px;
+}
+main .card-container .logo-container .text-container .title {
+  padding: 0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+main .card-container .logo-container .text-container .description {
+  color: #787878;
+  font-weight: 4500;
+  max-width: 220px;
+}
+main .picture-container {
+  margin: 20px;
+}
+main .picture-container img {
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    flex-wrap: wrap;
+  }
+  .card-container .card-one {
+    order: 1;
+  }
+  .card-container .card-two {
+    order: 3;
+  }
+  .card-container .picture-container {
+    order: 2;
+    min-width: 400px;
+  }
+  .card-container .picture-container img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
