@@ -19,7 +19,6 @@ body .title {
   align-items: center;
   height: 100px;
   width: 60%;
-  border: 1px solid black;
 }
 body .title .logo {
   width: 80px;
@@ -33,24 +32,26 @@ body .title .logo img {
 }
 body .title .title-text {
   padding-left: 20px;
-  color: #303030;
+  color: #404040;
 }
 body .title .title-text h5 {
   font-weight: 400;
+  color: #787878;
 }
 body .card-container {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 40px;
   color: #787878;
 }
 body .card-container .card {
   width: 300px;
   height: 650px;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 30px;
 }
 body .card-container .card .top-section {
   display: flex;
@@ -64,6 +65,9 @@ body .card-container .card .top-section p {
   font-size: 15px;
   font-weight: 500;
 }
+body .card-container .card .top-section.black-font {
+  color: #585858;
+}
 body .card-container .card .price-section {
   display: flex;
   justify-content: center;
@@ -71,21 +75,28 @@ body .card-container .card .price-section {
   width: 100%;
   height: 22%;
   background-color: lightgray;
-  position: relative;
   margin-bottom: 30px;
   clip-path: polygon(0% 0%, 100% 0%, 100% 89%, 61% 89%, 51% 100%, 41% 90%, 0 90%);
 }
-body .card-container .card .price-section .price-section-dollar {
-  font-size: 30px;
-  position: absolute;
-  top: 25px;
-  left: 90px;
+body .card-container .card .price-section .price-section-number {
+  position: relative;
+  font-weight: 500;
 }
-body .card-container .card .price-section p {
+body .card-container .card .price-section .price-section-number .price-section-dollar {
+  font-size: 25px;
+  position: absolute;
+  top: -13px;
+  left: -13px;
+}
+body .card-container .card .price-section .price-section-number p {
   font-size: 18px;
 }
-body .card-container .card .price-section p span {
+body .card-container .card .price-section .price-section-number p span {
   font-size: 44px;
+}
+body .card-container .card .price-section.orange-background {
+  background-color: #ee3c25;
+  color: white;
 }
 body .card-container .card .lower-section {
   display: flex;
@@ -103,12 +114,31 @@ body .card-container .card .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 30px;
-  border: 1px solid red;
-  border-radius: 6px;
+  width: 140px;
+  height: 40px;
+  border: 2px solid red;
+  background-color: white;
+  color: #303030;
+  border-radius: 26px;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    width: 75% !important;
+    justify-content: start !important;
+  }
+  .card-container {
+    flex-direction: row !important;
+    width: 75%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .card-container .card {
+    margin: 0px 0px 40px 0px !important;
+  }
 }/*# sourceMappingURL=styles.css.map */

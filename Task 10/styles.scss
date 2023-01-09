@@ -30,7 +30,6 @@ body {
     align-items: center;
     height: 100px;
     width: 60%;
-    border: 1px solid black;
 
     .logo {
       width: 80px;
@@ -45,9 +44,10 @@ body {
 
     .title-text {
       padding-left: 20px;
-      color: #303030;
+      color: #404040;
       h5 {
         font-weight: 400;
+        color: #787878;
       }
     }
   }
@@ -55,16 +55,17 @@ body {
   .card-container {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 40px;
     color: #787878;
 
     .card {
       width: 300px;
       height: 650px;
-      border: 1px solid black;
+      border: 1px solid lightgray;
       display: flex;
       flex-direction: column;
       position: relative;
+      margin: 30px;
 
       .top-section {
         @include card-field(15%);
@@ -75,11 +76,13 @@ body {
         }
       }
 
+      .top-section.black-font {
+        color: #585858;
+      }
+
       .price-section {
         @include card-field(22%);
         background-color: lightgray;
-
-        position: relative;
         margin-bottom: 30px;
         clip-path: polygon(
           0% 0%,
@@ -91,19 +94,29 @@ body {
           0 90%
         );
 
-        .price-section-dollar {
-          font-size: 30px;
-          position: absolute;
-          top: 25px;
-          left: 90px;
-        }
+        .price-section-number {
+          position: relative;
+          font-weight: 500;
+          .price-section-dollar {
+            font-size: 25px;
+            position: absolute;
+            top: -13px;
+            left: -13px;
+          }
 
-        p {
-          font-size: 18px;
-          span {
-            font-size: 44px;
+          p {
+            font-size: 18px;
+
+            span {
+              font-size: 44px;
+            }
           }
         }
+      }
+
+      .price-section.orange-background {
+        background-color: #ee3c25;
+        color: white;
       }
 
       .lower-section {
@@ -120,15 +133,36 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px;
-        height: 30px;
-        border: 1px solid red;
-        border-radius: 6px;
+        width: 140px;
+        height: 40px;
+        border: 2px solid red;
+        background-color: white;
+        color: #303030;
+        border-radius: 26px;
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 50%);
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    width: 75% !important;
+    justify-content: start !important;
+  }
+
+  .card-container {
+    flex-direction: row !important;
+    width: 75%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+
+    .card {
+      margin: 0px 0px 40px 0px !important;
     }
   }
 }
