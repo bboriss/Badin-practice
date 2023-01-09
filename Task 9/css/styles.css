@@ -111,14 +111,19 @@ body main .pic-container .image:hover .hide {
 
 @media only screen and (min-width: 768px) {
   nav {
-    min-width: 930px;
+    min-width: 1200px;
   }
   ul {
     border-bottom: 2px solid #ffb600;
+    width: 75% !important;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
   ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 8px !important;
     margin-right: 15px;
     font-size: 15px !important;
@@ -129,7 +134,7 @@ body main .pic-container .image:hover .hide {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     width: 75%;
-    min-width: 930px;
+    min-width: 980px;
   }
   .pic-container .image {
     width: 33.33% !important;

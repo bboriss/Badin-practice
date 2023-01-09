@@ -131,19 +131,25 @@ body {
 
 @media only screen and (min-width: 768px) {
   nav {
-    min-width: 930px;
+    min-width: 1200px;
   }
 
   ul {
     border-bottom: 2px solid $yellowColor;
+    width: 75% !important;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 8px !important;
       margin-right: 15px;
       font-size: 15px !important;
       font-weight: 500;
+      // min-width: 120px;
     }
   }
 
@@ -152,7 +158,7 @@ body {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     width: 75%;
-    min-width: 930px;
+    min-width: 980px;
 
     .image {
       width: 33.33% !important ;
