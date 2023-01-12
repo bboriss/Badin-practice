@@ -66,6 +66,8 @@ body {
       flex-direction: column;
       position: relative;
       margin: 30px;
+      flex-grow: 1;
+      max-width: 300px;
 
       .top-section {
         @include card-field(15%);

@@ -1,0 +1,173 @@
+@import "config";
+@import "font";
+
+.what_we_offer {
+  background-color: $lightgray;
+  overflow: auto;
+  padding-left: 1rem;
+
+  h1 {
+    @include font-secondary-italic;
+
+    color: #22252e;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin: 3rem 12px 2rem 12px;
+  }
+
+  p {
+    @include paragraphs(15px, $graycolor, 1.6);
+    margin: 1rem 16px;
+    font-weight: 500;
+  }
+
+  .services_btn {
+    @include flex_container(row, center, center, nowrap);
+    @include paragraphs(16px, white, 1.7);
+
+    background-color: #317ade;
+    padding: 1rem 1rem;
+    margin: 2rem 1rem;
+    width: 18rem;
+    height: 3rem;
+    border-radius: 2rem;
+  }
+  &-container {
+    margin-bottom: 12rem;
+    &-card {
+      @include flex_container(column, center, flex-start, nowrap);
+      width: 24rem;
+      margin-bottom: 3rem;
+
+      .what_we_offer-card-title_blue {
+        @include paragraphs(16px, #317ade, 1.7);
+        margin: 4px 1rem;
+      }
+      .what_we_offer-card-title_black {
+        @include paragraphs(16px, black, 1.7);
+        margin: 4px 1rem;
+      }
+      .what_we_offer-card-title_orange {
+        @include paragraphs(16px, #ed701d, 1.7);
+        margin: 4px 1rem;
+      }
+      .what_we_offer-card-title_green {
+        @include paragraphs(16px, #1ebf73, 1.7);
+        margin: 4px 1rem;
+      }
+
+      .icons-container {
+        @include flex_container(row, flex-start, center, nowrap);
+        padding-left: 1rem;
+        margin-top: 1rem;
+
+        .icon {
+          width: 40px;
+          height: 40px;
+          margin-right: 1rem;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .main-picture-up {
+        margin-top: 2rem;
+        width: 160px;
+        height: 250px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .main-picture-mid {
+        margin-top: 2rem;
+        width: 275px;
+        height: 250px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .main-picture-dwn {
+        margin-top: 2rem;
+        width: 250px;
+        height: 310px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .trusted_by_section {
+    h2 {
+      @include font-secondary-italic;
+
+      color: #22252e;
+      font-size: 48px;
+      letter-spacing: 2px;
+      margin: 6rem 12px 2rem 12px;
+    }
+
+    p {
+      @include paragraphs(16px, $graycolor, 1.6);
+      margin: 1rem 16px;
+      font-weight: 500;
+    }
+
+    .trusted_by_container {
+      margin-top: 4rem;
+      @include flex_container(column, center, flex-start, nowrap);
+
+      &-pic_container {
+        @include flex_container(row, start, baseline, nowrap);
+
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+        gap: 1rem;
+
+        .client_pic_big {
+          width: 130px;
+          height: 130px;
+          position: relative;
+          bottom: 5px;
+          img {
+            width: 100%;
+          }
+        }
+
+        .client_pic_normal {
+          width: 80px;
+          height: 80px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      &-name_and_role {
+        &-name {
+          @include paragraphs(24px, #22252e, 1.6);
+          font-weight: 700;
+          margin-bottom: 0px;
+        }
+
+        &-role {
+          @include paragraphs(16px, #6b728e, 1.6);
+          font-weight: 700;
+          margin-top: 0px;
+        }
+      }
+
+      &-text {
+        p {
+          @include paragraphs(16px, black, 1.6);
+          font-weight: 500;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

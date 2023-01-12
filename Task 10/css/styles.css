@@ -52,6 +52,8 @@ body .card-container .card {
   flex-direction: column;
   position: relative;
   margin: 30px;
+  flex-grow: 1;
+  max-width: 300px;
 }
 body .card-container .card .top-section {
   display: flex;

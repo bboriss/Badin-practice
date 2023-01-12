@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// colors
+$lightgray: #f9fafe;
+$graycolor: #909090;
+$darkgray: #505050;
+
+// paragraphs
+@mixin paragraphs($size, $color, $lineheight) {
+  @include font-primary-heavy;
+  font-size: $size;
+  color: $color;
+  line-height: $lineheight;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@mixin flex_container($direction, $justify, $align, $wrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin burger-line($top) {
+  position: absolute;
+  right: 0;
+  top: $top;
+  width: 20px;
+  height: 2px;
+  background: white;
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #303030;
+  } @else {
+    @return white;
+  }
+}
+
+@mixin top-section-btn($color) {
+  @include font-primary-medium;
+  z-index: 1;
+  color: $color;
+  font-size: 20px;
+  font-weight: 900;
+  width: 100%;
+  height: 55px;
+  border-radius: 28px;
+  border-style: none;
+  background-color: set-text-color($color);
+  margin-bottom: 1rem;
+}
+
+// RESPONSIVNESS
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}

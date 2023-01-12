@@ -1,0 +1,233 @@
+@import "config";
+@import "font";
+@import "clients";
+@import "why-badin";
+@import "what_we_offer";
+
+.top-section {
+  background: url("./../slike/header-hero/hero-bg.png");
+  background-size: cover;
+  position: relative;
+
+  header {
+    padding-top: 10px;
+    .logo-badin {
+      width: 110px;
+      height: 50px;
+      position: relative;
+      left: 15px;
+      top: 20px;
+    }
+
+    .menu-btn {
+      position: absolute;
+      z-index: 1;
+      right: 20px;
+      top: 32px;
+      height: 20px;
+      width: 25px;
+      cursor: pointer;
+
+      &__menu {
+        @include paragraphs(15px, white, 1.6);
+        position: relative;
+        top: 70%;
+        left: 2rem;
+        transform: rotate(270deg);
+        font-weight: 300;
+        display: none;
+      }
+
+      &__burger {
+        @include burger-line(16px);
+
+        &::before {
+          @include burger-line(-7px);
+          content: "";
+        }
+
+        &::after {
+          @include burger-line(7px);
+          content: "";
+        }
+      }
+    }
+  }
+
+  &-container {
+    @include flex_container(column, center, flex-start, nowrap);
+    margin-top: 60px;
+    padding: 20px;
+    gap: 20px;
+
+    h1 {
+      @include font-primary-bold;
+      font-size: 44px;
+      color: white;
+    }
+
+    h4 {
+      @include font-primary-heavy;
+      font-size: 17px;
+      color: $graycolor;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .button_wrapper {
+      width: 100%;
+      .btn-1 {
+        @include top-section-btn(black);
+      }
+
+      .btn-2 {
+        @include top-section-btn(white);
+      }
+    }
+  }
+
+  &-pictures {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    &-main_pic {
+      position: relative;
+      right: -20%;
+      width: 26rem;
+    }
+
+    &-tower_1 {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      width: 60px;
+    }
+
+    &-tower_2 {
+      position: absolute;
+      top: 71%;
+      left: 20px;
+      width: 72px;
+    }
+
+    &-planet {
+      position: absolute;
+      top: 10%;
+      left: 150px;
+      width: 50px;
+    }
+
+    &-net {
+      position: absolute;
+      width: 130%;
+      bottom: -50%;
+    }
+
+    &-white_bgr {
+      position: absolute;
+      bottom: 0rem;
+      right: -21%;
+      width: 62%;
+    }
+  }
+}
+
+// RESPONSIVNESS
+
+@include media-md {
+  .top-section {
+    padding-left: 12%;
+    margin-bottom: 10rem;
+
+    header {
+      padding-top: 4rem;
+
+      .menu-btn {
+        position: fixed;
+        left: 2rem;
+        top: 50%;
+        &__menu {
+          display: block;
+        }
+      }
+    }
+
+    &-container {
+      h1 {
+        font-size: 80px;
+        max-width: 36rem;
+      }
+
+      h4 {
+        max-width: 38rem;
+      }
+
+      .button_wrapper {
+        @include flex_container(row, flex-start, center, nowrap);
+        gap: 1rem;
+
+        .btn-1 {
+          height: 56px;
+          width: 197px;
+        }
+
+        .btn-2 {
+          height: 56px;
+          width: 197px;
+        }
+      }
+    }
+
+    &-pictures {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      &-main_pic {
+        position: absolute;
+        right: -8%;
+        bottom: -8rem;
+        width: 52vw;
+      }
+
+      &-tower_1 {
+        position: absolute;
+        top: -9rem;
+        right: 55px;
+        width: 120px;
+        z-index: 1;
+      }
+
+      &-tower_2 {
+        position: absolute;
+        top: -9rem;
+        left: 43%;
+        width: 130px;
+        z-index: 1;
+      }
+
+      &-planet {
+        position: absolute;
+        top: -32rem;
+        left: 63vw;
+        width: 100px;
+        z-index: 1;
+      }
+
+      &-net {
+        position: absolute;
+        width: 70rem;
+        right: -9%;
+        bottom: -50%;
+      }
+
+      &-white_bgr {
+        position: absolute;
+        bottom: 0rem;
+        right: -26%;
+        width: 80%;
+      }
+    }
+  }
+}
