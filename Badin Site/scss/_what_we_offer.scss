@@ -1,5 +1,6 @@
 @import "config";
 @import "font";
+@import "clients-keyframes";
 
 .what_we_offer {
   background-color: $lightgray;
@@ -147,6 +148,10 @@
         }
       }
 
+      .order_line {
+        display: none;
+      }
+
       &-name_and_role {
         &-name {
           @include paragraphs(24px, #22252e, 1.6);
@@ -167,6 +172,145 @@
           font-weight: 500;
           font-style: italic;
         }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .what_we_offer {
+    position: relative;
+    padding-left: 12%;
+
+    h1 {
+      font-size: 5rem;
+      max-width: 28rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 40rem;
+      line-height: 29px;
+    }
+
+    .services_btn {
+      position: absolute;
+      top: 2rem;
+      right: 8%;
+    }
+
+    &-container {
+      @include flex-container(row, start, center, nowrap);
+    }
+
+    .trusted_by_section {
+      h2 {
+        font-size: 6rem;
+
+        margin: 6rem 12px 2rem 12px;
+      }
+
+      p {
+        max-width: 29rem;
+        color: #6b728e;
+      }
+
+      .trusted_by_container {
+        margin-top: 4rem;
+        @include flex_container(row, flex-start, center, nowrap);
+
+        &-pic_container {
+          border: 1px solid green;
+          width: 22rem;
+          height: 22rem;
+          margin-right: 2rem;
+          position: relative;
+
+          .client_pic_big {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .rotator_1 {
+            animation: picture-rotator1 25s infinite;
+          }
+          .rotator_2 {
+            animation: picture-rotator2 25s infinite;
+          }
+          .rotator_3 {
+            animation: picture-rotator3 25s infinite;
+          }
+          .rotator_4 {
+            animation: picture-rotator4 25s infinite;
+          }
+          .rotator_5 {
+            animation: picture-rotator5 25s infinite;
+          }
+          .client_pic_normal {
+            position: absolute;
+          }
+        }
+
+        .order_line {
+          @include flex-container(column, space-around, center, nowrap);
+          width: 3px;
+          height: 18rem;
+          margin-bottom: 1rem;
+          padding: 22px 0px;
+          background-color: lightblue;
+
+          &-circle {
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border: 2px solid lightblue;
+            border-radius: 100%;
+          }
+
+          .circle_1 {
+            animation: client_circle1 25s infinite;
+          }
+          .circle_2 {
+            animation: client_circle2 25s infinite;
+          }
+          .circle_3 {
+            animation: client_circle3 25s infinite;
+          }
+          .circle_4 {
+            animation: client_circle4 25s infinite;
+          }
+          .circle_5 {
+            animation: client_circle5 25s infinite;
+          }
+        }
+
+        // &-name_and_role {
+        //   &-name {
+        //     @include paragraphs(24px, #22252e, 1.6);
+        //     font-weight: 700;
+        //     margin-bottom: 0px;
+        //   }
+
+        //   &-role {
+        //     @include paragraphs(16px, #6b728e, 1.6);
+        //     font-weight: 700;
+        //     margin-top: 0px;
+        //   }
+        // }
+
+        // &-text {
+        //   p {
+        //     @include paragraphs(16px, black, 1.6);
+        //     font-weight: 500;
+        //     font-style: italic;
+        //   }
+        // }
       }
     }
   }

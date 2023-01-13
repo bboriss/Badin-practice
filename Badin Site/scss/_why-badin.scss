@@ -2,31 +2,92 @@
 @import "font";
 
 .why_badin {
-  h1 {
-    @include font-secondary-italic;
-    color: #22252e;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    margin: 3rem 12px;
-  }
-
-  p {
-    @include paragraphs(13px, $darkgray, 1.7);
-    margin: 2rem 16px;
-  }
-
-  .why_badin_img {
-    @include flex_container(row, center, center, nowrap);
-    margin-bottom: 5rem;
-
+  &-top_img {
+    display: none;
+    width: 50rem;
     img {
-      width: 90%;
-      height: 100%;
-      border-radius: 20px;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
-        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
-        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
-        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      width: 100%;
+      border-radius: 22px;
+    }
+  }
+
+  &-first_wrapper {
+    h1 {
+      @include font-secondary-italic;
+      color: #22252e;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      margin: 3rem 12px;
+    }
+
+    p {
+      @include paragraphs(13px, $darkgray, 1.7);
+      margin: 2rem 16px;
+    }
+  }
+
+  &-second_wrapper {
+    p {
+      @include paragraphs(13px, $darkgray, 1.7);
+      margin: 2rem 16px;
+    }
+
+    .why_badin_img {
+      @include flex_container(row, center, center, nowrap);
+      margin-bottom: 5rem;
+
+      img {
+        width: 90%;
+        height: 100%;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      }
+    }
+  }
+}
+
+@include media-md {
+  .why_badin {
+    padding-left: 12%;
+
+    &-top_img {
+      display: block;
+    }
+
+    &-first_wrapper {
+      @include flex-container(row, start, center, nowrap);
+      margin-bottom: 3rem;
+      h1 {
+        font-size: 5rem;
+        max-width: 15rem;
+      }
+
+      p {
+        @include paragraphs(17px, $darkgray, 1.7);
+        max-width: 55rem;
+        margin: 4rem;
+      }
+    }
+    &-second_wrapper {
+      @include flex-container(row, space-between, center, nowrap);
+
+      &-text {
+        @include flex-container(column, center, center, nowrap);
+        width: 45rem;
+        margin-top: -6rem;
+        p {
+          @include paragraphs(17px, $darkgray, 1.7);
+        }
+      }
+
+      .why_badin_img {
+        margin-right: -5rem;
+        width: 49vw;
+        min-width: 32rem;
+      }
     }
   }
 }
