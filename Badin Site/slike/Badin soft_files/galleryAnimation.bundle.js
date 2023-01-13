@@ -1,2 +1,0 @@
-(()=>{var e=document.querySelectorAll(".image-desktop-gallery"),o=document.querySelector(".gallery-desktop");document.querySelector("main"),new IntersectionObserver((function(o){o.forEach((function(o){o.isIntersecting?e.forEach((function(e){e.classList.add("moveMe")})):e.forEach((function(e){e.classList.remove("moveMe")}))}))})).observe(o)})();
-//# sourceMappingURL=galleryAnimation.bundle.js.map

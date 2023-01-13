@@ -151,26 +151,31 @@
       .order_line {
         display: none;
       }
+      .name_and_text_wrapper {
+        .name_and_role {
+          &-name {
+            @include paragraphs(24px, #22252e, 1.6);
+            font-weight: 700;
+            margin-bottom: 0px;
+          }
 
-      &-name_and_role {
-        &-name {
-          @include paragraphs(24px, #22252e, 1.6);
-          font-weight: 700;
-          margin-bottom: 0px;
+          &-role {
+            @include paragraphs(16px, #6b728e, 1.6);
+            font-weight: 700;
+            margin-top: 0px;
+          }
         }
 
-        &-role {
-          @include paragraphs(16px, #6b728e, 1.6);
-          font-weight: 700;
-          margin-top: 0px;
-        }
-      }
-
-      &-text {
-        p {
-          @include paragraphs(16px, black, 1.6);
-          font-weight: 500;
-          font-style: italic;
+        &-text {
+          .quote-open,
+          .quote-close {
+            display: none;
+          }
+          p {
+            @include paragraphs(16px, black, 1.6);
+            font-weight: 500;
+            font-style: italic;
+          }
         }
       }
     }
@@ -216,11 +221,11 @@
       }
 
       .trusted_by_container {
-        margin-top: 4rem;
+        margin-top: 10rem;
         @include flex_container(row, flex-start, center, nowrap);
 
         &-pic_container {
-          border: 1px solid green;
+          // border: 1px solid green;
           width: 22rem;
           height: 22rem;
           margin-right: 2rem;
@@ -289,28 +294,36 @@
             animation: client_circle5 25s infinite;
           }
         }
+        .name_and_text_wrapper {
+          @include flex-container(column-reverse, flex-end, start, nowrap);
+          flex-grow: 1;
+          margin-left: 1rem;
+          padding-bottom: 2rem;
 
-        // &-name_and_role {
-        //   &-name {
-        //     @include paragraphs(24px, #22252e, 1.6);
-        //     font-weight: 700;
-        //     margin-bottom: 0px;
-        //   }
+          &-text {
+            position: relative;
+            .quote-open {
+              display: block;
+              position: absolute;
+              top: -7rem;
+              left: -4rem;
+            }
 
-        //   &-role {
-        //     @include paragraphs(16px, #6b728e, 1.6);
-        //     font-weight: 700;
-        //     margin-top: 0px;
-        //   }
-        // }
+            .quote-close {
+              display: block;
+              position: absolute;
+              top: 19rem;
+              left: 20rem;
+            }
 
-        // &-text {
-        //   p {
-        //     @include paragraphs(16px, black, 1.6);
-        //     font-weight: 500;
-        //     font-style: italic;
-        //   }
-        // }
+            p {
+              @include paragraphs(17px, black, 1.6);
+              max-width: 600px;
+              line-height: 28px;
+              font-style: italic;
+            }
+          }
+        }
       }
     }
   }

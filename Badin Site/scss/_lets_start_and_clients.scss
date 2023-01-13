@@ -1,0 +1,66 @@
+@import "config";
+@import "font";
+
+.lets_start_and_clients {
+  &-lets_start {
+    // position: relative;
+    .behind {
+      position: relative;
+      @include paragraphs(42px, #e8e8e8, 1.6);
+      margin-top: 4rem;
+      margin-left: 3rem;
+    }
+
+    h1 {
+      position: relative;
+      @include font-secondary-italic;
+      color: #22252e;
+      font-size: 48px;
+      letter-spacing: 2px;
+      margin-top: -2rem;
+      margin-left: 3rem;
+    }
+
+    .sentence {
+      @include paragraphs(14px, #6b728e, 1.6);
+      font-weight: 500;
+      width: 65%;
+      margin: 4rem 3rem 3rem 3rem;
+    }
+
+    .lets_connect_btn {
+      @include flex_container(row, center, center, nowrap);
+      @include paragraphs(16px, white, 1.7);
+
+      background-color: #317ade;
+      padding: 1rem 1rem;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+      width: 12rem;
+      height: 40pxrem;
+      border-radius: 2rem;
+    }
+  }
+
+  .trusted_by_second {
+    @include flex-container(column, center, center, nowrap);
+    background-color: $lightgray;
+
+    h6 {
+      @include paragraphs(14px, #6b728e, 1.6);
+      margin: 2rem;
+    }
+
+    &-icons_container {
+      background-color: $lightgray;
+      @include flex-container(row, flex-start, center, nowrap);
+      gap: 2rem;
+      .client_icon {
+        margin: 2rem 1rem;
+        img {
+          width: 10rem;
+        }
+      }
+    }
+  }
+}

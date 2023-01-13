@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -264,28 +265,27 @@ body {
   0% {
     left: 7rem;
     top: 2rem;
+    scale: 1;
   }
   15% {
     left: 7rem;
     top: 2rem;
-    transform: scale(1);
+    scale: 1;
   }
   20% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1.3);
-  }
-  34% {
-    transform: scale(1.3);
+    scale: 1.3;
   }
   35% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1);
+    scale: 1.3;
   }
   40% {
     left: 8rem;
     top: 15rem;
+    scale: 1;
   }
   55% {
     left: 8rem;
@@ -316,23 +316,22 @@ body {
   0% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1.2);
-  }
-  14% {
-    transform: scale(1.2);
+    scale: 1.2;
   }
   15% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1);
+    scale: 1.2;
   }
   20% {
     left: 8rem;
     top: 15rem;
+    scale: 1;
   }
   35% {
     left: 8rem;
     top: 15rem;
+    scale: 1;
   }
   40% {
     left: 2rem;
@@ -361,7 +360,7 @@ body {
   100% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1.2);
+    scale: 1.2;
   }
 }
 @keyframes picture-rotator3 {
@@ -396,24 +395,22 @@ body {
   75% {
     left: 7rem;
     top: 2rem;
-    transform: scale(1);
+    scale: 1;
   }
   80% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1.2);
-  }
-  94% {
-    transform: scale(1.2);
+    scale: 1.2;
   }
   95% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1);
+    scale: 1.2;
   }
   100% {
     left: 8rem;
     top: 15rem;
+    scale: 1;
   }
 }
 @keyframes picture-rotator4 {
@@ -440,24 +437,22 @@ body {
   55% {
     left: 7rem;
     top: 2rem;
-    transform: scale(1);
+    scale: 1;
   }
   60% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1.2);
-  }
-  74% {
-    transform: scale(1.2);
+    scale: 1.2;
   }
   75% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1);
+    scale: 1.2;
   }
   80% {
     left: 8rem;
     top: 15rem;
+    scale: 1;
   }
   95% {
     left: 8rem;
@@ -484,20 +479,20 @@ body {
   35% {
     left: 7rem;
     top: 2rem;
-    transform: scale(1);
+    scale: 1;
   }
   40% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1.2);
+    scale: 1.2;
   }
   54% {
-    transform: scale(1.2);
+    scale: 1.2;
   }
   55% {
     left: 12rem;
     top: 7rem;
-    transform: scale(1);
+    scale: 1;
   }
   60% {
     left: 8rem;
@@ -844,7 +839,7 @@ body {
 .what_we_offer .trusted_by_section .trusted_by_container .order_line {
   display: none;
 }
-.what_we_offer .trusted_by_section .trusted_by_container-name_and_role-name {
+.what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper .name_and_role-name {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -854,7 +849,7 @@ body {
   font-weight: 700;
   margin-bottom: 0px;
 }
-.what_we_offer .trusted_by_section .trusted_by_container-name_and_role-role {
+.what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper .name_and_role-role {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -864,7 +859,11 @@ body {
   font-weight: 700;
   margin-top: 0px;
 }
-.what_we_offer .trusted_by_section .trusted_by_container-text p {
+.what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text .quote-open,
+.what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text .quote-close {
+  display: none;
+}
+.what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text p {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -910,7 +909,7 @@ body {
     color: #6b728e;
   }
   .what_we_offer .trusted_by_section .trusted_by_container {
-    margin-top: 4rem;
+    margin-top: 10rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -918,7 +917,6 @@ body {
     flex-wrap: nowrap;
   }
   .what_we_offer .trusted_by_section .trusted_by_container-pic_container {
-    border: 1px solid green;
     width: 22rem;
     height: 22rem;
     margin-right: 2rem;
@@ -985,7 +983,155 @@ body {
   .what_we_offer .trusted_by_section .trusted_by_container .order_line .circle_5 {
     animation: client_circle5 25s infinite;
   }
+  .what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: start;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    margin-left: 1rem;
+    padding-bottom: 2rem;
+  }
+  .what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text {
+    position: relative;
+  }
+  .what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text .quote-open {
+    display: block;
+    position: absolute;
+    top: -7rem;
+    left: -4rem;
+  }
+  .what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text .quote-close {
+    display: block;
+    position: absolute;
+    top: 19rem;
+    left: 20rem;
+  }
+  .what_we_offer .trusted_by_section .trusted_by_container .name_and_text_wrapper-text p {
+    font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 17px;
+    color: black;
+    line-height: 1.6;
+    max-width: 600px;
+    line-height: 28px;
+    font-style: italic;
+  }
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "lust";
+  src: url("../fonts/lust-slim.ttf");
+}
+.lets_start_and_clients-lets_start .behind {
+  position: relative;
+  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 42px;
+  color: #e8e8e8;
+  line-height: 1.6;
+  margin-top: 4rem;
+  margin-left: 3rem;
+}
+.lets_start_and_clients-lets_start h1 {
+  position: relative;
+  font-family: lust, "Courier", serif;
+  font-weight: 900;
+  font-style: italic;
+  color: #22252e;
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-top: -2rem;
+  margin-left: 3rem;
+}
+.lets_start_and_clients-lets_start .sentence {
+  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #6b728e;
+  line-height: 1.6;
+  font-weight: 500;
+  width: 65%;
+  margin: 4rem 3rem 3rem 3rem;
+}
+.lets_start_and_clients-lets_start .lets_connect_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: white;
+  line-height: 1.7;
+  background-color: #317ade;
+  padding: 1rem 1rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  width: 12rem;
+  height: 40pxrem;
+  border-radius: 2rem;
+}
+.lets_start_and_clients .trusted_by_second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #f9fafe;
+}
+.lets_start_and_clients .trusted_by_second h6 {
+  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #6b728e;
+  line-height: 1.6;
+  margin: 2rem;
+}
+.lets_start_and_clients .trusted_by_second-icons_container {
+  background-color: #f9fafe;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+.lets_start_and_clients .trusted_by_second-icons_container .client_icon {
+  margin: 2rem 1rem;
+}
+.lets_start_and_clients .trusted_by_second-icons_container .client_icon img {
+  width: 10rem;
+}
+
 .top-section {
   background: url("./../slike/header-hero/hero-bg.png");
   background-size: cover;

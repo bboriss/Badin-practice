@@ -1,2 +1,0 @@
-(()=>{var e=document.querySelector(".hero-logo"),o=document.querySelector(".hero-title"),t=document.querySelector(".hero-undertitle-animate"),a="Power1.easeInOut",y="0.4";TweenLite.fromTo(e,y,{opacity:"0",y:50,ease:a},{delay:.2,opacity:"1",y:0,ease:a}),TweenLite.fromTo(o,y,{opacity:"0",y:20,ease:a},{delay:.4,opacity:"1",y:0,ease:a}),TweenLite.fromTo(t,y,{opacity:"0",y:50,ease:a},{delay:.6,opacity:"1",y:0,ease:a})})();
-//# sourceMappingURL=heroTextAnime.bundle.js.map

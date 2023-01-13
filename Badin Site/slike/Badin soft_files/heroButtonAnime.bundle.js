@@ -1,2 +1,0 @@
-(()=>{var e=document.querySelector(".hero-button"),o="Power1.easeInOut";TweenLite.fromTo(e,"0.4",{opacity:"0",y:50,ease:o},{delay:.7,opacity:"1",y:0,ease:o})})();
-//# sourceMappingURL=heroButtonAnime.bundle.js.map
