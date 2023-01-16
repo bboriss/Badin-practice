@@ -51,16 +51,27 @@
     }
 
     &-icons_container {
+      animation: 5s logos_translate linear alternate infinite;
       background-color: $lightgray;
       @include flex-container(row, flex-start, center, nowrap);
       gap: 2rem;
       padding-bottom: 2rem;
       .client_icon {
-        margin: 2rem 1rem;
+        margin: 2rem 0rem;
         img {
           width: 10rem;
         }
       }
     }
+  }
+}
+
+@keyframes logos_translate {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-40%);
   }
 }

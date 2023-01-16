@@ -1288,6 +1288,7 @@ body {
   margin: 2rem;
 }
 .lets_start_and_clients .trusted_by_second-icons_container {
+  animation: 5s logos_translate linear alternate infinite;
   background-color: #f9fafe;
   display: flex;
   flex-direction: row;
@@ -1298,12 +1299,20 @@ body {
   padding-bottom: 2rem;
 }
 .lets_start_and_clients .trusted_by_second-icons_container .client_icon {
-  margin: 2rem 1rem;
+  margin: 2rem 0rem;
 }
 .lets_start_and_clients .trusted_by_second-icons_container .client_icon img {
   width: 10rem;
 }
 
+@keyframes logos_translate {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-40%);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
