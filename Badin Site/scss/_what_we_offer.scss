@@ -119,8 +119,14 @@
     }
 
     .trusted_by_container {
+      position: relative;
       margin-top: 4rem;
       @include flex_container(column, center, flex-start, nowrap);
+
+      .quote-open,
+      .quote-close {
+        display: none;
+      }
 
       &-pic_container {
         @include flex_container(row, start, baseline, nowrap);
@@ -151,6 +157,7 @@
       .order_line {
         display: none;
       }
+
       .name_and_text_wrapper {
         .name_and_role {
           &-name {
@@ -167,10 +174,6 @@
         }
 
         &-text {
-          .quote-open,
-          .quote-close {
-            display: none;
-          }
           p {
             @include paragraphs(16px, black, 1.6);
             font-weight: 500;
@@ -196,6 +199,7 @@
     p {
       max-width: 40rem;
       line-height: 29px;
+      margin-bottom: 4rem;
     }
 
     .services_btn {
@@ -223,9 +227,23 @@
       .trusted_by_container {
         margin-top: 10rem;
         @include flex_container(row, flex-start, center, nowrap);
+        position: relative;
+
+        .quote-open {
+          display: block;
+          position: absolute;
+          top: -7rem;
+          left: 25em;
+        }
+
+        .quote-close {
+          display: block;
+          position: absolute;
+          top: 19rem;
+          left: 56rem;
+        }
 
         &-pic_container {
-          // border: 1px solid green;
           width: 22rem;
           height: 22rem;
           margin-right: 2rem;
@@ -295,27 +313,16 @@
           }
         }
         .name_and_text_wrapper {
+          position: absolute;
+          left: 29rem;
           @include flex-container(column-reverse, flex-end, start, nowrap);
           flex-grow: 1;
           margin-left: 1rem;
           padding-bottom: 2rem;
+          // max-width: 40rem;
+          min-width: 30rem;
 
           &-text {
-            position: relative;
-            .quote-open {
-              display: block;
-              position: absolute;
-              top: -7rem;
-              left: -4rem;
-            }
-
-            .quote-close {
-              display: block;
-              position: absolute;
-              top: 19rem;
-              left: 20rem;
-            }
-
             p {
               @include paragraphs(17px, black, 1.6);
               max-width: 600px;
@@ -323,6 +330,22 @@
               font-style: italic;
             }
           }
+        }
+
+        .wrapper-1 {
+          animation: text1 25s linear infinite;
+        }
+        .wrapper-2 {
+          animation: text2 25s linear infinite;
+        }
+        .wrapper-3 {
+          animation: text3 25s linear infinite;
+        }
+        .wrapper-4 {
+          animation: text4 25s linear infinite;
+        }
+        .wrapper-5 {
+          animation: text5 25s linear infinite;
         }
       }
     }
