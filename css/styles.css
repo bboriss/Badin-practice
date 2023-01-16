@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+body h3 {
+  margin: 10px;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+body nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body nav ul {
+  list-style-type: none;
+  border-left: 1px solid #ffb600;
+  margin-top: 20px;
+}
+body nav ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 4px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+body nav ul .active {
+  background-color: #ffb600;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+body main .pic-container .image {
+  width: 70%;
+  height: 400px;
+  position: relative;
+}
+body main .pic-container .image img {
+  width: 100%;
+  height: 100%;
+}
+body main .pic-container .image .hide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .pic-container .image .hide .hide-text-inside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body main .pic-container .image .hide .hide-text-inside p {
+  font-size: 28px;
+  font-weight: 700;
+}
+body main .pic-container .image .hide .hide-text-inside .hide-button {
+  width: 40%;
+  min-width: 220px;
+  height: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: #ffb600;
+  font-weight: 500;
+  margin-top: 25px;
+}
+body main .pic-container .image .hide .hide-top-right-icon {
+  height: 55px;
+  width: 55px;
+  background-color: #ffb600;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .pic-container .image .hide .hide-top-right-icon img {
+  width: 40%;
+  height: 40%;
+}
+body main .pic-container .image:hover .hide {
+  visibility: visible;
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    min-width: 1200px;
+  }
+  ul {
+    border-bottom: 2px solid #ffb600;
+    width: 75% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px !important;
+    margin-right: 15px;
+    font-size: 15px !important;
+    font-weight: 500;
+  }
+  .pic-container {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 75%;
+    min-width: 980px;
+  }
+  .pic-container .image {
+    width: 33.33% !important;
+    min-width: 200px !important;
+  }
+}/*# sourceMappingURL=styles.css.map */footer-card-container .footer-card .options {
+  margin-top: 10px;
+}
+footer .footer-card-container .footer-card .option {
+  color: #787878;
+  border-bottom: 1px solid #202020;
+  padding-bottom: 9px;
+  margin-bottom: 26px;
+}
+footer .footer-card-container .footer-card .option.no-border {
+  border-bottom: none;
+}
+footer .footer-copyrights-and-links {
+  width: 75%;
+  background-color: #ffb600;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-copyrights-and-links .wrapper {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+footer .footer-copyrights-and-links .wrapper .copyrights {
+  order: 2;
+  margin: 5px;
+  color: #f0f0f0;
+  font-size: 15px;
+}
+footer .footer-copyrights-and-links .wrapper .links {
+  order: 1;
+  width: 60%;
+  margin: 20px;
+}
+footer .footer-copyrights-and-links .wrapper .links ul {
+  list-style-type: none;
+}
+footer .footer-copyrights-and-links .wrapper .links ul li {
+  margin: 7px;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+}
+footer .footer-copyrights-and-links .wrapper .links ul li:hover {
+  background-color: #202020;
+  color: #f0f0f0;
+}
+
+.top-button {
+  background-color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.top-button img {
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    flex-wrap: wrap;
+  }
+  .card-container .card-one {
+    order: 1;
+  }
+  .card-container .card-two {
+    order: 3;
+  }
+  .card-container .picture-container {
+    order: 2;
+    min-width: 400px;
+  }
+  .card-container .picture-container img {
+    width: 100%;
+  }
+  .footer-card-container {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 70% !important;
+  }
+  .footer-card-container .footer-card {
+    width: 30%;
+    min-height: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0 !important;
+    gap: 20px;
+  }
+  .footer-card-container .footer-card .footer-card-title {
+    padding: 0 0 0 7px !important;
+    margin: 0 !important;
+  }
+  .footer-copyrights-and-links {
+    height: 80px;
+  }
+  .footer-copyrights-and-links .wrapper {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    width: 65% !important;
+    height: 100%;
+  }
+  .footer-copyrights-and-links .wrapper .copyrights {
+    order: 1;
+    color: #202020 !important;
+  }
+  .footer-copyrights-and-links .wrapper .links {
+    order: 2 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    min-width: 500px;
+    height: 100%;
+    margin: 0 !important;
+  }
+  .footer-copyrights-and-links .wrapper .links ul {
+    margin: 0;
+    padding: 0;
+    height: 100% !important;
+  }
+  .footer-copyrights-and-links .wrapper .links ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px !important;
+    float: left;
+    margin: 0px !important;
+    padding: 0px !important;
+    height: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
