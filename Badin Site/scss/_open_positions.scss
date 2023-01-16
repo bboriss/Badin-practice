@@ -1,0 +1,129 @@
+@import "config";
+@import "font";
+
+.open_positions {
+  @include flex-container(column, center, flex-start, nowrap);
+  background-color: $lightgray;
+
+  h1 {
+    @include paragraphs(56px, #e0e0e0, 1.6);
+    margin: 1rem;
+  }
+
+  h3 {
+    @include font-secondary-italic;
+    margin: 0rem 1rem;
+    color: #22252e;
+    font-size: 44px;
+  }
+
+  &-container {
+    @include flex-container(column, space-between, flex-start, nowrap);
+
+    background-color: white;
+    margin-top: 2rem;
+    width: 95%;
+    height: 9rem;
+    border-radius: 1rem;
+    align-self: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .position-title {
+      @include paragraphs(16px, #22252e, 1.6);
+      margin-top: 2rem;
+      margin-left: 2rem;
+    }
+
+    .position-button {
+      @include flex-container(row, space-around, center, nowrap);
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+      background-color: #317ade;
+      border-radius: 2rem;
+      width: 10rem;
+      padding: 7px 18px;
+
+      p {
+        @include paragraphs(18px, white, 1.6);
+      }
+
+      img {
+        width: 18px;
+        // margin-left: 10px;
+      }
+    }
+  }
+  .all_positions_btn {
+    @include flex-container(row, center, center, nowrap);
+    margin: 3rem;
+    padding: 10px 40px;
+    background-color: black;
+    border-radius: 2rem;
+    align-self: center;
+
+    p {
+      @include paragraphs(18px, white, 1.6);
+    }
+  }
+}
+
+@include media-md {
+  .open_positions {
+    h1 {
+      @include paragraphs(110px, #e0e0e0, 1.6);
+    }
+
+    h3 {
+      position: relative;
+      top: -6rem;
+      letter-spacing: 10px;
+      font-size: 85px;
+    }
+
+    &-container {
+      @include flex-container(row, space-between, center, nowrap);
+      height: 7rem;
+      border-radius: 1rem;
+      align-self: center;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      .position-title {
+        @include paragraphs(16px, #22252e, 1.6);
+        margin-top: 0rem;
+        margin-left: 2rem;
+      }
+
+      .position-button {
+        @include flex-container(row, space-around, center, nowrap);
+        margin-bottom: 0rem;
+        margin-left: 0rem;
+        margin-right: 1rem;
+        background-color: #317ade;
+        border-radius: 2rem;
+        width: 10rem;
+        padding: 7px 18px;
+
+        p {
+          @include paragraphs(18px, white, 1.6);
+        }
+
+        img {
+          width: 18px;
+          // margin-left: 10px;
+        }
+      }
+    }
+    .all_positions_btn {
+      @include flex-container(row, center, center, nowrap);
+      margin: 3rem;
+      padding: 10px 40px;
+      background-color: black;
+      border-radius: 2rem;
+      align-self: center;
+
+      p {
+        @include paragraphs(18px, white, 1.6);
+      }
+    }
+  }
+}

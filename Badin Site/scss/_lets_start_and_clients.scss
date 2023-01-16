@@ -3,7 +3,6 @@
 
 .lets_start_and_clients {
   &-lets_start {
-    // position: relative;
     .behind {
       position: relative;
       @include paragraphs(42px, #e8e8e8, 1.6);
@@ -55,6 +54,7 @@
       background-color: $lightgray;
       @include flex-container(row, flex-start, center, nowrap);
       gap: 2rem;
+      padding-bottom: 2rem;
       .client_icon {
         margin: 2rem 1rem;
         img {

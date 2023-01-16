@@ -1,0 +1,114 @@
+@import "config";
+@import "font";
+
+footer {
+  background-color: #1a1a1a;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  .responsive_wrapper {
+    .left_side {
+      .white_logo {
+        width: 5rem;
+        //   margin-bottom: 2rem;
+      }
+
+      .message {
+        @include paragraphs(12px, #ffffff, 1.6);
+        font-weight: 700;
+        opacity: 0.5;
+        width: 65%;
+        margin-top: 1rem;
+      }
+      .logo_container {
+        @include flex-container(row, flex-start, center, nowrap);
+
+        .social_media {
+          @include flex-container(row, center, center, nowrap);
+          width: 56px;
+          height: 56px;
+          background-color: #2c2d3c;
+          border-radius: 40%;
+          margin: 2rem 1rem 2rem 0rem;
+          img {
+            width: 40%;
+          }
+        }
+      }
+    }
+
+    .right_side {
+      padding-bottom: 2rem;
+      &-navigation {
+        h5 {
+          @include paragraphs(16px, white, 1.6);
+          margin-top: 1rem;
+        }
+
+        ul {
+          list-style: none;
+          margin-top: 1rem;
+
+          li {
+            @include paragraphs(13px, white, 1.6);
+            opacity: 0.5;
+            margin: 5px 0px;
+          }
+        }
+      }
+
+      &-contact {
+        h5 {
+          @include paragraphs(16px, white, 1.6);
+          margin-top: 1rem;
+        }
+        .email {
+          @include paragraphs(13px, white, 1.6);
+          opacity: 0.5;
+          margin-top: 1rem;
+          margin-bottom: 14px;
+        }
+
+        .address {
+          @include paragraphs(13px, white, 1.6);
+          opacity: 0.5;
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .copyrights {
+    border-top: 1px solid #2c2d3c;
+    @include paragraphs(10px, white, 1.6);
+
+    opacity: 0.5;
+    padding: 1rem;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@include media-md {
+  footer {
+    padding-top: 3rem;
+
+    padding-right: 2rem;
+    .responsive_wrapper {
+      @include flex-container(row, space-between, center, nowrap);
+
+      .right_side {
+        @include flex-container(row, center, flex-start, nowrap);
+
+        &-navigation {
+          margin-right: 6rem;
+        }
+      }
+    }
+
+    .copyrights {
+      @include paragraphs(14px, white, 1.6);
+      padding: 26px;
+    }
+  }
+}

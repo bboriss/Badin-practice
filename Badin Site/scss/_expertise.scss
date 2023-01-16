@@ -1,0 +1,78 @@
+@import "config";
+@import "font";
+
+.expertise {
+  @include flex-container(column, center, flex-start, nowrap);
+  background-color: #1c408c;
+  padding-bottom: 5rem;
+  h1 {
+    @include font-secondary-italic;
+    align-self: flex-start;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+    color: white;
+    font-size: 60px;
+    letter-spacing: 2px;
+  }
+
+  .technology_line {
+    @include flex-container(row, center, center, nowrap);
+
+    margin-top: 2rem;
+
+    span {
+      @include paragraphs(24px, white, 1.6);
+      position: relative;
+      white-space: nowrap;
+      height: 2rem;
+      opacity: 0.5;
+      font-weight: 700;
+      margin-right: 2rem;
+    }
+  }
+
+  .animation-left {
+    animation: expertise_left 35s linear alternate infinite;
+  }
+
+  .animation_right {
+    animation: expertise_right 35s linear alternate infinite;
+  }
+}
+
+@keyframes expertise_left {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-40%);
+  }
+}
+
+@keyframes expertise_right {
+  0% {
+    transform: translateX(-40%);
+  }
+}
+
+@include media-md {
+  .expertise {
+    @include flex-container(column, center, flex-start, nowrap);
+    background-color: #1c408c;
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+    h1 {
+      align-self: center;
+    }
+
+    .technology_line {
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+    }
+    .desktop-size {
+      display: none;
+    }
+  }
+}

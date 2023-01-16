@@ -1,0 +1,65 @@
+@import "config";
+@import "font";
+
+.info_badin {
+  @include flex-container(column, center, flex-start, nowrap);
+  background-color: $lightgray;
+  padding-left: 1rem;
+
+  h1 {
+    @include paragraphs(56px, #e0e0e0, 0.7);
+    font-style: italic;
+    width: 26rem;
+    margin-top: 5rem;
+  }
+
+  h3 {
+    @include font-secondary-italic;
+    width: 23rem;
+
+    margin-top: -1rem;
+    color: #22252e;
+    font-size: 44px;
+    letter-spacing: 4px;
+  }
+
+  p {
+    @include paragraphs(29px, black, 1.7);
+    text-decoration: underline;
+    margin-top: 2rem;
+  }
+  img {
+    width: 273px;
+    margin: 2rem 0rem;
+  }
+}
+
+@include media-md {
+  .info_badin {
+    position: relative;
+
+    h1 {
+      width: auto;
+      margin-top: 3rem;
+    }
+
+    h3 {
+      width: auto;
+
+      margin-top: 0rem;
+      color: #22252e;
+      font-size: 44px;
+      letter-spacing: 4px;
+    }
+
+    p {
+      margin-bottom: 7rem;
+    }
+
+    img {
+      position: absolute;
+      right: 3rem;
+      bottom: -1rem;
+    }
+  }
+}
