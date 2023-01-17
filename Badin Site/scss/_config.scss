@@ -49,7 +49,7 @@ body {
 
 @mixin top-section-btn($color) {
   @include font-primary-medium;
-  z-index: 1;
+  z-index: 99;
   color: $color;
   font-size: 20px;
   font-weight: 900;

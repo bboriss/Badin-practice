@@ -2236,13 +2236,14 @@ footer .copyrights {
   animation: 0.9s to-up linear;
 }
 .top-section-container .button_wrapper {
+  z-index: 1;
   width: 100%;
 }
 .top-section-container .button_wrapper .btn-1 {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
   font-weight: 500;
   font-style: normal;
-  z-index: 1;
+  z-index: 99;
   color: black;
   font-size: 20px;
   font-weight: 900;
@@ -2258,7 +2259,7 @@ footer .copyrights {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
   font-weight: 500;
   font-style: normal;
-  z-index: 1;
+  z-index: 99;
   color: white;
   font-size: 20px;
   font-weight: 900;
@@ -2315,7 +2316,7 @@ footer .copyrights {
 @media screen and (min-width: 768px) {
   .top-section {
     padding-left: 12%;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
   }
   .top-section header {
     padding-top: 4rem;
@@ -2327,6 +2328,17 @@ footer .copyrights {
   }
   .top-section header .menu-btn__menu {
     display: block;
+  }
+  .top-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 60px;
+    padding: 20px;
+    gap: 20px;
+    height: 72vh;
   }
   .top-section-container h1 {
     font-size: 80px;
