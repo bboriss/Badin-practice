@@ -91,12 +91,10 @@ footer {
 
 @include media-md {
   footer {
-    padding-top: 3rem;
-
-    padding-right: 2rem;
+    padding: 3rem 10%;
     .responsive_wrapper {
       @include flex-container(row, space-between, center, nowrap);
-
+      min-width: 732px;
       .right_side {
         @include flex-container(row, center, flex-start, nowrap);
 

@@ -121,7 +121,15 @@
     .trusted_by_container {
       position: relative;
       margin-top: 4rem;
+      margin-bottom: 3rem;
       @include flex_container(column, center, flex-start, nowrap);
+
+      .wrapper-2,
+      .wrapper-3,
+      .wrapper-4,
+      .wrapper-5 {
+        display: none;
+      }
 
       .quote-open,
       .quote-close {
@@ -228,6 +236,13 @@
         margin-top: 10rem;
         @include flex_container(row, flex-start, center, nowrap);
         position: relative;
+
+        .wrapper-2,
+        .wrapper-3,
+        .wrapper-4,
+        .wrapper-5 {
+          display: block;
+        }
 
         .quote-open {
           display: block;

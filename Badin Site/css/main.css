@@ -958,11 +958,18 @@ body {
 .what_we_offer .trusted_by_section .trusted_by_container {
   position: relative;
   margin-top: 4rem;
+  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
+}
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-2,
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-3,
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-4,
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-5 {
+  display: none;
 }
 .what_we_offer .trusted_by_section .trusted_by_container .quote-open,
 .what_we_offer .trusted_by_section .trusted_by_container .quote-close {
@@ -1071,6 +1078,12 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     position: relative;
+  }
+  .what_we_offer .trusted_by_section .trusted_by_container .wrapper-2,
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-3,
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-4,
+.what_we_offer .trusted_by_section .trusted_by_container .wrapper-5 {
+    display: block;
   }
   .what_we_offer .trusted_by_section .trusted_by_container .quote-open {
     display: block;
@@ -1217,6 +1230,13 @@ body {
   font-family: "lust";
   src: url("../fonts/lust-slim.ttf");
 }
+.lets_start_and_clients {
+  background-color: #f9fafe;
+}
+.lets_start_and_clients-lets_start {
+  background-color: white;
+  padding-bottom: 12rem;
+}
 .lets_start_and_clients-lets_start .behind {
   position: relative;
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
@@ -1288,14 +1308,13 @@ body {
   margin: 2rem;
 }
 .lets_start_and_clients .trusted_by_second-icons_container {
-  animation: 5s logos_translate linear alternate infinite;
+  animation: 6s logos_translate linear alternate infinite;
   background-color: #f9fafe;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 2rem;
   padding-bottom: 2rem;
 }
 .lets_start_and_clients .trusted_by_second-icons_container .client_icon {
@@ -1310,7 +1329,101 @@ body {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-40%);
+    transform: translateX(-30%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .lets_start_and_clients {
+    position: relative;
+  }
+  .lets_start_and_clients-lets_start {
+    padding-bottom: 20rem;
+    padding-left: 12%;
+  }
+  .lets_start_and_clients-lets_start .behind {
+    position: relative;
+    font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 95px;
+    color: #e8e8e8;
+    line-height: 1.6;
+    margin-top: 0rem;
+    margin-left: 3rem;
+  }
+  .lets_start_and_clients-lets_start h1 {
+    position: relative;
+    font-family: lust, "Courier", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: #22252e;
+    font-size: 75px;
+    letter-spacing: 2px;
+    margin-top: -5rem;
+    margin-left: 3rem;
+  }
+  .lets_start_and_clients-lets_start .sentence {
+    font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: #6b728e;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 31rem;
+    letter-spacing: 1px;
+  }
+  .lets_start_and_clients-lets_start .lets_connect_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: white;
+    line-height: 1.7;
+    background-color: #317ade;
+    padding: 1rem 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    width: 12rem;
+    height: 40pxrem;
+    border-radius: 2rem;
+  }
+  .lets_start_and_clients .trusted_by_second {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    padding-top: 1rem;
+    z-index: 1;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 5rem;
+    width: 20%;
+    animation: none;
+    background-color: #f9fafe;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-bottom: 2rem;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container .client_icon {
+    margin: 2rem 0rem;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container .client_icon img {
+    width: 13rem;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container .client_icon:nth-child(n+6) {
+    display: none;
   }
 }
 * {
@@ -1360,6 +1473,8 @@ body {
   font-family: lust, "Courier", serif;
   font-weight: 900;
   font-style: italic;
+  position: relative;
+  top: -3rem;
   margin: 0rem 1rem;
   color: #22252e;
   font-size: 44px;
@@ -1434,6 +1549,13 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .open_positions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
   .open_positions h1 {
     font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
     font-weight: 700;
@@ -1441,12 +1563,15 @@ body {
     font-size: 110px;
     color: #e0e0e0;
     line-height: 1.6;
+    position: relative;
+    left: -9rem;
   }
   .open_positions h3 {
-    position: relative;
-    top: -6rem;
     letter-spacing: 10px;
     font-size: 85px;
+    position: relative;
+    top: -6rem;
+    left: -15rem;
   }
   .open_positions-container {
     display: flex;
@@ -1454,6 +1579,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    width: 70rem;
     height: 7rem;
     border-radius: 1rem;
     align-self: center;
@@ -1964,8 +2090,7 @@ footer .copyrights {
 
 @media screen and (min-width: 768px) {
   footer {
-    padding-top: 3rem;
-    padding-right: 2rem;
+    padding: 3rem 10%;
   }
   footer .responsive_wrapper {
     display: flex;
@@ -1973,6 +2098,7 @@ footer .copyrights {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    min-width: 732px;
   }
   footer .responsive_wrapper .right_side {
     display: flex;

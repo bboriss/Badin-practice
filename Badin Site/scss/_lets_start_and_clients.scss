@@ -2,7 +2,10 @@
 @import "font";
 
 .lets_start_and_clients {
+  background-color: $lightgray;
   &-lets_start {
+    background-color: white;
+    padding-bottom: 12rem;
     .behind {
       position: relative;
       @include paragraphs(42px, #e8e8e8, 1.6);
@@ -49,18 +52,17 @@
       @include paragraphs(14px, #6b728e, 1.6);
       margin: 2rem;
     }
+  }
 
-    &-icons_container {
-      animation: 5s logos_translate linear alternate infinite;
-      background-color: $lightgray;
-      @include flex-container(row, flex-start, center, nowrap);
-      gap: 2rem;
-      padding-bottom: 2rem;
-      .client_icon {
-        margin: 2rem 0rem;
-        img {
-          width: 10rem;
-        }
+  .trusted_by_second-icons_container {
+    animation: 6s logos_translate linear alternate infinite;
+    background-color: $lightgray;
+    @include flex-container(row, flex-start, center, nowrap);
+    padding-bottom: 2rem;
+    .client_icon {
+      margin: 2rem 0rem;
+      img {
+        width: 10rem;
       }
     }
   }
@@ -72,6 +74,83 @@
   }
 
   100% {
-    transform: translateX(-40%);
+    transform: translateX(-30%);
+  }
+}
+
+@include media-md {
+  .lets_start_and_clients {
+    position: relative;
+    &-lets_start {
+      // background-color: white;
+      padding-bottom: 20rem;
+      padding-left: 12%;
+      .behind {
+        position: relative;
+        @include paragraphs(95px, #e8e8e8, 1.6);
+        margin-top: 0rem;
+        margin-left: 3rem;
+      }
+
+      h1 {
+        position: relative;
+        @include font-secondary-italic;
+        color: #22252e;
+        font-size: 75px;
+        letter-spacing: 2px;
+        margin-top: -5rem;
+        margin-left: 3rem;
+      }
+
+      .sentence {
+        @include paragraphs(16px, #6b728e, 1.6);
+        font-weight: 500;
+        max-width: 31rem;
+        letter-spacing: 1px;
+      }
+
+      .lets_connect_btn {
+        @include flex_container(row, center, center, nowrap);
+        @include paragraphs(16px, white, 1.7);
+
+        background-color: #317ade;
+        padding: 1rem 1rem;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+        width: 12rem;
+        height: 40pxrem;
+        border-radius: 2rem;
+      }
+    }
+
+    .trusted_by_second {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20%;
+      padding-top: 1rem;
+      z-index: 1;
+    }
+
+    .trusted_by_second-icons_container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-top: 5rem;
+      width: 20%;
+      animation: none;
+      background-color: $lightgray;
+      @include flex-container(column, flex-start, center, nowrap);
+      padding-bottom: 2rem;
+      .client_icon {
+        margin: 2rem 0rem;
+        img {
+          width: 13rem;
+        }
+      }
+      .client_icon:nth-child(n + 6) {
+        display: none;
+      }
+    }
   }
 }

@@ -12,6 +12,8 @@
 
   h3 {
     @include font-secondary-italic;
+    position: relative;
+    top: -3rem;
     margin: 0rem 1rem;
     color: #22252e;
     font-size: 44px;
@@ -69,19 +71,24 @@
 
 @include media-md {
   .open_positions {
+    @include flex-container(column, center, center, nowrap);
     h1 {
       @include paragraphs(110px, #e0e0e0, 1.6);
+      position: relative;
+      left: -9rem;
     }
 
     h3 {
-      position: relative;
-      top: -6rem;
       letter-spacing: 10px;
       font-size: 85px;
+      position: relative;
+      top: -6rem;
+      left: -15rem;
     }
 
     &-container {
       @include flex-container(row, space-between, center, nowrap);
+      width: 70rem;
       height: 7rem;
       border-radius: 1rem;
       align-self: center;
