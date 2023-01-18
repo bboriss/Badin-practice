@@ -2310,13 +2310,14 @@ footer .copyrights {
   position: absolute;
   bottom: 0rem;
   right: -21%;
-  width: 62%;
+  width: 75%;
 }
 
 @media screen and (min-width: 768px) {
   .top-section {
-    padding-left: 12%;
+    padding-left: 16%;
     margin-bottom: 5rem;
+    height: 100vh;
   }
   .top-section header {
     padding-top: 4rem;
@@ -2335,13 +2336,13 @@ footer .copyrights {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: nowrap;
-    margin-top: 60px;
-    padding: 20px;
+    margin-top: 0px;
+    padding: 10px;
     gap: 20px;
     height: 72vh;
   }
   .top-section-container h1 {
-    font-size: 80px;
+    font-size: 90px;
     max-width: 36rem;
   }
   .top-section-container h4 {
@@ -2367,31 +2368,33 @@ footer .copyrights {
     display: flex;
     justify-content: flex-end;
     position: relative;
+    bottom: -11rem;
+    right: 0;
   }
   .top-section-pictures-main_pic {
     position: absolute;
     right: -8%;
-    bottom: -8rem;
+    bottom: 0rem;
     width: 52vw;
   }
   .top-section-pictures-tower_1 {
     position: absolute;
-    top: -9rem;
+    top: -14rem;
     right: 55px;
     width: 120px;
     z-index: 1;
   }
   .top-section-pictures-tower_2 {
     position: absolute;
-    top: -9rem;
+    top: -14rem;
     left: 43%;
     width: 130px;
     z-index: 1;
   }
   .top-section-pictures-planet {
     position: absolute;
-    top: -32rem;
-    left: 63vw;
+    top: -52rem;
+    left: 53vw;
     width: 100px;
     z-index: 1;
   }
