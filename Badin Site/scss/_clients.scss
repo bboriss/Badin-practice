@@ -4,8 +4,8 @@
   @include flex_container(row, center, center, nowrap);
 
   &-container {
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 6rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;

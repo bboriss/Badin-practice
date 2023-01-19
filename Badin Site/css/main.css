@@ -52,8 +52,8 @@ body {
   flex-wrap: nowrap;
 }
 .clients_section-container {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -2158,55 +2158,6 @@ footer .copyrights {
   top: 20px;
   animation: 0.4s to-up linear;
 }
-.top-section header .menu-btn {
-  position: absolute;
-  z-index: 1;
-  right: 20px;
-  top: 32px;
-  height: 20px;
-  width: 25px;
-  cursor: pointer;
-}
-.top-section header .menu-btn__menu {
-  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 15px;
-  color: white;
-  line-height: 1.6;
-  position: relative;
-  top: 70%;
-  left: 2rem;
-  transform: rotate(270deg);
-  font-weight: 300;
-  display: none;
-}
-.top-section header .menu-btn__burger {
-  position: absolute;
-  right: 0;
-  top: 16px;
-  width: 20px;
-  height: 2px;
-  background: white;
-}
-.top-section header .menu-btn__burger::before {
-  position: absolute;
-  right: 0;
-  top: -7px;
-  width: 20px;
-  height: 2px;
-  background: white;
-  content: "";
-}
-.top-section header .menu-btn__burger::after {
-  position: absolute;
-  right: 0;
-  top: 7px;
-  width: 20px;
-  height: 2px;
-  background: white;
-  content: "";
-}
 .top-section-container {
   display: flex;
   flex-direction: column;
@@ -2313,10 +2264,63 @@ footer .copyrights {
   width: 75%;
 }
 
+.menu-btn {
+  position: fixed;
+  z-index: 1;
+  right: 20px;
+  top: 32px;
+  height: 20px;
+  width: 25px;
+  cursor: pointer;
+}
+.menu-btn__menu {
+  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 15px;
+  color: white;
+  line-height: 1.6;
+  position: relative;
+  top: 70%;
+  left: 2rem;
+  transform: rotate(270deg);
+  font-weight: 300;
+  display: none;
+}
+.menu-btn__burger {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+.menu-btn__burger::before {
+  position: absolute;
+  right: 0;
+  top: -7px;
+  width: 100%;
+  height: 2px;
+  background: white;
+  content: "";
+}
+.menu-btn__burger::after {
+  position: absolute;
+  right: 0;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  background: white;
+  content: "";
+}
+
+.toggler {
+  background-color: black;
+}
+
 @media screen and (min-width: 768px) {
   .top-section {
     padding-left: 16%;
-    margin-bottom: 5rem;
     height: 100vh;
   }
   .top-section header {
@@ -2324,11 +2328,32 @@ footer .copyrights {
   }
   .top-section header .menu-btn {
     position: fixed;
-    left: 2rem;
+    width: 18px;
+    left: 3rem;
     top: 50%;
   }
   .top-section header .menu-btn__menu {
     display: block;
+    top: 1.2rem;
+    left: 1.7rem;
+    letter-spacing: 2px;
+  }
+  .top-section header .menu-btn:hover .menu-btn__menu {
+    left: 2.3rem;
+    top: 120%;
+    scale: 1.2;
+    transition: 0.5s ease;
+  }
+  .top-section header .menu-btn:hover .menu-btn__burger {
+    width: 2.5rem;
+    transition: 0.5s ease;
+  }
+  .top-section header .menu-btn:hover .menu-btn__burger::after {
+    width: 2rem;
+    transition: 0.5s ease;
+  }
+  .top-section header .menu-btn:hover .menu-btn__burger::before {
+    width: 1.1rem;
   }
   .top-section-container {
     display: flex;
