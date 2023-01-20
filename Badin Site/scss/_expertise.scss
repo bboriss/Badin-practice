@@ -11,7 +11,7 @@
     margin-top: 4rem;
     margin-bottom: 3rem;
     margin-left: 1rem;
-    color: white;
+    color: $white;
     font-size: 60px;
     letter-spacing: 2px;
   }
@@ -22,9 +22,9 @@
     margin-top: 2rem;
 
     span {
-      @include paragraphs(24px, white, 1.6);
+      @include paragraphs(24px, $white, 1.6);
       position: relative;
-      white-space: nowrap;
+      $white-space: nowrap;
       height: 2rem;
       opacity: 0.5;
       font-weight: 700;

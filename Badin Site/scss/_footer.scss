@@ -41,7 +41,7 @@ footer {
       padding-bottom: 2rem;
       &-navigation {
         h5 {
-          @include paragraphs(16px, white, 1.6);
+          @include paragraphs(16px, $white, 1.6);
           margin-top: 1rem;
         }
 
@@ -50,7 +50,7 @@ footer {
           margin-top: 1rem;
 
           li {
-            @include paragraphs(13px, white, 1.6);
+            @include paragraphs(13px, $white, 1.6);
             opacity: 0.5;
             margin: 5px 0px;
           }
@@ -59,18 +59,18 @@ footer {
 
       &-contact {
         h5 {
-          @include paragraphs(16px, white, 1.6);
+          @include paragraphs(16px, $white, 1.6);
           margin-top: 1rem;
         }
         .email {
-          @include paragraphs(13px, white, 1.6);
+          @include paragraphs(13px, $white, 1.6);
           opacity: 0.5;
           margin-top: 1rem;
           margin-bottom: 14px;
         }
 
         .address {
-          @include paragraphs(13px, white, 1.6);
+          @include paragraphs(13px, $white, 1.6);
           opacity: 0.5;
           margin-top: 0px;
         }
@@ -80,7 +80,7 @@ footer {
 
   .copyrights {
     border-top: 1px solid #2c2d3c;
-    @include paragraphs(10px, white, 1.6);
+    @include paragraphs(10px, $white, 1.6);
 
     opacity: 0.5;
     padding: 1rem;
@@ -105,7 +105,7 @@ footer {
     }
 
     .copyrights {
-      @include paragraphs(14px, white, 1.6);
+      @include paragraphs(14px, $white, 1.6);
       padding: 26px;
     }
   }

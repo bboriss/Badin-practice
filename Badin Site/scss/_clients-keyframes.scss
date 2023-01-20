@@ -1,3 +1,5 @@
+@import "config";
+
 @keyframes picture-rotator1 {
   0% {
     left: 7rem;
@@ -259,143 +261,143 @@
 
 @keyframes client_circle1 {
   0% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   15% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   20% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   55% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
 
   95% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   100% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
 }
 
 @keyframes client_circle2 {
   0% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   15% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   20% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   35% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   40% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
 }
 
 @keyframes client_circle3 {
   0% {
     background-color: white;
-    border-color: lightblue;
+    border-color: #add8e6;
   }
   20% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   35% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   40% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   55% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
 }
 
 @keyframes client_circle3 {
   0% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   35% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   40% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   55% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   60% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
 }
 @keyframes client_circle4 {
   0% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   55% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   60% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   75% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   80% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
 }
 
 @keyframes client_circle5 {
   0% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   75% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
   80% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   95% {
-    background-color: #1e90ff;
-    border-color: #1e90ff;
+    background-color: $blue_animation;
+    border-color: $blue_animation;
   }
   100% {
     background-color: white;
-    border-color: lightblue;
+    border-color: $lightblue_animation;
   }
 }
 

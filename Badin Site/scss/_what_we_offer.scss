@@ -24,7 +24,7 @@
 
   .services_btn {
     @include flex_container(row, center, center, nowrap);
-    @include paragraphs(16px, white, 1.7);
+    @include paragraphs(16px, $white, 1.7);
 
     background-color: #317ade;
     padding: 1rem 1rem;
@@ -301,13 +301,13 @@
           height: 18rem;
           margin-bottom: 1rem;
           padding: 22px 0px;
-          background-color: lightblue;
+          background-color: $lightblue_animation;
 
           &-circle {
             width: 12px;
             height: 12px;
-            background-color: white;
-            border: 2px solid lightblue;
+            background-color: $white;
+            border: 2px solid $lightblue_animation;
             border-radius: 100%;
           }
 

@@ -4,7 +4,7 @@
 .lets_start_and_clients {
   background-color: $lightgray;
   &-lets_start {
-    background-color: white;
+    background-color: $white;
     padding-bottom: 12rem;
     .behind {
       position: relative;
@@ -32,7 +32,7 @@
 
     .lets_connect_btn {
       @include flex_container(row, center, center, nowrap);
-      @include paragraphs(16px, white, 1.7);
+      @include paragraphs(16px, $white, 1.7);
 
       background-color: #317ade;
       padding: 1rem 1rem;
@@ -82,7 +82,7 @@
   .lets_start_and_clients {
     position: relative;
     &-lets_start {
-      // background-color: white;
+      // background-color: $white;
       padding-bottom: 20rem;
       padding-left: 12%;
       .behind {
@@ -111,7 +111,7 @@
 
       .lets_connect_btn {
         @include flex_container(row, center, center, nowrap);
-        @include paragraphs(16px, white, 1.7);
+        @include paragraphs(16px, $white, 1.7);
 
         background-color: #317ade;
         padding: 1rem 1rem;

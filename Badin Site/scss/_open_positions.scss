@@ -22,7 +22,7 @@
   &-container {
     @include flex-container(column, space-between, flex-start, nowrap);
 
-    background-color: white;
+    background-color: $white;
     margin-top: 2rem;
     width: 95%;
     height: 9rem;
@@ -46,7 +46,7 @@
       padding: 7px 18px;
 
       p {
-        @include paragraphs(18px, white, 1.6);
+        @include paragraphs(18px, $white, 1.6);
       }
 
       img {
@@ -64,7 +64,7 @@
     align-self: center;
 
     p {
-      @include paragraphs(18px, white, 1.6);
+      @include paragraphs(18px, $white, 1.6);
     }
   }
 }
@@ -111,7 +111,7 @@
         padding: 7px 18px;
 
         p {
-          @include paragraphs(18px, white, 1.6);
+          @include paragraphs(18px, $white, 1.6);
         }
 
         img {
@@ -129,7 +129,7 @@
       align-self: center;
 
       p {
-        @include paragraphs(18px, white, 1.6);
+        @include paragraphs(18px, $white, 1.6);
       }
     }
   }

@@ -1,13 +1,14 @@
-// import { beTouching } from "./../scripts/observer.js";
-const menuBtn = document.querySelector(".menu-btn");
+// Referencing elements for menu button color change
 const topSection = document.getElementsByClassName("top-section")[0];
-const expertise = document.getElementsByClassName("expertise")[0];
-const burger = document.getElementsByClassName("menu-btn__burger")[0];
+const expertise = document.querySelector(".expertise");
+const footer = document.getElementsByTagName("footer")[0];
+const burgerLines = Array.from(
+  document.getElementsByClassName("menu-btn__burger-line")
+);
+const menuText = document.querySelector(".menu-btn__menu");
 
+//    <-------- OBSERVER -------->
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(topSection);
-  console.log(document);
-
   let options = {
     root: null,
     rootMargin: "-49% 0px",
@@ -17,12 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(topSection);
   observer.observe(expertise);
+  observer.observe(footer);
 });
 
 function beTouching(entries) {
-  console.log(entries[0].isIntersecting);
-  // menu-btn
   if (entries[0].isIntersecting) {
-    console.log(burger);
+    burgerLines.forEach((line) => (line.style.backgroundColor = "white"));
+    menuText.style.color = "white";
+  } else {
+    burgerLines.forEach((line) => (line.style.backgroundColor = "black"));
+    menuText.style.color = "black";
   }
 }
