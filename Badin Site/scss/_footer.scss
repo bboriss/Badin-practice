@@ -10,9 +10,7 @@ footer {
     .left_side {
       .white_logo {
         width: 5rem;
-        //   margin-bottom: 2rem;
       }
-
       .message {
         @include paragraphs(12px, #ffffff, 1.6);
         font-weight: 700;
@@ -92,6 +90,7 @@ footer {
 @include media-md {
   footer {
     padding: 3rem 10%;
+    padding-bottom: 0;
     .responsive_wrapper {
       @include flex-container(row, space-between, center, nowrap);
       min-width: 732px;
