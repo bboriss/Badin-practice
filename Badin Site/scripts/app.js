@@ -12,39 +12,69 @@ const menuText = document.querySelector(".menu-btn__menu");
 // arrows
 const arrLeft = document.querySelector(".arrow-left");
 const arrRight = document.querySelector(".arrow-right");
+// arrow icons
+const leftArrIcon = document.querySelector(".fa-left-long");
+const rightArrIcon = document.querySelector(".fa-right-long");
 // picture container
 const picContainer = document.querySelector(
   ".trusted_by_container-pic_container"
 );
 // pictures
 const pictures = Array.from(document.getElementsByClassName("client_pic"));
-console.log(picContainer);
+
+let counterPic = 0;
 
 arrLeft.addEventListener("click", () => {
-  console.log("left clicked");
-  if (pictures[0].classList.contains("client_pic_big")) {
+  if (counterPic === 0) {
     console.log("na prvoj je");
     return;
   } else {
-    // addddd
-    return;
+    pictures[counterPic - 1].classList.remove("client_pic_normal");
+    pictures[counterPic - 1].classList.add("client_pic_big");
+    pictures[counterPic].classList.remove("client_pic_big");
+    pictures[counterPic].classList.add("client_pic_normal");
+
+    let elementBigIndex = pictures.findIndex((element) =>
+      element.classList.contains("client_pic_big")
+    );
+    console.log("big el index: ", elementBigIndex);
+    picContainer.style.cssText = `position: relative;
+    left: -${elementBigIndex * 96}px;
+    transition: 0.7s linear;
+    `;
+    counterPic--;
+    console.log(counterPic);
   }
 });
-let counter = 0;
+
 arrRight.addEventListener("click", () => {
   console.log("right clicked");
 
   if (pictures[pictures.length - 1].classList.contains("client_pic_big")) {
     console.log("na zadnjoj je");
   } else {
-    pictures[counter].classList.remove("client_pic_big");
-    pictures[counter].classList.add("client_pic_normal");
-    pictures[counter + 1].classList.remove("client_pic_normal");
-    pictures[counter + 1].classList.add("client_pic_big");
+    pictures[counterPic].classList.remove("client_pic_big");
+    pictures[counterPic].classList.add("client_pic_normal");
+    pictures[counterPic + 1].classList.remove("client_pic_normal");
+    pictures[counterPic + 1].classList.add("client_pic_big");
+    // container translation
     picContainer.style.cssText = `position: relative;
-    left: -${(counter + 1) * 100}px;`;
-    console.log(counter);
-    counter++;
+    left: -${(counterPic + 1) * 96}px;
+    transition: 0.7s linear;
+    `;
+
+    console.log("pre povecanja: ", counterPic);
+    counterPic++;
+    console.log("posle povecanja: ", counterPic);
+    counterPic > 0
+      ? (arrLeft.style.cssText = "pointer-events:auto") &&
+        (leftArrIcon.style.color = "#1e90ff")
+      : (arrLeft.style.cssText = "pointer-events:none");
+
+    counterPic === pictures.length - 1
+      ? (rightArrIcon.style.cssText = "color:#909090;") &&
+        (arrRight.style.cssText = "pointer-events: none;")
+      : (rightArrIcon.style.color = "#1e90ff");
   }
 });
 

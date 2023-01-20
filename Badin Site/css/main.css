@@ -947,6 +947,10 @@ body {
 .what_we_offer-container-card .main-picture-dwn img {
   width: 100%;
 }
+.what_we_offer .trusted_by_section .quote-open,
+.what_we_offer .trusted_by_section .quote-close {
+  display: none;
+}
 .what_we_offer .trusted_by_section h2 {
   font-family: lust, "Courier", serif;
   font-weight: 900;
@@ -970,6 +974,8 @@ body {
   position: relative;
   margin-top: 4rem;
   margin-bottom: 3rem;
+  padding-top: 1rem;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -993,22 +999,22 @@ body {
   align-items: center;
   flex-wrap: nowrap;
 }
-.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow_div {
+.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow-left {
+  pointer-events: none;
   cursor: pointer;
 }
-.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow_div .fa-left-long {
+.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow-left .fa-left-long {
   font-size: 1.4rem;
   color: #909090;
   pointer-events: none;
 }
-.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow_div .fa-right-long {
+.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow-right {
+  cursor: pointer;
+}
+.what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper .arrow-right .fa-right-long {
   font-size: 1.4rem;
   color: #1e90ff;
   pointer-events: none;
-}
-.what_we_offer .trusted_by_section .trusted_by_container .quote-open,
-.what_we_offer .trusted_by_section .trusted_by_container .quote-close {
-  display: none;
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container {
   display: flex;
@@ -1016,6 +1022,7 @@ body {
   justify-content: start;
   align-items: baseline;
   flex-wrap: nowrap;
+  height: 150px;
   margin-left: 1rem;
   margin-bottom: 2rem;
   gap: 1rem;
@@ -1025,6 +1032,7 @@ body {
   height: 130px;
   position: relative;
   bottom: 5px;
+  transition: 0.7s linear;
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_big img {
   width: 100%;
@@ -1032,6 +1040,7 @@ body {
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_normal {
   width: 80px;
   height: 80px;
+  transition: 0.7s linear;
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_normal img {
   width: 100%;
@@ -1070,11 +1079,6 @@ body {
   font-style: italic;
 }
 
-.mover {
-  position: relative;
-  left: -130px;
-}
-
 @media screen and (min-width: 768px) {
   .what_we_offer {
     position: relative;
@@ -1102,6 +1106,9 @@ body {
     align-items: center;
     flex-wrap: nowrap;
   }
+  .what_we_offer .trusted_by_section {
+    position: relative;
+  }
   .what_we_offer .trusted_by_section h2 {
     font-size: 6rem;
     margin: 6rem 12px 2rem 12px;
@@ -1110,9 +1117,23 @@ body {
     max-width: 29rem;
     color: #6b728e;
   }
+  .what_we_offer .trusted_by_section .quote-open {
+    display: block;
+    position: absolute;
+    top: 17rem;
+    left: 25em;
+    z-index: 1;
+  }
+  .what_we_offer .trusted_by_section .quote-close {
+    display: block;
+    position: absolute;
+    top: 42rem;
+    left: 60rem;
+    z-index: 1;
+  }
   .what_we_offer .trusted_by_section .trusted_by_container {
-    height: auto;
-    margin-top: 10rem;
+    height: 30rem;
+    margin-top: 7rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -1128,20 +1149,6 @@ body {
   }
   .what_we_offer .trusted_by_section .trusted_by_container .arrow_wrapper {
     display: none;
-  }
-  .what_we_offer .trusted_by_section .trusted_by_container .quote-open {
-    display: block;
-    position: absolute;
-    top: -7rem;
-    left: 25em;
-    z-index: 1;
-  }
-  .what_we_offer .trusted_by_section .trusted_by_container .quote-close {
-    display: block;
-    position: absolute;
-    top: 19rem;
-    left: 56rem;
-    z-index: 1;
   }
   .what_we_offer .trusted_by_section .trusted_by_container-pic_container {
     width: 22rem;

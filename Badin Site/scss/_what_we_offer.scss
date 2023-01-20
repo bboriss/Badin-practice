@@ -103,6 +103,10 @@
   }
 
   .trusted_by_section {
+    .quote-open,
+    .quote-close {
+      display: none;
+    }
     h2 {
       @include font-secondary-italic;
 
@@ -122,6 +126,8 @@
       position: relative;
       margin-top: 4rem;
       margin-bottom: 3rem;
+      padding-top: 1rem;
+      overflow-x: hidden;
       @include flex_container(column, center, flex-start, nowrap);
 
       .wrapper-2,
@@ -138,14 +144,17 @@
         width: 4.3rem;
         @include flex-container(row, space-between, center, nowrap);
 
-        .arrow_div {
+        .arrow-left {
+          pointer-events: none;
           cursor: pointer;
           .fa-left-long {
             font-size: 1.4rem;
             color: $graycolor;
             pointer-events: none;
           }
-
+        }
+        .arrow-right {
+          cursor: pointer;
           .fa-right-long {
             font-size: 1.4rem;
             color: $blue_animation;
@@ -154,14 +163,9 @@
         }
       }
 
-      .quote-open,
-      .quote-close {
-        display: none;
-      }
-
       &-pic_container {
         @include flex_container(row, start, baseline, nowrap);
-
+        height: 150px;
         margin-left: 1rem;
         margin-bottom: 2rem;
         gap: 1rem;
@@ -171,6 +175,7 @@
           height: 130px;
           position: relative;
           bottom: 5px;
+          transition: 0.7s linear;
           img {
             width: 100%;
           }
@@ -179,21 +184,12 @@
         .client_pic_normal {
           width: 80px;
           height: 80px;
+          transition: 0.7s linear;
           img {
             width: 100%;
           }
         }
       }
-
-      // .active {
-      //   width: 130px;
-      //   height: 130px;
-      //   position: relative;
-      //   bottom: 5px;
-      //   img {
-      //     width: 100%;
-      //   }
-      // }
 
       .order_line {
         display: none;
@@ -226,10 +222,10 @@
   }
 }
 
-.mover {
-  position: relative;
-  left: -130px;
-}
+// .mover {
+//   position: relative;
+//   left: -130px;
+// }
 
 @include media-md {
   .what_we_offer {
@@ -259,6 +255,7 @@
     }
 
     .trusted_by_section {
+      position: relative;
       h2 {
         font-size: 6rem;
 
@@ -270,9 +267,26 @@
         color: #6b728e;
       }
 
+      .quote-open {
+        display: block;
+        position: absolute;
+        top: 17rem;
+        left: 25em;
+        z-index: 1;
+      }
+
+      .quote-close {
+        display: block;
+        position: absolute;
+        top: 42rem;
+        left: 60rem;
+        z-index: 1;
+      }
+
       .trusted_by_container {
-        height: auto;
-        margin-top: 10rem;
+        height: 30rem;
+
+        margin-top: 7rem;
         @include flex_container(row, flex-start, center, nowrap);
         position: relative;
 
@@ -285,22 +299,6 @@
 
         .arrow_wrapper {
           display: none;
-        }
-
-        .quote-open {
-          display: block;
-          position: absolute;
-          top: -7rem;
-          left: 25em;
-          z-index: 1;
-        }
-
-        .quote-close {
-          display: block;
-          position: absolute;
-          top: 19rem;
-          left: 56rem;
-          z-index: 1;
         }
 
         &-pic_container {
@@ -323,6 +321,7 @@
           .client_pic_normal {
             width: 80px;
             height: 80px;
+
             img {
               width: 100%;
             }
