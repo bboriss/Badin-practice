@@ -164,7 +164,7 @@
       }
 
       &-pic_container {
-        @include flex_container(row, start, baseline, nowrap);
+        @include flex_container(row, start, flex-end, nowrap);
         height: 150px;
         margin-left: 1rem;
         margin-bottom: 2rem;
@@ -172,10 +172,10 @@
 
         .client_pic_big {
           width: 130px;
-          height: 130px;
+
           position: relative;
           bottom: 5px;
-          transition: 0.7s linear;
+          transition: 0.8s;
           img {
             width: 100%;
           }
@@ -183,8 +183,7 @@
 
         .client_pic_normal {
           width: 80px;
-          height: 80px;
-          transition: 0.7s linear;
+          transition: 0.7s;
           img {
             width: 100%;
           }
@@ -221,11 +220,6 @@
     }
   }
 }
-
-// .mover {
-//   position: relative;
-//   left: -130px;
-// }
 
 @include media-md {
   .what_we_offer {

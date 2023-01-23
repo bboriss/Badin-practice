@@ -1020,7 +1020,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: start;
-  align-items: baseline;
+  align-items: flex-end;
   flex-wrap: nowrap;
   height: 150px;
   margin-left: 1rem;
@@ -1029,18 +1029,16 @@ body {
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_big {
   width: 130px;
-  height: 130px;
   position: relative;
   bottom: 5px;
-  transition: 0.7s linear;
+  transition: 0.8s;
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_big img {
   width: 100%;
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_normal {
   width: 80px;
-  height: 80px;
-  transition: 0.7s linear;
+  transition: 0.7s;
 }
 .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_normal img {
   width: 100%;

@@ -23,58 +23,70 @@ const picContainer = document.querySelector(
 const pictures = Array.from(document.getElementsByClassName("client_pic"));
 
 let counterPic = 0;
+const namesAndRoles = [{ name: "Karthik Rao" }];
 
 arrLeft.addEventListener("click", () => {
-  if (counterPic === 0) {
-    console.log("na prvoj je");
-    return;
-  } else {
-    pictures[counterPic - 1].classList.remove("client_pic_normal");
-    pictures[counterPic - 1].classList.add("client_pic_big");
-    pictures[counterPic].classList.remove("client_pic_big");
-    pictures[counterPic].classList.add("client_pic_normal");
+  pictures[counterPic - 1].classList.remove("client_pic_normal");
+  pictures[counterPic - 1].classList.add("client_pic_big");
+  pictures[counterPic].classList.remove("client_pic_big");
+  pictures[counterPic].classList.add("client_pic_normal");
 
-    let elementBigIndex = pictures.findIndex((element) =>
-      element.classList.contains("client_pic_big")
-    );
-    console.log("big el index: ", elementBigIndex);
-    picContainer.style.cssText = `position: relative;
+  let elementBigIndex = pictures.findIndex((element) =>
+    element.classList.contains("client_pic_big")
+  );
+  // container translation
+  picContainer.style.cssText = `position: relative;
     left: -${elementBigIndex * 96}px;
     transition: 0.7s linear;
     `;
-    counterPic--;
-    console.log(counterPic);
-  }
+  counterPic--;
+
+  counterPic > 0
+    ? (arrLeft.style.cssText = "pointer-events:auto") &&
+      (leftArrIcon.style.color = "#1e90ff")
+    : (arrLeft.style.cssText = "pointer-events:none") &&
+      (leftArrIcon.style.color = "#909090");
+
+  counterPic === pictures.length - 1
+    ? (rightArrIcon.style.cssText = "color:#909090;") &&
+      (arrRight.style.cssText = "pointer-events: none;")
+    : (rightArrIcon.style.color = "#1e90ff") &&
+      (arrRight.style.cssText = "pointer-events: auto;");
 });
 
 arrRight.addEventListener("click", () => {
-  console.log("right clicked");
-
-  if (pictures[pictures.length - 1].classList.contains("client_pic_big")) {
-    console.log("na zadnjoj je");
-  } else {
-    pictures[counterPic].classList.remove("client_pic_big");
-    pictures[counterPic].classList.add("client_pic_normal");
-    pictures[counterPic + 1].classList.remove("client_pic_normal");
-    pictures[counterPic + 1].classList.add("client_pic_big");
-    // container translation
-    picContainer.style.cssText = `position: relative;
+  pictures[counterPic].classList.remove("client_pic_big");
+  pictures[counterPic].classList.add("client_pic_normal");
+  pictures[counterPic + 1].classList.remove("client_pic_normal");
+  pictures[counterPic + 1].classList.add("client_pic_big");
+  // container translation
+  picContainer.style.cssText = `position: relative;
     left: -${(counterPic + 1) * 96}px;
     transition: 0.7s linear;
     `;
 
-    console.log("pre povecanja: ", counterPic);
-    counterPic++;
-    console.log("posle povecanja: ", counterPic);
-    counterPic > 0
-      ? (arrLeft.style.cssText = "pointer-events:auto") &&
-        (leftArrIcon.style.color = "#1e90ff")
-      : (arrLeft.style.cssText = "pointer-events:none");
+  console.log("pre povecanja: ", counterPic);
+  counterPic++;
+  console.log("posle povecanja: ", counterPic);
+  counterPic > 0
+    ? (arrLeft.style.cssText = "pointer-events:auto") &&
+      (leftArrIcon.style.color = "#1e90ff")
+    : (arrLeft.style.cssText = "pointer-events:none") &&
+      (leftArrIcon.style.color = "#909090");
 
-    counterPic === pictures.length - 1
-      ? (rightArrIcon.style.cssText = "color:#909090;") &&
-        (arrRight.style.cssText = "pointer-events: none;")
-      : (rightArrIcon.style.color = "#1e90ff");
+  counterPic === pictures.length - 1
+    ? (rightArrIcon.style.cssText = "color:#909090;") &&
+      (arrRight.style.cssText = "pointer-events: none;")
+    : (rightArrIcon.style.color = "#1e90ff");
+});
+
+// When window resized get back picture container to position 0
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    picContainer.style.cssText = `position: relative;
+    left: 0px;
+    `;
   }
 });
 
