@@ -3,13 +3,26 @@
 
 .pictures {
   margin-top: 4rem;
+
+  .modal {
+    display: none;
+  }
   .picture_container {
     width: 90%;
     margin: auto;
+    position: relative;
 
     img {
       width: 100%;
       border-radius: 10px;
+    }
+
+    .zoom {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2.5rem;
+      opacity: 0;
     }
   }
 
@@ -22,6 +35,7 @@
 
 @include media-md {
   .pictures {
+    padding-left: 3rem;
     width: 90%;
     margin: auto;
     display: grid;
@@ -38,6 +52,70 @@
 
       img {
         width: 100%;
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+
+      .modal_container {
+        @include flex-container(row, center, center, nowrap);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        opacity: 1;
+
+        button {
+          width: 2rem;
+          height: 2rem;
+          background-color: $white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+
+          i {
+            color: $blue_animation;
+          }
+        }
+
+        .pic_left_btn:hover {
+          position: relative;
+          left: -4px;
+          transition: 1s ease;
+        }
+
+        .pic_right_btn:hover {
+          position: relative;
+          right: 4px;
+          transition: 1s ease;
+        }
+
+        .modal_image {
+          margin-left: 3rem;
+          margin-right: 3rem;
+          width: 38rem;
+          border-radius: 1rem;
+        }
+      }
+    }
+
+    .picture_container:hover {
+      cursor: pointer;
+      transition: 0.7s;
+      position: relative;
+      filter: brightness(70%);
+      .zoom {
+        transition: 0.4s linear;
+        opacity: 1;
+        pointer-events: none;
       }
     }
 

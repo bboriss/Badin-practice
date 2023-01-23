@@ -41,19 +41,19 @@
       margin-bottom: 3rem;
 
       .what_we_offer-card-title_blue {
-        @include paragraphs(16px, #317ade, 1.7);
+        @include paragraphs(16px, $blue_animation, 1.7);
         margin: 4px 1rem;
       }
       .what_we_offer-card-title_black {
-        @include paragraphs(16px, black, 1.7);
+        @include paragraphs(16px, $black, 1.7);
         margin: 4px 1rem;
       }
       .what_we_offer-card-title_orange {
-        @include paragraphs(16px, #ed701d, 1.7);
+        @include paragraphs(16px, $orange, 1.7);
         margin: 4px 1rem;
       }
       .what_we_offer-card-title_green {
-        @include paragraphs(16px, #1ebf73, 1.7);
+        @include paragraphs(16px, $lightgreen, 1.7);
         margin: 4px 1rem;
       }
 
@@ -245,7 +245,42 @@
     }
 
     &-container {
-      @include flex-container(row, start, center, nowrap);
+      @include flex-container(row, start, flex-end, nowrap);
+
+      .what_we_offer-container-card:nth-child(1):hover {
+        position: relative;
+        scale: 1.1;
+        transition: 0.3s linear;
+        left: -10px;
+        p:nth-child(2) {
+          transition: 0.3s linear;
+          color: $blue_animation;
+          font-size: 1.2rem;
+        }
+      }
+      .what_we_offer-container-card:nth-child(2):hover {
+        position: relative;
+        scale: 1.1;
+        transition: 0.3s linear;
+        left: 0px;
+        p:nth-child(2) {
+          transition: 0.3s linear;
+          color: $orange;
+          font-size: 1.2rem;
+        }
+      }
+      .what_we_offer-container-card:nth-child(3):hover {
+        position: relative;
+        scale: 1.1;
+        transition: 0.3s linear;
+        left: 10px;
+        p:nth-child(2) {
+          transition: 0.3s linear;
+          color: $lightgreen;
+          font-size: 1.2rem;
+        }
+      }
+      // }
     }
 
     .trusted_by_section {

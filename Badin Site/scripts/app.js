@@ -1,4 +1,5 @@
 // Referencing elements for menu button color change
+
 const topSection = document.getElementsByClassName("top-section")[0];
 const expertise = document.querySelector(".expertise");
 const footer = document.getElementsByTagName("footer")[0];
@@ -7,7 +8,7 @@ const burgerLines = Array.from(
 );
 const menuText = document.querySelector(".menu-btn__menu");
 
-// elements for clients pictures and text
+// <-- clients pictures and text -->
 
 // arrows
 const arrLeft = document.querySelector(".arrow-left");
@@ -19,12 +20,86 @@ const rightArrIcon = document.querySelector(".fa-right-long");
 const picContainer = document.querySelector(
   ".trusted_by_container-pic_container"
 );
-// pictures
+// client pictures
 const pictures = Array.from(document.getElementsByClassName("client_pic"));
 // name, role and text
 const clientName = document.querySelector(".name_and_role-name");
 const clientRole = document.querySelector(".name_and_role-role");
 const clientText = document.querySelector(".client_text");
+
+// <-- badin pictures -->
+const pictureContainers = Array.from(
+  document.getElementsByClassName("picture_container")
+);
+
+const badinPicturesAdresses = Array.from(
+  document.getElementsByClassName("picture_container")
+).map((picture) => picture.children[0].currentSrc);
+
+const modal = document.querySelector(".modal");
+const modalImg = document.querySelector(".modal_image");
+const modalLeftArrow = document.querySelector(".pic_left_btn");
+const modalRightArrow = document.querySelector(".pic_right_btn");
+console.log(badinPicturesAdresses);
+// current Img
+let currentImg;
+console.log(currentImg);
+
+pictureContainers.forEach((badinPicture) =>
+  badinPicture.addEventListener("click", (e) => {
+    modal.style.display = "block";
+
+    currentImg = e.target.src;
+    modalImg.src = currentImg;
+
+    currentImg.includes("first")
+      ? (modalLeftArrow.style.display = "none")
+      : (modalLeftArrow.style.display = "block");
+
+    currentImg.includes("chill")
+      ? (modalRightArrow.style.display = "none")
+      : (modalRightArrow.style.display = "block");
+
+    console.log(typeof currentImg);
+    console.log(currentImg);
+  })
+);
+
+modalRightArrow.addEventListener("click", (e) => {
+  modalLeftArrow.style.display = "block";
+  const nextIndex =
+    badinPicturesAdresses.findIndex((address) => address == currentImg) + 1;
+
+  currentImg = badinPicturesAdresses[nextIndex];
+  modalImg.src = currentImg;
+
+  currentImg.includes("chill")
+    ? (modalRightArrow.style.display = "none")
+    : (modalRightArrow.style.display = "block");
+
+  e.stopPropagation();
+});
+
+modalLeftArrow.addEventListener("click", (e) => {
+  modalRightArrow.style.display = "block";
+  const previousIndex =
+    badinPicturesAdresses.findIndex((address) => address == currentImg) - 1;
+
+  currentImg = badinPicturesAdresses[previousIndex];
+  modalImg.src = currentImg;
+
+  currentImg.includes("first")
+    ? (modalLeftArrow.style.display = "none")
+    : (modalLeftArrow.style.display = "block");
+
+  e.stopPropagation();
+});
+
+modal.addEventListener("click", (e) => {
+  modal.style.display = "none";
+});
+
+// <-------------->
 
 let counterPic = 0;
 const namesAndRoles = [

@@ -875,7 +875,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
-  color: #317ade;
+  color: #1e90ff;
   line-height: 1.7;
   margin: 4px 1rem;
 }
@@ -884,7 +884,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
-  color: black;
+  color: #000000;
   line-height: 1.7;
   margin: 4px 1rem;
 }
@@ -1101,8 +1101,41 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: center;
+    align-items: flex-end;
     flex-wrap: nowrap;
+  }
+  .what_we_offer-container .what_we_offer-container-card:nth-child(1):hover {
+    position: relative;
+    scale: 1.1;
+    transition: 0.3s linear;
+    left: -10px;
+  }
+  .what_we_offer-container .what_we_offer-container-card:nth-child(1):hover p:nth-child(2) {
+    transition: 0.3s linear;
+    color: #1e90ff;
+    font-size: 1.2rem;
+  }
+  .what_we_offer-container .what_we_offer-container-card:nth-child(2):hover {
+    position: relative;
+    scale: 1.1;
+    transition: 0.3s linear;
+    left: 0px;
+  }
+  .what_we_offer-container .what_we_offer-container-card:nth-child(2):hover p:nth-child(2) {
+    transition: 0.3s linear;
+    color: #ed701d;
+    font-size: 1.2rem;
+  }
+  .what_we_offer-container .what_we_offer-container-card:nth-child(3):hover {
+    position: relative;
+    scale: 1.1;
+    transition: 0.3s linear;
+    left: 10px;
+  }
+  .what_we_offer-container .what_we_offer-container-card:nth-child(3):hover p:nth-child(2) {
+    transition: 0.3s linear;
+    color: #1ebf73;
+    font-size: 1.2rem;
   }
   .what_we_offer .trusted_by_section {
     position: relative;
@@ -1728,13 +1761,24 @@ body {
 .pictures {
   margin-top: 4rem;
 }
+.pictures .modal {
+  display: none;
+}
 .pictures .picture_container {
   width: 90%;
   margin: auto;
+  position: relative;
 }
 .pictures .picture_container img {
   width: 100%;
   border-radius: 10px;
+}
+.pictures .picture_container .zoom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  opacity: 0;
 }
 .pictures .picture_5,
 .pictures .picture_6 {
@@ -1743,6 +1787,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .pictures {
+    padding-left: 3rem;
     width: 90%;
     margin: auto;
     display: grid;
@@ -1756,6 +1801,66 @@ body {
   }
   .pictures .picture_container img {
     width: 100%;
+  }
+  .pictures .modal {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  .pictures .modal .modal_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 1;
+  }
+  .pictures .modal .modal_container button {
+    width: 2rem;
+    height: 2rem;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .pictures .modal .modal_container button i {
+    color: #1e90ff;
+  }
+  .pictures .modal .modal_container .pic_left_btn:hover {
+    position: relative;
+    left: -4px;
+    transition: 1s ease;
+  }
+  .pictures .modal .modal_container .pic_right_btn:hover {
+    position: relative;
+    right: 4px;
+    transition: 1s ease;
+  }
+  .pictures .modal .modal_container .modal_image {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 38rem;
+    border-radius: 1rem;
+  }
+  .pictures .picture_container:hover {
+    cursor: pointer;
+    transition: 0.7s;
+    position: relative;
+    filter: brightness(70%);
+  }
+  .pictures .picture_container:hover .zoom {
+    transition: 0.4s linear;
+    opacity: 1;
+    pointer-events: none;
   }
   .pictures .picture_1 {
     display: flex;
