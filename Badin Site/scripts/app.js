@@ -238,6 +238,12 @@ window.addEventListener("resize", () => {
 
 //    <-------- OBSERVER MENU BUTTON -------->
 document.addEventListener("DOMContentLoaded", () => {
+  // back to top btn
+  let scrollProgress = document.querySelector(".back-to-top-btn");
+  scrollProgress.style.display = "none";
+
+  // menu btn
+
   let options = {
     root: null,
     rootMargin: "-49% 0px",
@@ -259,3 +265,26 @@ function menuTouching(entries) {
     menuText.style.color = "black";
   }
 }
+
+// back to top button
+
+window.addEventListener("scroll", () => {
+  let scrollProgress = document.querySelector(".back-to-top-btn");
+
+  let pos = document.documentElement.scrollTop;
+  let calcHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  let scrollValue = Math.round((pos * 100) / calcHeight);
+
+  pos > 100 && window.innerWidth > 768
+    ? (scrollProgress.style.display = "flex")
+    : (scrollProgress.style.display = "none");
+
+  scrollProgress.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+  });
+
+  scrollProgress.style.background = `conic-gradient(#f9fafe ${scrollValue}%, #505050 ${scrollValue}%)`;
+});
