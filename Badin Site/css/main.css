@@ -1771,7 +1771,7 @@ body {
 }
 .pictures .picture_container img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .pictures .picture_container .zoom {
   position: absolute;
@@ -1869,6 +1869,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     grid-area: pic_1;
+    top: 3rem;
   }
   .pictures .picture_1 img {
     width: 95%;
@@ -1880,6 +1881,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     grid-area: pic_2;
+    top: 3rem;
   }
   .pictures .picture_2 img {
     width: 95%;
@@ -1890,22 +1892,27 @@ body {
   }
   .pictures .picture_4 {
     position: relative;
-    top: -3rem;
+    top: 0rem;
     grid-area: pic_4;
   }
   .pictures .picture_5 {
     display: block;
     position: relative;
-    top: 2rem;
+    top: 5rem;
     grid-area: pic_5;
   }
   .pictures .picture_6 {
     display: block;
+    top: 3rem;
     border-radius: 1rem;
-    overflow: hidden;
     grid-area: pic_6;
   }
 }
+.popper {
+  transform: translateY(-3rem);
+  transition: 1.2s ease;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

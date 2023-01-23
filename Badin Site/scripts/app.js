@@ -40,7 +40,15 @@ const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal_image");
 const modalLeftArrow = document.querySelector(".pic_left_btn");
 const modalRightArrow = document.querySelector(".pic_right_btn");
-console.log(badinPicturesAdresses);
+
+// pictures for poping up
+const gallerySection = document.querySelector(".pictures");
+const picOne = document.querySelector(".picture_1");
+const picTwo = document.querySelector(".picture_2");
+const picSix = document.querySelector(".picture_6");
+const picFive = document.querySelector(".picture_5");
+const picFour = document.querySelector(".picture_4");
+
 // current Img
 let currentImg;
 console.log(currentImg);
@@ -99,7 +107,26 @@ modal.addEventListener("click", (e) => {
   modal.style.display = "none";
 });
 
-// <-------------->
+// <--- Pictures poping up --->
+
+let galleryOptions = {
+  root: null,
+  rootMargin: "0px 0px",
+  threshold: 0,
+};
+let galleryObserver = new IntersectionObserver(galleryTouching, galleryOptions);
+
+galleryObserver.observe(gallerySection);
+
+function galleryTouching(entries) {
+  const picturesArray = [picOne, picTwo, picSix, picFive, picFour];
+
+  entries[0].isIntersecting && window.innerWidth > 768
+    ? picturesArray.forEach((pic) => pic.classList.add("popper"))
+    : picturesArray.forEach((pic) => pic.classList.remove("popper"));
+}
+
+// <------- CLIENTS SECTION ------->
 
 let counterPic = 0;
 const namesAndRoles = [
@@ -209,21 +236,21 @@ window.addEventListener("resize", () => {
 
 //
 
-//    <-------- OBSERVER -------->
+//    <-------- OBSERVER MENU BUTTON -------->
 document.addEventListener("DOMContentLoaded", () => {
   let options = {
     root: null,
     rootMargin: "-49% 0px",
     threshold: 0,
   };
-  let observer = new IntersectionObserver(beTouching, options);
+  let observer = new IntersectionObserver(menuTouching, options);
 
   observer.observe(topSection);
   observer.observe(expertise);
   observer.observe(footer);
 });
 
-function beTouching(entries) {
+function menuTouching(entries) {
   if (entries[0].isIntersecting) {
     burgerLines.forEach((line) => (line.style.backgroundColor = "white"));
     menuText.style.color = "white";
