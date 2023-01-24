@@ -2050,6 +2050,9 @@ body {
   font-weight: 700;
   animation: translateLeft 20s linear infinite alternate;
 }
+.expertise .to_right {
+  animation-direction: alternate-reverse;
+}
 
 @keyframes translateLeft {
   from {

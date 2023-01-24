@@ -36,9 +36,9 @@
     animation: translateLeft 20s linear infinite alternate;
   }
 
-  // .to_right {
-  //   animation-direction: reverse;
-  // }
+  .to_right {
+    animation-direction: alternate-reverse;
+  }
 }
 
 @keyframes translateLeft {

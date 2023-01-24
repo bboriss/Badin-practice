@@ -4,20 +4,6 @@ import { moveToLeft, moveToRight, getBackPosition } from "./trustedBy.js";
 import { moveToRightGallery, moveToLeftGallery } from "./badinGallery.js";
 import { galleryIntersecting } from "./galleryObserver.js";
 
-const lines = Array.from(document.getElementsByClassName("top_btm_line"));
-
-setInterval(changeDirection, 1000);
-
-// window.setTimeout(changeDirection, 20000);
-// setInterval(changeDirection, 1000);
-
-function changeDirection() {
-  console.log("menja");
-  lines[0].classList.contains("to_right")
-    ? lines.forEach((line) => line.classList.remove("to_right"))
-    : lines.forEach((line) => line.classList.add("to_right"));
-}
-
 // trusted by section arrows
 const arrLeft = document.querySelector(".arrow-left");
 const arrRight = document.querySelector(".arrow-right");
