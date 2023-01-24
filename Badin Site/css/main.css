@@ -2048,10 +2048,7 @@ body {
   gap: 1rem;
   list-style: none;
   font-weight: 700;
-  animation: translateLeft 70s linear infinite;
-}
-.expertise .to_right {
-  animation-direction: reverse;
+  animation: translateLeft 20s linear infinite alternate;
 }
 
 @keyframes translateLeft {

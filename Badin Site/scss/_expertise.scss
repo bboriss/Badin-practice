@@ -33,12 +33,12 @@
     gap: 1rem;
     list-style: none;
     font-weight: 700;
-    animation: translateLeft 70s linear infinite;
+    animation: translateLeft 20s linear infinite alternate;
   }
 
-  .to_right {
-    animation-direction: reverse;
-  }
+  // .to_right {
+  //   animation-direction: reverse;
+  // }
 }
 
 @keyframes translateLeft {
