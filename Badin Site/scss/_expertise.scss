@@ -3,75 +3,68 @@
 
 .expertise {
   @include flex-container(column, center, flex-start, nowrap);
-  background-color: #1c408c;
+  background-color: $blue_expertise;
   padding-bottom: 5rem;
   h1 {
     @include font-secondary-italic;
     align-self: flex-start;
     margin-top: 4rem;
-    margin-bottom: 3rem;
+
     margin-left: 1rem;
     color: $white;
-    font-size: 60px;
-    letter-spacing: 2px;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
   }
 
   .technology_line {
-    @include flex-container(row, center, center, nowrap);
-
-    margin-top: 2rem;
-
-    span {
-      @include paragraphs(24px, $white, 1.6);
-      position: relative;
-      $white-space: nowrap;
-      height: 2rem;
-      opacity: 0.5;
-      font-weight: 700;
-      margin-right: 2rem;
-    }
+    @include flex-container(row, flex-start, center, nowrap);
+    user-select: none;
+    margin-top: 3.5rem;
+    gap: 1rem;
   }
 
-  .animation-left {
-    animation: expertise_left 35s linear alternate infinite;
+  .technology_line-content {
+    @include paragraphs(24px, $white, 1.6);
+    opacity: 0.7;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 1rem;
+    list-style: none;
+    font-weight: 700;
+    animation: translateLeft 70s linear infinite;
   }
 
-  .animation_right {
-    animation: expertise_right 35s linear alternate infinite;
-  }
-}
-
-@keyframes expertise_left {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-40%);
+  .to_right {
+    animation-direction: reverse;
   }
 }
 
-@keyframes expertise_right {
-  0% {
-    transform: translateX(-40%);
+@keyframes translateLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
   }
 }
 
 @include media-md {
   .expertise {
     @include flex-container(column, center, flex-start, nowrap);
-    background-color: #1c408c;
     padding-bottom: 2rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
     h1 {
       align-self: center;
+      margin-bottom: 3rem;
     }
 
     .technology_line {
-      margin-top: 1rem;
-      margin-bottom: 4rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    .desktop-size {
+    .technology_line:nth-last-child(-n + 2) {
       display: none;
     }
   }

@@ -27,7 +27,7 @@ const clientName = document.querySelector(".name_and_role-name");
 const clientRole = document.querySelector(".name_and_role-role");
 const clientText = document.querySelector(".client_text");
 
-// <-- badin pictures -->
+// <-- badin gallery -->
 const pictureContainers = Array.from(
   document.getElementsByClassName("picture_container")
 );
@@ -49,9 +49,9 @@ const picSix = document.querySelector(".picture_6");
 const picFive = document.querySelector(".picture_5");
 const picFour = document.querySelector(".picture_4");
 
+// <--- GALLERY LOGIC --->
 // current Img
 let currentImg;
-console.log(currentImg);
 
 pictureContainers.forEach((badinPicture) =>
   badinPicture.addEventListener("click", (e) => {
@@ -266,7 +266,7 @@ function menuTouching(entries) {
   }
 }
 
-// back to top button
+// <--- BACK TO TOP --->
 
 window.addEventListener("scroll", () => {
   let scrollProgress = document.querySelector(".back-to-top-btn");
