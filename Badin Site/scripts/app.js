@@ -12,7 +12,6 @@ const logoContainer = document.querySelector(
 );
 
 let logos = [...logosRef];
-let i = 0;
 
 const logoChanger = () => {
   while (logoContainer.firstElementChild) {
@@ -29,9 +28,7 @@ const logoChanger = () => {
   logos.slice(0, 5).forEach((logo) => logoContainer.append(logo));
 };
 
-if (window.innerWidth > 768) {
-  setInterval(logoChanger, 3000);
-}
+const test = setInterval(logoChanger, 3000);
 
 // trusted by section arrows
 const arrLeft = document.querySelector(".arrow-left");
@@ -61,7 +58,19 @@ arrLeft.addEventListener("click", moveToLeft);
 arrRight.addEventListener("click", moveToRight);
 // when window resized get back picture container to position 0
 window.addEventListener("resize", getBackPosition);
-// window.addEventListener("resize", clientAnimationTimer);
+// window.addEventListener("resize", () => {
+//   if (window.innerWidth < 768) {
+//     clearInterval(test);
+//     console.log("smanjeno");
+//   }
+// });
+// window.addEventListener("DOMContentLoaded", () => {
+//   if (window.innerWidth < 768) {
+//     clearInterval(test);
+//   } else {
+//     setInterval(test);
+//   }
+// });
 
 // <--- back to top btn --->
 window.addEventListener("scroll", buttonFiller);

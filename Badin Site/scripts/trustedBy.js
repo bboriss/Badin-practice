@@ -105,6 +105,7 @@ export const moveToLeft = () => {
 };
 
 export const getBackPosition = () => {
+  console.log("fired");
   if (window.innerWidth > 768) {
     picContainer.style.cssText = `position: relative;
         left: 0px;
