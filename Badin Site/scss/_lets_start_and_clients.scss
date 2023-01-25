@@ -139,28 +139,54 @@
       top: 0;
       padding-top: 2rem;
       width: 25%;
+      height: 100%;
       background-color: $lightgray;
-      padding-bottom: 15rem;
 
       &_content {
         @include flex-container(column, center, center, nowrap);
         position: relative;
-        top: 5rem;
+        top: -1rem;
         animation: none;
         .client_icon {
           margin: 1.2rem 0rem;
+          animation: 3.1s logoTransition infinite;
+          display: block;
           img {
             width: 13rem;
           }
         }
-        .client_icon:nth-child(n + 6) {
-          display: none;
-        }
+      }
+
+      .first_iteration {
+        display: none;
       }
 
       .mirrored {
         display: none;
       }
     }
+  }
+}
+
+@keyframes logoTransition {
+  0% {
+    position: relative;
+    top: -2rem;
+    opacity: 0;
+  }
+  25% {
+    position: static;
+    top: 0;
+    opacity: 1;
+  }
+  75% {
+    position: static;
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    position: relative;
+    top: -2rem;
+    opacity: 0;
   }
 }

@@ -1542,8 +1542,8 @@ body {
     top: 0;
     padding-top: 2rem;
     width: 25%;
+    height: 100%;
     background-color: #f9fafe;
-    padding-bottom: 15rem;
   }
   .lets_start_and_clients .trusted_by_second-icons_container_content {
     display: flex;
@@ -1552,20 +1552,44 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     position: relative;
-    top: 5rem;
+    top: -1rem;
     animation: none;
   }
   .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
     margin: 1.2rem 0rem;
+    animation: 3.1s logoTransition infinite;
+    display: block;
   }
   .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon img {
     width: 13rem;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon:nth-child(n+6) {
+  .lets_start_and_clients .trusted_by_second-icons_container .first_iteration {
     display: none;
   }
   .lets_start_and_clients .trusted_by_second-icons_container .mirrored {
     display: none;
+  }
+}
+@keyframes logoTransition {
+  0% {
+    position: relative;
+    top: -2rem;
+    opacity: 0;
+  }
+  25% {
+    position: static;
+    top: 0;
+    opacity: 1;
+  }
+  75% {
+    position: static;
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    position: relative;
+    top: -2rem;
+    opacity: 0;
   }
 }
 * {
