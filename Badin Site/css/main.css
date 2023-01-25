@@ -1113,6 +1113,7 @@ body {
   .what_we_offer {
     position: relative;
     padding-left: 12%;
+    overflow-x: hidden;
   }
   .what_we_offer h1 {
     font-size: 5rem;
@@ -1436,50 +1437,54 @@ body {
   font-size: 14px;
   color: #6b728e;
   line-height: 1.6;
-  margin: 2rem;
+  margin-top: 3.2rem;
+  margin-bottom: 1rem;
 }
 .lets_start_and_clients .trusted_by_second-icons_container {
-  animation: 6s logos_translate linear alternate infinite;
-  background-color: #f9fafe;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  padding-bottom: 2rem;
+  user-select: none;
+  gap: 1rem;
 }
-.lets_start_and_clients .trusted_by_second-icons_container .client_icon {
+.lets_start_and_clients .trusted_by_second-icons_container_content {
+  opacity: 0.7;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 1rem;
+  list-style: none;
+  font-weight: 700;
+  animation: translateLeft 30s linear infinite alternate;
+}
+.lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
   margin: 2rem 0rem;
 }
-.lets_start_and_clients .trusted_by_second-icons_container .client_icon img {
+.lets_start_and_clients .trusted_by_second-icons_container_content .client_icon img {
   width: 10rem;
 }
 
-@keyframes logos_translate {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-30%);
-  }
-}
 @media screen and (min-width: 768px) {
   .lets_start_and_clients {
     position: relative;
   }
   .lets_start_and_clients-lets_start {
     padding-bottom: 20rem;
-    padding-left: 12%;
+    padding-left: 7%;
   }
   .lets_start_and_clients-lets_start .behind {
     position: relative;
     font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 95px;
+    font-size: 80px;
     color: #e8e8e8;
     line-height: 1.6;
     margin-top: 0rem;
+    padding-top: 7rem;
     margin-left: 3rem;
   }
   .lets_start_and_clients-lets_start h1 {
@@ -1489,7 +1494,7 @@ body {
     font-style: italic;
     color: #22252e;
     font-size: 75px;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     margin-top: -5rem;
     margin-left: 3rem;
   }
@@ -1521,12 +1526,11 @@ body {
     margin-left: 2rem;
     margin-bottom: 2rem;
     width: 12rem;
-    height: 40pxrem;
     border-radius: 2rem;
   }
   .lets_start_and_clients .trusted_by_second {
     position: absolute;
-    right: 0;
+    right: 2rem;
     top: 0;
     width: 20%;
     padding-top: 1rem;
@@ -1536,24 +1540,31 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    padding-top: 5rem;
-    width: 20%;
-    animation: none;
+    padding-top: 2rem;
+    width: 25%;
     background-color: #f9fafe;
+    padding-bottom: 15rem;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container_content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    padding-bottom: 2rem;
+    position: relative;
+    top: 5rem;
+    animation: none;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container .client_icon {
-    margin: 2rem 0rem;
+  .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
+    margin: 1.2rem 0rem;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container .client_icon img {
+  .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon img {
     width: 13rem;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container .client_icon:nth-child(n+6) {
+  .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon:nth-child(n+6) {
+    display: none;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container .mirrored {
     display: none;
   }
 }
@@ -2048,7 +2059,7 @@ body {
   gap: 1rem;
   list-style: none;
   font-weight: 700;
-  animation: translateLeft 20s linear infinite alternate;
+  animation: translateLeft 90s linear infinite alternate;
 }
 .expertise .to_right {
   animation-direction: alternate-reverse;
@@ -2403,7 +2414,7 @@ footer .copyrights {
   right: 1.5rem;
   bottom: 1.5rem;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 3;
   cursor: pointer;
 }
 .back-to-top-btn .inner-circle {

@@ -50,31 +50,33 @@
 
     h6 {
       @include paragraphs(14px, #6b728e, 1.6);
-      margin: 2rem;
+      margin-top: 3.2rem;
+      margin-bottom: 1rem;
     }
   }
 
   .trusted_by_second-icons_container {
-    animation: 6s logos_translate linear alternate infinite;
-    background-color: $lightgray;
     @include flex-container(row, flex-start, center, nowrap);
-    padding-bottom: 2rem;
-    .client_icon {
-      margin: 2rem 0rem;
-      img {
-        width: 10rem;
+    user-select: none;
+    gap: 1rem;
+
+    &_content {
+      opacity: 0.7;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      min-width: 100%;
+      gap: 1rem;
+      list-style: none;
+      font-weight: 700;
+      animation: translateLeft 30s linear infinite alternate;
+      .client_icon {
+        margin: 2rem 0rem;
+        img {
+          width: 10rem;
+        }
       }
     }
-  }
-}
-
-@keyframes logos_translate {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-30%);
   }
 }
 
@@ -82,13 +84,13 @@
   .lets_start_and_clients {
     position: relative;
     &-lets_start {
-      // background-color: $white;
       padding-bottom: 20rem;
-      padding-left: 12%;
+      padding-left: 7%;
       .behind {
         position: relative;
-        @include paragraphs(95px, #e8e8e8, 1.6);
+        @include paragraphs(80px, #e8e8e8, 1.6);
         margin-top: 0rem;
+        padding-top: 7rem;
         margin-left: 3rem;
       }
 
@@ -97,7 +99,7 @@
         @include font-secondary-italic;
         color: #22252e;
         font-size: 75px;
-        letter-spacing: 2px;
+        letter-spacing: 5px;
         margin-top: -5rem;
         margin-left: 3rem;
       }
@@ -113,19 +115,18 @@
         @include flex_container(row, center, center, nowrap);
         @include paragraphs(16px, $white, 1.7);
 
-        background-color: #317ade;
+        background-color: $blue_button;
         padding: 1rem 1rem;
         margin-left: 2rem;
         margin-bottom: 2rem;
         width: 12rem;
-        height: 40pxrem;
         border-radius: 2rem;
       }
     }
 
     .trusted_by_second {
       position: absolute;
-      right: 0;
+      right: 2rem;
       top: 0;
       width: 20%;
       padding-top: 1rem;
@@ -136,19 +137,28 @@
       position: absolute;
       right: 0;
       top: 0;
-      padding-top: 5rem;
-      width: 20%;
-      animation: none;
+      padding-top: 2rem;
+      width: 25%;
       background-color: $lightgray;
-      @include flex-container(column, flex-start, center, nowrap);
-      padding-bottom: 2rem;
-      .client_icon {
-        margin: 2rem 0rem;
-        img {
-          width: 13rem;
+      padding-bottom: 15rem;
+
+      &_content {
+        @include flex-container(column, center, center, nowrap);
+        position: relative;
+        top: 5rem;
+        animation: none;
+        .client_icon {
+          margin: 1.2rem 0rem;
+          img {
+            width: 13rem;
+          }
+        }
+        .client_icon:nth-child(n + 6) {
+          display: none;
         }
       }
-      .client_icon:nth-child(n + 6) {
+
+      .mirrored {
         display: none;
       }
     }
