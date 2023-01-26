@@ -12,14 +12,19 @@ html {
 $lightgray: #f9fafe;
 $graycolor: #909090;
 $darkgray: #505050;
-$blue_animation: #1e90ff;
 $blue_expertise: #1c408c;
+$blue_animation: #1e90ff;
+$blue_gradient_top: #2b6ecd;
+$blue_gradient_bottom: #0e3378;
+$blue_menu_selected: #0e3479;
+$blue_menu_selector: #1e3d78;
 $blue_button: #317ade;
 $lightblue_animation: #add8e6;
 $black: #000000;
 $white: #ffffff;
 $orange: #ed701d;
 $lightgreen: #1ebf73;
+$menu_border: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
 
 // paragraphs
 @mixin paragraphs($size, $color, $lineheight) {

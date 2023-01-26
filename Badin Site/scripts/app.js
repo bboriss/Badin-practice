@@ -3,37 +3,27 @@ import { menuIntersecting } from "./menuBtnObserver.js";
 import { moveToLeft, moveToRight, getBackPosition } from "./trustedBy.js";
 import { moveToRightGallery, moveToLeftGallery } from "./badinGallery.js";
 import { galleryIntersecting } from "./galleryObserver.js";
+import { logoChanger } from "./logoChanger.js";
 
-const logosRef = Array.from(
-  document.getElementsByClassName("client_icon")
-).splice(0, 13);
+const menuBtn = document.querySelector(".menu-btn");
+const menuCover = document.querySelector(".menu_cover");
+const menuLogo = document.querySelector(".logo-badin_menu");
+const menu = document.querySelector(".menu");
 
-const allLogos = Array.from(document.getElementsByClassName("client_icon"));
+console.log(menuCover);
+menuBtn.addEventListener("mouseenter", () => {
+  console.log("upadaa");
+  menuCover.classList.remove("notExisting");
+  menuCover.classList.add("border-primary");
+});
 
-const logoContainer = document.querySelector(
-  ".trusted_by_second-icons_container_content-desktop"
-);
+menuBtn.addEventListener("mouseleave", () => {
+  console.log("ispadaa");
+  menuCover.classList.remove("border-primary");
+  menuCover.classList.add("notExisting");
+});
 
-let logos = [...logosRef];
-
-const logoChanger = () => {
-  logoContainer.innerHTML = "";
-  // remove hardcoded visible logos
-  logos.forEach((logo) => logo.classList.remove("first_iteration"));
-  // move them to the end of array
-  const firstFive = logos.splice(0, 5);
-
-  logos = [...logos, ...firstFive];
-  // take second 5 to display
-  const forDisplay = logos.slice(0, 5);
-
-  for (let i = 0; i < forDisplay.length; i++) {
-    setTimeout(() => {
-      logoContainer.append(forDisplay[i]);
-    }, 150 * i);
-  }
-};
-
+// logos change
 setInterval(logoChanger, 3000);
 
 // trusted by section arrows

@@ -1,0 +1,176 @@
+@import "config";
+@import "font";
+
+.menu_cover {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  // background-color: rgba(0, 0, 0, 0.7);
+  // backdrop-filter: blur(5px);
+
+  &_container {
+    position: absolute;
+    left: 3rem;
+    bottom: 2rem;
+    width: 50%;
+
+    ul {
+      @include flex_container(row, flex-start, center, nowrap);
+      list-style-type: none;
+      gap: 1.3rem;
+      margin-bottom: 1rem;
+      img {
+        cursor: pointer;
+        width: 1.1rem;
+        opacity: 0.8;
+      }
+    }
+
+    p {
+      @include paragraphs(12px, $white, 1.6);
+      cursor: pointer;
+      white-space: nowrap;
+      margin-top: 3px;
+      opacity: 0.8;
+    }
+  }
+
+  .img_1 {
+    position: relative;
+    top: -1px;
+  }
+  .img_2 {
+    position: absolute;
+    top: -1px;
+    right: 0;
+  }
+  .img_3 {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+  }
+  .img_4 {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+}
+
+.logo-badin_menu {
+  position: fixed;
+  width: 110px;
+  height: 50px;
+  left: 18rem;
+  top: 5rem;
+  z-index: 3;
+}
+
+// .selector {
+//   position: absolute;
+//   width: 0rem;
+//   height: 100%;
+//   left: -1rem;
+//   background-color: $blue_menu_selector;
+//   border: 2px solid green;
+// }
+
+// .selector:hover {
+//   transition: width 1s;
+//   width: 3rem;
+// }
+
+.border-primary {
+  // transition: 2s ease;
+  // border-top: 3rem solid;
+  border-right: none;
+  // border-bottom: 3rem solid;
+  // border-left: 7rem solid;
+  border-image: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
+  // transition: border-width 1s;
+  animation: test 0.5s linear normal forwards;
+}
+
+.border-secondary {
+  border-top: 10vh solid;
+  border-right: 6vw solid;
+  border-bottom: 15vh solid;
+  border-left: 70vw solid;
+  border-image: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
+}
+
+.menu {
+  position: fixed;
+  top: 25vh;
+  left: 15vw;
+  border: 2px solid red;
+  z-index: 2;
+
+  .menu_list {
+    list-style-type: none;
+
+    li {
+      position: relative;
+      margin-bottom: 1rem;
+      p {
+        @include paragraphs(36px, $white, 1.6);
+        white-space: nowrap;
+
+        opacity: 0.8;
+      }
+
+      .selected {
+        position: absolute;
+        width: 4rem;
+        height: 100%;
+        left: -1rem;
+        border: 2px solid green;
+        background-color: $blue_menu_selected;
+        z-index: 0;
+      }
+
+      .selector {
+        position: absolute;
+        width: 0rem;
+        height: 100%;
+        left: -1rem;
+        background-color: $blue_menu_selector;
+        border: 2px solid green;
+      }
+
+      .selector:hover {
+        transition: width 1s;
+        width: 3rem;
+      }
+    }
+  }
+
+  &_close_btn {
+    position: absolute;
+    top: 25%;
+    left: -6rem;
+
+    .fa-solid {
+      color: $white;
+      scale: 1.3;
+      cursor: pointer;
+    }
+  }
+}
+
+.notExisting {
+  display: none;
+}
+
+@keyframes test {
+  0% {
+    border-top: 0rem solid;
+    border-bottom: 0rem solid;
+    border-left: 0rem solid;
+  }
+  100% {
+    border-top: 3rem solid;
+    border-bottom: 3rem solid;
+    border-left: 7rem solid;
+  }
+}
