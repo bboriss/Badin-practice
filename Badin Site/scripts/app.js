@@ -5,8 +5,10 @@ import { moveToRightGallery, moveToLeftGallery } from "./badinGallery.js";
 import { galleryIntersecting } from "./galleryObserver.js";
 
 const logosRef = Array.from(
-  document.getElementsByClassName("client_icondesktop")
+  document.getElementsByClassName("client_icon")
 ).splice(0, 13);
+
+const allLogos = Array.from(document.getElementsByClassName("client_icon"));
 
 const logoContainer = document.querySelector(
   ".trusted_by_second-icons_container_content"
@@ -19,11 +21,11 @@ const logoChanger = () => {
   // remove hardcoded visible logos
   logos.forEach((logo) => logo.classList.remove("first_iteration"));
   // move them to the end of array
-  let firstFive = logos.splice(0, 5);
+  const firstFive = logos.splice(0, 5);
 
   logos = [...logos, ...firstFive];
   // take second 5 to display
-  let forDisplay = logos.slice(0, 5);
+  const forDisplay = logos.slice(0, 5);
 
   for (let i = 0; i < forDisplay.length; i++) {
     setTimeout(() => {
@@ -32,7 +34,7 @@ const logoChanger = () => {
   }
 };
 
-const test = setInterval(logoChanger, 3000);
+// setInterval(logoChanger, 3000);
 
 // trusted by section arrows
 const arrLeft = document.querySelector(".arrow-left");

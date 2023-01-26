@@ -1458,7 +1458,7 @@ body {
   gap: 1rem;
   list-style: none;
   font-weight: 700;
-  animation: translateLeft 30s linear infinite alternate;
+  animation: translateLeft 30s linear infinite;
 }
 .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
   margin: 2rem 0rem;
@@ -1559,7 +1559,7 @@ body {
   }
   .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
     margin: 1.2rem 0rem;
-    animation: 3.1s logoTransition infinite;
+    animation: 3s logoTransition infinite;
     display: block;
   }
   .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon img {

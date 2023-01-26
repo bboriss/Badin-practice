@@ -69,7 +69,7 @@
       gap: 1rem;
       list-style: none;
       font-weight: 700;
-      animation: translateLeft 30s linear infinite alternate;
+      animation: translateLeft 30s linear infinite;
       .client_icon {
         margin: 2rem 0rem;
         img {
@@ -151,7 +151,7 @@
         animation: none;
         .client_icon {
           margin: 1.2rem 0rem;
-          animation: 3.1s logoTransition infinite;
+          animation: 3s logoTransition infinite;
           display: block;
           img {
             width: 13rem;
