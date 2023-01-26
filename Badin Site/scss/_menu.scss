@@ -6,8 +6,8 @@
   width: 100vw;
   height: 100vh;
   z-index: 2;
-  // background-color: rgba(0, 0, 0, 0.7);
-  // backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 
   &_container {
     position: absolute;
@@ -62,48 +62,25 @@
   width: 110px;
   height: 50px;
   left: 18rem;
-  top: 5rem;
+  top: 7rem;
   z-index: 3;
 }
 
-// .selector {
-//   position: absolute;
-//   width: 0rem;
-//   height: 100%;
-//   left: -1rem;
-//   background-color: $blue_menu_selector;
-//   border: 2px solid green;
-// }
-
-// .selector:hover {
-//   transition: width 1s;
-//   width: 3rem;
-// }
-
 .border-primary {
-  // transition: 2s ease;
-  // border-top: 3rem solid;
   border-right: none;
-  // border-bottom: 3rem solid;
-  // border-left: 7rem solid;
   border-image: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
-  // transition: border-width 1s;
-  animation: test 0.5s linear normal forwards;
+  animation: primary_border 0.4s linear normal forwards;
 }
 
 .border-secondary {
-  border-top: 10vh solid;
-  border-right: 6vw solid;
-  border-bottom: 15vh solid;
-  border-left: 70vw solid;
   border-image: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
+  animation: secondary_border 0.4s linear normal forwards;
 }
 
 .menu {
   position: fixed;
-  top: 25vh;
+  top: 27vh;
   left: 15vw;
-  border: 2px solid red;
   z-index: 2;
 
   .menu_list {
@@ -112,6 +89,7 @@
     li {
       position: relative;
       margin-bottom: 1rem;
+      cursor: pointer;
       p {
         @include paragraphs(36px, $white, 1.6);
         white-space: nowrap;
@@ -124,7 +102,6 @@
         width: 4rem;
         height: 100%;
         left: -1rem;
-        border: 2px solid green;
         background-color: $blue_menu_selected;
         z-index: 0;
       }
@@ -135,20 +112,19 @@
         height: 100%;
         left: -1rem;
         background-color: $blue_menu_selector;
-        border: 2px solid green;
       }
+    }
 
-      .selector:hover {
-        transition: width 1s;
-        width: 3rem;
-      }
+    li:hover .selector {
+      transition: width 1s;
+      width: 3rem;
     }
   }
 
   &_close_btn {
     position: absolute;
-    top: 25%;
-    left: -6rem;
+    top: 20vh;
+    left: -10rem;
 
     .fa-solid {
       color: $white;
@@ -162,7 +138,15 @@
   display: none;
 }
 
-@keyframes test {
+.border_left_disappear {
+  animation: primary_border_disappear 0.3s ease normal forwards;
+}
+
+.list_animation {
+  animation: list_animation 0.7s ease normal forwards;
+}
+
+@keyframes primary_border {
   0% {
     border-top: 0rem solid;
     border-bottom: 0rem solid;
@@ -171,6 +155,38 @@
   100% {
     border-top: 3rem solid;
     border-bottom: 3rem solid;
-    border-left: 7rem solid;
+    border-left: 8rem solid;
+  }
+}
+
+@keyframes secondary_border {
+  0% {
+    border-top: 3rem solid;
+    border-bottom: 3rem solid;
+    border-left: 8rem solid;
+  }
+  100% {
+    border-top: 10vh solid;
+    border-right: 6vw solid;
+    border-bottom: 15vh solid;
+    border-left: 70vw solid;
+  }
+}
+
+@keyframes primary_border_disappear {
+  0% {
+    border-left: 8rem solid;
+  }
+  100% {
+    border-left: 0rem solid;
+  }
+}
+
+@keyframes list_animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

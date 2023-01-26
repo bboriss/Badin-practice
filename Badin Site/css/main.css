@@ -2474,6 +2474,8 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 }
 .menu_cover_container {
   position: absolute;
@@ -2533,29 +2535,25 @@ body {
   width: 110px;
   height: 50px;
   left: 18rem;
-  top: 5rem;
+  top: 7rem;
   z-index: 3;
 }
 
 .border-primary {
   border-right: none;
   border-image: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
-  animation: test 0.5s linear normal forwards;
+  animation: primary_border 0.4s linear normal forwards;
 }
 
 .border-secondary {
-  border-top: 10vh solid;
-  border-right: 6vw solid;
-  border-bottom: 15vh solid;
-  border-left: 70vw solid;
   border-image: linear-gradient(to bottom right, #317ade -10%, #0e3378 50%) 1;
+  animation: secondary_border 0.4s linear normal forwards;
 }
 
 .menu {
   position: fixed;
-  top: 25vh;
+  top: 27vh;
   left: 15vw;
-  border: 2px solid red;
   z-index: 2;
 }
 .menu .menu_list {
@@ -2564,6 +2562,7 @@ body {
 .menu .menu_list li {
   position: relative;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 .menu .menu_list li p {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
@@ -2580,7 +2579,6 @@ body {
   width: 4rem;
   height: 100%;
   left: -1rem;
-  border: 2px solid green;
   background-color: #0e3479;
   z-index: 0;
 }
@@ -2590,16 +2588,15 @@ body {
   height: 100%;
   left: -1rem;
   background-color: #1e3d78;
-  border: 2px solid green;
 }
-.menu .menu_list li .selector:hover {
+.menu .menu_list li:hover .selector {
   transition: width 1s;
   width: 3rem;
 }
 .menu_close_btn {
   position: absolute;
-  top: 25%;
-  left: -6rem;
+  top: 20vh;
+  left: -10rem;
 }
 .menu_close_btn .fa-solid {
   color: #ffffff;
@@ -2611,7 +2608,15 @@ body {
   display: none;
 }
 
-@keyframes test {
+.border_left_disappear {
+  animation: primary_border_disappear 0.3s ease normal forwards;
+}
+
+.list_animation {
+  animation: list_animation 0.7s ease normal forwards;
+}
+
+@keyframes primary_border {
   0% {
     border-top: 0rem solid;
     border-bottom: 0rem solid;
@@ -2620,7 +2625,36 @@ body {
   100% {
     border-top: 3rem solid;
     border-bottom: 3rem solid;
-    border-left: 7rem solid;
+    border-left: 8rem solid;
+  }
+}
+@keyframes secondary_border {
+  0% {
+    border-top: 3rem solid;
+    border-bottom: 3rem solid;
+    border-left: 8rem solid;
+  }
+  100% {
+    border-top: 10vh solid;
+    border-right: 6vw solid;
+    border-bottom: 15vh solid;
+    border-left: 70vw solid;
+  }
+}
+@keyframes primary_border_disappear {
+  0% {
+    border-left: 8rem solid;
+  }
+  100% {
+    border-left: 0rem solid;
+  }
+}
+@keyframes list_animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .back-to-top-btn {

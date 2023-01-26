@@ -4,27 +4,10 @@ import { moveToLeft, moveToRight, getBackPosition } from "./trustedBy.js";
 import { moveToRightGallery, moveToLeftGallery } from "./badinGallery.js";
 import { galleryIntersecting } from "./galleryObserver.js";
 import { logoChanger } from "./logoChanger.js";
+import { onMouseEnter, onMouseLeave, onClick, onClose } from "./menu.js";
 
 const menuBtn = document.querySelector(".menu-btn");
-const menuCover = document.querySelector(".menu_cover");
-const menuLogo = document.querySelector(".logo-badin_menu");
-const menu = document.querySelector(".menu");
-
-console.log(menuCover);
-menuBtn.addEventListener("mouseenter", () => {
-  console.log("upadaa");
-  menuCover.classList.remove("notExisting");
-  menuCover.classList.add("border-primary");
-});
-
-menuBtn.addEventListener("mouseleave", () => {
-  console.log("ispadaa");
-  menuCover.classList.remove("border-primary");
-  menuCover.classList.add("notExisting");
-});
-
-// logos change
-setInterval(logoChanger, 3000);
+const closeBtn = document.querySelector(".menu_close_btn");
 
 // trusted by section arrows
 const arrLeft = document.querySelector(".arrow-left");
@@ -57,3 +40,16 @@ window.addEventListener("resize", getBackPosition);
 
 // <--- back to top btn --->
 window.addEventListener("scroll", buttonFiller);
+
+// <--- menu --->
+
+menuBtn.addEventListener("mouseenter", onMouseEnter);
+
+menuBtn.addEventListener("mouseleave", onMouseLeave);
+
+menuBtn.addEventListener("click", onClick);
+
+closeBtn.addEventListener("click", onClose);
+
+// logos change
+setInterval(logoChanger, 3000);
