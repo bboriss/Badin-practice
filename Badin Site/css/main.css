@@ -1548,10 +1548,12 @@ body {
   .lets_start_and_clients .trusted_by_second-icons_container_content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
+    padding-top: 6.5rem;
     position: relative;
+    height: 100%;
     top: -1rem;
     animation: none;
   }

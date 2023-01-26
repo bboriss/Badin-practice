@@ -143,8 +143,10 @@
       background-color: $lightgray;
 
       &_content {
-        @include flex-container(column, center, center, nowrap);
+        @include flex-container(column, flex-start, center, nowrap);
+        padding-top: 6.5rem;
         position: relative;
+        height: 100%;
         top: -1rem;
         animation: none;
         .client_icon {
