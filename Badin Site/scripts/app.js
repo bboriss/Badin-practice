@@ -11,7 +11,7 @@ const logosRef = Array.from(
 const allLogos = Array.from(document.getElementsByClassName("client_icon"));
 
 const logoContainer = document.querySelector(
-  ".trusted_by_second-icons_container_content"
+  ".trusted_by_second-icons_container_content-desktop"
 );
 
 let logos = [...logosRef];
@@ -34,7 +34,7 @@ const logoChanger = () => {
   }
 };
 
-// setInterval(logoChanger, 3000);
+setInterval(logoChanger, 3000);
 
 // trusted by section arrows
 const arrLeft = document.querySelector(".arrow-left");

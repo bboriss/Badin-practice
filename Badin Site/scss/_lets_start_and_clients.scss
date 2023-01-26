@@ -60,7 +60,11 @@
     user-select: none;
     gap: 1rem;
 
-    &_content {
+    &_content-desktop {
+      display: none;
+    }
+
+    &_content-mobile {
       opacity: 0.7;
       flex-shrink: 0;
       display: flex;
@@ -135,6 +139,8 @@
 
     .trusted_by_second-icons_container {
       position: absolute;
+      display: block;
+      margin: auto;
       right: 0;
       top: 0;
       padding-top: 2rem;
@@ -142,7 +148,11 @@
       height: 100%;
       background-color: $lightgray;
 
-      &_content {
+      &_content-mobile {
+        display: none;
+      }
+
+      &_content-desktop {
         @include flex-container(column, flex-start, center, nowrap);
         padding-top: 6.5rem;
         position: relative;

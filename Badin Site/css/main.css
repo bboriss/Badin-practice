@@ -1449,7 +1449,10 @@ body {
   user-select: none;
   gap: 1rem;
 }
-.lets_start_and_clients .trusted_by_second-icons_container_content {
+.lets_start_and_clients .trusted_by_second-icons_container_content-desktop {
+  display: none;
+}
+.lets_start_and_clients .trusted_by_second-icons_container_content-mobile {
   opacity: 0.7;
   flex-shrink: 0;
   display: flex;
@@ -1460,10 +1463,10 @@ body {
   font-weight: 700;
   animation: translateLeft 30s linear infinite;
 }
-.lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
+.lets_start_and_clients .trusted_by_second-icons_container_content-mobile .client_icon {
   margin: 2rem 0rem;
 }
-.lets_start_and_clients .trusted_by_second-icons_container_content .client_icon img {
+.lets_start_and_clients .trusted_by_second-icons_container_content-mobile .client_icon img {
   width: 10rem;
 }
 
@@ -1538,6 +1541,8 @@ body {
   }
   .lets_start_and_clients .trusted_by_second-icons_container {
     position: absolute;
+    display: block;
+    margin: auto;
     right: 0;
     top: 0;
     padding-top: 2rem;
@@ -1545,7 +1550,10 @@ body {
     height: 100%;
     background-color: #f9fafe;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container_content {
+  .lets_start_and_clients .trusted_by_second-icons_container_content-mobile {
+    display: none;
+  }
+  .lets_start_and_clients .trusted_by_second-icons_container_content-desktop {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1557,12 +1565,12 @@ body {
     top: -1rem;
     animation: none;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon {
+  .lets_start_and_clients .trusted_by_second-icons_container_content-desktop .client_icon {
     margin: 1.2rem 0rem;
     animation: 3s logoTransition infinite;
     display: block;
   }
-  .lets_start_and_clients .trusted_by_second-icons_container_content .client_icon img {
+  .lets_start_and_clients .trusted_by_second-icons_container_content-desktop .client_icon img {
     width: 13rem;
   }
   .lets_start_and_clients .trusted_by_second-icons_container .first_iteration {
