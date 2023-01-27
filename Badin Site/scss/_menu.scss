@@ -6,8 +6,6 @@
   width: 100vw;
   height: 100vh;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
 
   &_container {
     position: absolute;
@@ -55,6 +53,11 @@
     bottom: -1px;
     left: 0;
   }
+}
+
+.blur {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 }
 
 .logo-badin_menu {

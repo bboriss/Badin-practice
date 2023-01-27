@@ -10,6 +10,7 @@ const picContainer = document.querySelector(
 );
 // client pictures
 const pictures = Array.from(document.getElementsByClassName("client_pic"));
+
 // name, role and text
 const clientName = document.querySelector(".name_and_role-name");
 const clientRole = document.querySelector(".name_and_role-role");
@@ -104,8 +105,46 @@ export const moveToLeft = () => {
       (arrRight.style.cssText = "pointer-events: auto;");
 };
 
+export const onPictureSelect = (e) => {
+  const pictureIndex = Array.from(e.target.parentElement.classList)
+    .find((rotator) => rotator.includes("rotator"))
+    .at(-1);
+  if (pictureIndex == 1) {
+    return;
+  }
+
+  counterPic = pictureIndex - 1;
+  console.log(counterPic);
+
+  pictures[counterPic].classList.remove("client_pic_normal");
+  pictures[counterPic].classList.add("client_pic_big");
+  pictures[counterPic - 1].classList.remove("client_pic_big");
+  pictures[counterPic - 1].classList.add("client_pic_normal");
+
+  clientName.innerText = namesAndRoles[counterPic].name;
+  clientRole.innerText = namesAndRoles[counterPic].role;
+  clientText.innerText = namesAndRoles[counterPic].text;
+
+  counterPic > 0
+    ? (arrLeft.style.cssText = "pointer-events:auto") &&
+      (leftArrIcon.style.color = "#1e90ff")
+    : (arrLeft.style.cssText = "pointer-events:none") &&
+      (leftArrIcon.style.color = "#909090");
+
+  counterPic === pictures.length - 1
+    ? (rightArrIcon.style.cssText = "color:#909090;") &&
+      (arrRight.style.cssText = "pointer-events: none;")
+    : (rightArrIcon.style.color = "#1e90ff") &&
+      (arrRight.style.cssText = "pointer-events: auto;");
+
+  // container translation
+  picContainer.style.cssText = `position: relative;
+    left: -${counterPic * 96}px;
+    transition: 0.7s linear;
+    `;
+};
+
 export const getBackPosition = () => {
-  console.log("fired");
   if (window.innerWidth > 768) {
     picContainer.style.cssText = `position: relative;
         left: 0px;

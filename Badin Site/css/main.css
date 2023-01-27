@@ -2474,8 +2474,6 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
 }
 .menu_cover_container {
   position: absolute;
@@ -2528,6 +2526,11 @@ body {
   position: absolute;
   bottom: -1px;
   left: 0;
+}
+
+.blur {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
 }
 
 .logo-badin_menu {

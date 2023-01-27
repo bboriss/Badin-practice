@@ -4,7 +4,6 @@ const menuBtn = document.querySelector(".menu-btn");
 const menuLogo = document.querySelector(".logo-badin_menu");
 const menu = document.querySelector(".menu");
 const corners = Array.from(document.getElementsByClassName("corner"));
-const closeBtn = document.querySelector(".menu_close_btn");
 
 export const onMouseEnter = () => {
   menuCover.classList.remove("border_left_disappear");
@@ -25,8 +24,9 @@ export const onClick = () => {
   menuCover.classList.remove("border_left_disappear");
   menuCover.classList.remove("border-primary");
   menuCover.classList.remove("notExisting");
-
   menuCover.classList.add("border-secondary");
+  menuCover.classList.add("blur");
+
   corners.forEach((corner) => corner.classList.remove("notExisting"));
   menuLogo.classList.remove("notExisting");
   menuCoverContainer.classList.remove("notExisting");
