@@ -246,39 +246,49 @@
     }
 
     &-container {
-      @include flex-container(row, start, flex-end, nowrap);
+      @include flex-container(row, start, baseline, nowrap);
+      height: 30rem;
+
+      &-card {
+        width: 26rem;
+        p:nth-child(2) {
+          font-size: 1.4rem;
+        }
+      }
+
+      &-card:nth-child(3) {
+        margin-left: 2rem;
+      }
 
       .what_we_offer-container-card:nth-child(1):hover {
         position: relative;
         scale: 1.1;
         transition: 0.3s linear;
-        left: -10px;
+
         p:nth-child(2) {
           transition: 0.3s linear;
+          left: -10px;
           color: $blue_animation;
-          font-size: 1.2rem;
         }
       }
       .what_we_offer-container-card:nth-child(2):hover {
         position: relative;
         scale: 1.1;
         transition: 0.3s linear;
-        left: 0px;
         p:nth-child(2) {
           transition: 0.3s linear;
+          left: 0px;
           color: $orange;
-          font-size: 1.2rem;
         }
       }
       .what_we_offer-container-card:nth-child(3):hover {
         position: relative;
         scale: 1.1;
         transition: 0.3s linear;
-        left: 10px;
         p:nth-child(2) {
           transition: 0.3s linear;
+          left: 10px;
           color: $lightgreen;
-          font-size: 1.2rem;
         }
       }
       // }

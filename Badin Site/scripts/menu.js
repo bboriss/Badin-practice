@@ -47,6 +47,7 @@ export const onClose = () => {
   menuCover.classList.add("border-primary");
   menuCover.classList.add("notExisting");
   menuCover.classList.remove("border-secondary");
+  menuCover.classList.remove("blur");
 
   corners.forEach((corner) => corner.classList.add("notExisting"));
   menuLogo.classList.add("notExisting");

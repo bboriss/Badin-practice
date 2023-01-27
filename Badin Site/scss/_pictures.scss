@@ -36,6 +36,7 @@
 @include media-md {
   .pictures {
     padding-left: 3rem;
+    padding-bottom: 3rem;
     width: 90%;
     margin: auto;
     display: grid;
@@ -165,6 +166,11 @@
 }
 
 .popper {
-  transform: translateY(-3rem);
-  transition: 1.2s ease;
+  animation: 1.5s popper normal;
+}
+
+@keyframes popper {
+  from {
+    transform: translateY(3rem);
+  }
 }

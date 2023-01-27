@@ -1135,41 +1135,48 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: flex-end;
+    align-items: baseline;
     flex-wrap: nowrap;
+    height: 30rem;
+  }
+  .what_we_offer-container-card {
+    width: 26rem;
+  }
+  .what_we_offer-container-card p:nth-child(2) {
+    font-size: 1.4rem;
+  }
+  .what_we_offer-container-card:nth-child(3) {
+    margin-left: 2rem;
   }
   .what_we_offer-container .what_we_offer-container-card:nth-child(1):hover {
     position: relative;
     scale: 1.1;
     transition: 0.3s linear;
-    left: -10px;
   }
   .what_we_offer-container .what_we_offer-container-card:nth-child(1):hover p:nth-child(2) {
     transition: 0.3s linear;
+    left: -10px;
     color: #1e90ff;
-    font-size: 1.2rem;
   }
   .what_we_offer-container .what_we_offer-container-card:nth-child(2):hover {
     position: relative;
     scale: 1.1;
     transition: 0.3s linear;
-    left: 0px;
   }
   .what_we_offer-container .what_we_offer-container-card:nth-child(2):hover p:nth-child(2) {
     transition: 0.3s linear;
+    left: 0px;
     color: #ed701d;
-    font-size: 1.2rem;
   }
   .what_we_offer-container .what_we_offer-container-card:nth-child(3):hover {
     position: relative;
     scale: 1.1;
     transition: 0.3s linear;
-    left: 10px;
   }
   .what_we_offer-container .what_we_offer-container-card:nth-child(3):hover p:nth-child(2) {
     transition: 0.3s linear;
+    left: 10px;
     color: #1ebf73;
-    font-size: 1.2rem;
   }
   .what_we_offer .trusted_by_section {
     position: relative;
@@ -1892,6 +1899,7 @@ body {
 @media screen and (min-width: 768px) {
   .pictures {
     padding-left: 3rem;
+    padding-bottom: 3rem;
     width: 90%;
     margin: auto;
     display: grid;
@@ -2013,10 +2021,14 @@ body {
   }
 }
 .popper {
-  transform: translateY(-3rem);
-  transition: 1.2s ease;
+  animation: 1.5s popper normal;
 }
 
+@keyframes popper {
+  from {
+    transform: translateY(3rem);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -2058,7 +2070,6 @@ body {
   align-items: flex-start;
   flex-wrap: nowrap;
   background-color: #1c408c;
-  padding-bottom: 5rem;
 }
 .expertise h1 {
   font-family: lust, "Courier", serif;
@@ -2071,35 +2082,53 @@ body {
   font-size: 3.5rem;
   letter-spacing: 3px;
 }
-.expertise .technology_line {
+.expertise .technologies {
+  padding-bottom: 4rem;
+}
+.expertise .technologies .technology_line-1 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  user-select: none;
-  margin-top: 3.5rem;
-  gap: 1rem;
-}
-.expertise .technology_line-content {
   font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
   color: #ffffff;
   line-height: 1.6;
-  opacity: 0.7;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: space-around;
-  min-width: 100%;
-  gap: 1rem;
-  list-style: none;
-  font-weight: 700;
-  animation: translateLeft 90s linear infinite alternate;
+  opacity: 0.6;
+  position: relative;
+  top: 1.5rem;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  list-style-type: none;
+  white-space: nowrap;
+  animation: translateLeft 80s linear infinite alternate;
 }
-.expertise .to_right {
-  animation-direction: alternate-reverse;
+.expertise .technologies .technology_line-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-family: "Poppins", futura-pt, "Arial Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 1.6;
+  opacity: 0.6;
+  position: relative;
+  top: 1.5rem;
+  right: 0rem;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  list-style-type: none;
+  white-space: nowrap;
+  animation: translateLeft 80s linear infinite alternate-reverse;
 }
 
 @keyframes translateLeft {
@@ -2107,7 +2136,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - 1rem));
+    transform: translateX(calc(-100% + 100vw - 3rem));
   }
 }
 @media screen and (min-width: 768px) {
@@ -2122,13 +2151,9 @@ body {
   }
   .expertise h1 {
     align-self: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
-  .expertise .technology_line {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .expertise .technology_line:nth-last-child(-n+2) {
+  .expertise .technologies ul:nth-last-child(-n+2) {
     display: none;
   }
 }

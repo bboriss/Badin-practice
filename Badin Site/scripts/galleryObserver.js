@@ -20,7 +20,6 @@ export const galleryIntersecting = () => {
 
   function galleryTouching(entries) {
     const picturesArray = [picOne, picTwo, picSix, picFive, picFour];
-
     entries[0].isIntersecting && window.innerWidth > 768
       ? picturesArray.forEach((pic) => pic.classList.add("popper"))
       : picturesArray.forEach((pic) => pic.classList.remove("popper"));
