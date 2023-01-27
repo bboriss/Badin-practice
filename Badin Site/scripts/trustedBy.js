@@ -110,6 +110,9 @@ export const onPictureSelect = (e) => {
     return;
   }
   console.log(e.target);
+  pictures[counterPic].classList.remove("client_pic_big");
+  pictures[counterPic].classList.add("client_pic_normal");
+
   const pictureIndex = Array.from(e.target.parentElement.classList)
     .find((rotator) => rotator.includes("rotator"))
     .at(-1);
@@ -122,8 +125,6 @@ export const onPictureSelect = (e) => {
 
   pictures[counterPic].classList.remove("client_pic_normal");
   pictures[counterPic].classList.add("client_pic_big");
-  pictures[counterPic - 1].classList.remove("client_pic_big");
-  pictures[counterPic - 1].classList.add("client_pic_normal");
 
   clientName.innerText = namesAndRoles[counterPic].name;
   clientRole.innerText = namesAndRoles[counterPic].role;
