@@ -345,6 +345,7 @@
 
             img {
               width: 100%;
+              pointer-events: none;
             }
           }
 
@@ -354,6 +355,7 @@
 
             img {
               width: 100%;
+              pointer-events: none;
             }
           }
 
@@ -448,3 +450,7 @@
     }
   }
 }
+
+// .notClickable {
+//   pointer-events: none;
+// }

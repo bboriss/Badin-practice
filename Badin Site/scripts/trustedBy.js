@@ -106,6 +106,10 @@ export const moveToLeft = () => {
 };
 
 export const onPictureSelect = (e) => {
+  if (window.innerWidth > 768) {
+    return;
+  }
+  console.log(e.target);
   const pictureIndex = Array.from(e.target.parentElement.classList)
     .find((rotator) => rotator.includes("rotator"))
     .at(-1);
@@ -153,6 +157,10 @@ export const getBackPosition = () => {
     clientRole.innerText = namesAndRoles[0].role;
     clientText.innerText = namesAndRoles[0].text;
   } else {
+    picContainer.style.cssText = `position: relative;
+    left: -${counterPic * 96}px;
+    transition: 0.7s linear;
+    `;
     clientName.innerText = namesAndRoles[counterPic].name;
     clientRole.innerText = namesAndRoles[counterPic].role;
     clientText.innerText = namesAndRoles[counterPic].text;

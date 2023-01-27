@@ -1228,6 +1228,7 @@ body {
   }
   .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_big img {
     width: 100%;
+    pointer-events: none;
   }
   .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_normal {
     width: 80px;
@@ -1235,6 +1236,7 @@ body {
   }
   .what_we_offer .trusted_by_section .trusted_by_container-pic_container .client_pic_normal img {
     width: 100%;
+    pointer-events: none;
   }
   .what_we_offer .trusted_by_section .trusted_by_container-pic_container .rotator_1 {
     animation: picture-rotator1 25s infinite;
