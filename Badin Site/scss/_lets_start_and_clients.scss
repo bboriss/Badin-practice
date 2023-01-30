@@ -41,6 +41,10 @@
       width: 12rem;
       height: 40pxrem;
       border-radius: 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 

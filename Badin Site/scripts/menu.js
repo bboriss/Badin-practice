@@ -21,6 +21,10 @@ const onMouseLeave = () => {
 };
 
 const onClick = () => {
+  // not scrollable
+  document.documentElement.style.overflowX = "unset";
+  document.body.classList.add("stop-scrolling");
+
   menuBtn.classList.add("notExisting");
   menuCover.classList.remove("border_left_disappear");
   menuCover.classList.remove("border-primary");
@@ -43,6 +47,10 @@ const onClick = () => {
 };
 
 const onClose = () => {
+  // scrollable
+  document.documentElement.style.overflowX = "hidden";
+
+  document.body.classList.remove("stop-scrolling");
   menuBtn.classList.remove("notExisting");
   menuCover.classList.add("border_left_disappear");
   menuCover.classList.add("border-primary");

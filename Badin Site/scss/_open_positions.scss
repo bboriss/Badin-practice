@@ -51,7 +51,10 @@
 
       img {
         width: 18px;
-        // margin-left: 10px;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -65,6 +68,10 @@
 
     p {
       @include paragraphs(18px, $white, 1.6);
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

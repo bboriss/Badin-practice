@@ -2,7 +2,7 @@
 @import "font";
 
 .pictures {
-  margin-top: 4rem;
+  margin-top: 2rem;
 
   .modal {
     display: none;
@@ -10,17 +10,29 @@
   .picture_container {
     width: 90%;
     margin: auto;
+    padding-bottom: 2rem;
     position: relative;
+
+    .shadow {
+      position: absolute;
+      top: 1rem;
+      filter: blur(8px);
+      opacity: 0.4;
+    }
 
     img {
       width: 100%;
       border-radius: 1rem;
+      z-index: -1;
+      // box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      //   rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     }
 
     .zoom {
       position: absolute;
       top: 50%;
       left: 50%;
+      transform: translate(-50%, -50%);
       width: 2.5rem;
       opacity: 0;
     }
@@ -123,7 +135,7 @@
     .picture_1 {
       @include flex-container(row, flex-end, center, nowrap);
       grid-area: pic_1;
-      top: 3rem;
+      top: 1rem;
       img {
         width: 95%;
       }
@@ -132,33 +144,35 @@
     .picture_2 {
       @include flex-container(row, flex-end, center, nowrap);
       grid-area: pic_2;
-      top: 3rem;
+      top: 1rem;
       img {
         width: 95%;
       }
     }
 
     .picture_3 {
+      position: relative;
+      top: -2rem;
       border-radius: 1rem;
       grid-area: pic_3;
     }
 
     .picture_4 {
       position: relative;
-      top: 0rem;
+      top: -10rem;
       grid-area: pic_4;
     }
 
     .picture_5 {
       display: block;
       position: relative;
-      top: 5rem;
+      top: 3rem;
       grid-area: pic_5;
     }
 
     .picture_6 {
       display: block;
-      top: 3rem;
+      top: 1rem;
       border-radius: 1rem;
       grid-area: pic_6;
     }

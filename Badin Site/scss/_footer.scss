@@ -10,6 +10,10 @@ footer {
     .left_side {
       .white_logo {
         width: 5rem;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
       .message {
         @include paragraphs(12px, #ffffff, 1.6);
@@ -31,6 +35,12 @@ footer {
           img {
             width: 40%;
           }
+
+          &:hover {
+            cursor: pointer;
+            filter: brightness(1.5);
+            transition: 0.5s ease;
+          }
         }
       }
     }
@@ -46,6 +56,10 @@ footer {
         ul {
           list-style: none;
           margin-top: 1rem;
+
+          &:hover {
+            cursor: pointer;
+          }
 
           li {
             @include paragraphs(13px, $white, 1.6);
