@@ -5,7 +5,7 @@ const picSix = document.querySelector(".picture_6");
 const picFive = document.querySelector(".picture_5");
 const picFour = document.querySelector(".picture_4");
 
-export const galleryIntersecting = () => {
+const galleryIntersecting = () => {
   let galleryOptions = {
     root: null,
     rootMargin: "0px 0px",
@@ -25,3 +25,8 @@ export const galleryIntersecting = () => {
       : picturesArray.forEach((pic) => pic.classList.remove("popper"));
   }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  // gallery poping up
+  galleryIntersecting();
+});

@@ -1,4 +1,4 @@
-export const buttonFiller = () => {
+const buttonFiller = () => {
   let scrollProgress = document.querySelector(".back-to-top-btn");
 
   let pos = document.documentElement.scrollTop;
@@ -18,3 +18,11 @@ export const buttonFiller = () => {
 
   scrollProgress.style.background = `conic-gradient(#f9fafe ${scrollValue}%, #505050 ${scrollValue}%)`;
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  // back to top btn not visible when page loads
+  document.querySelector(".back-to-top-btn").style.display = "none";
+});
+
+// <--- back to top btn --->
+window.addEventListener("scroll", buttonFiller);

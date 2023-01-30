@@ -1,14 +1,14 @@
+const modal = document.querySelector(".modal");
+const modalImg = document.querySelector(".modal_image");
+const modalLeftArrow = document.querySelector(".pic_left_btn");
+const modalRightArrow = document.querySelector(".pic_right_btn");
+
 const pictureContainers = Array.from(
   document.getElementsByClassName("picture_container")
 );
 const badinPicturesAdresses = Array.from(
   document.getElementsByClassName("picture_container")
 ).map((picture) => picture.children[0].currentSrc);
-
-const modal = document.querySelector(".modal");
-const modalImg = document.querySelector(".modal_image");
-const modalLeftArrow = document.querySelector(".pic_left_btn");
-const modalRightArrow = document.querySelector(".pic_right_btn");
 
 // <--- GALLERY LOGIC --->
 // current Img
@@ -34,7 +34,7 @@ pictureContainers.forEach((badinPicture) =>
   })
 );
 
-export const moveToRightGallery = (e) => {
+const moveToRightGallery = (e) => {
   modalLeftArrow.style.display = "block";
   const nextIndex =
     badinPicturesAdresses.findIndex((address) => address == currentImg) + 1;
@@ -49,7 +49,7 @@ export const moveToRightGallery = (e) => {
   e.stopPropagation();
 };
 
-export const moveToLeftGallery = (e) => {
+const moveToLeftGallery = (e) => {
   modalRightArrow.style.display = "block";
   const previousIndex =
     badinPicturesAdresses.findIndex((address) => address == currentImg) - 1;
@@ -63,3 +63,9 @@ export const moveToLeftGallery = (e) => {
 
   e.stopPropagation();
 };
+
+modalRightArrow.addEventListener("click", moveToRightGallery);
+modalLeftArrow.addEventListener("click", moveToLeftGallery);
+modal.addEventListener("click", () => {
+  modal.style.display = "none";
+});

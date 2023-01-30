@@ -45,7 +45,7 @@ const namesAndRoles = [
   },
 ];
 
-export const moveToRight = () => {
+const moveToRight = () => {
   pictures[counterPic].classList.remove("client_pic_big");
   pictures[counterPic].classList.add("client_pic_normal");
   pictures[counterPic + 1].classList.remove("client_pic_normal");
@@ -74,7 +74,7 @@ export const moveToRight = () => {
     : (rightArrIcon.style.color = "#1e90ff");
 };
 
-export const moveToLeft = () => {
+const moveToLeft = () => {
   pictures[counterPic - 1].classList.remove("client_pic_normal");
   pictures[counterPic - 1].classList.add("client_pic_big");
   pictures[counterPic].classList.remove("client_pic_big");
@@ -105,7 +105,7 @@ export const moveToLeft = () => {
       (arrRight.style.cssText = "pointer-events: auto;");
 };
 
-export const onPictureSelect = (e) => {
+const onPictureSelect = (e) => {
   if (window.innerWidth > 768) {
     return;
   }
@@ -149,7 +149,7 @@ export const onPictureSelect = (e) => {
     `;
 };
 
-export const getBackPosition = () => {
+const getBackPosition = () => {
   if (window.innerWidth > 768) {
     picContainer.style.cssText = `position: relative;
         left: 0px;
@@ -167,3 +167,13 @@ export const getBackPosition = () => {
     clientText.innerText = namesAndRoles[counterPic].text;
   }
 };
+
+// <--- trusted by sections and arrows --->
+arrLeft.addEventListener("click", moveToLeft);
+arrRight.addEventListener("click", moveToRight);
+pictures.forEach((picture) =>
+  picture.addEventListener("click", onPictureSelect)
+);
+
+// when window resized get back picture container to position 0
+window.addEventListener("resize", getBackPosition);

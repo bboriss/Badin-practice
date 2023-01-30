@@ -1,17 +1,18 @@
 const menuCover = document.querySelector(".menu_cover");
 const menuCoverContainer = document.querySelector(".menu_cover_container");
 const menuBtn = document.querySelector(".menu-btn");
+const closeBtn = document.querySelector(".menu_close_btn");
 const menuLogo = document.querySelector(".logo-badin_menu");
 const menu = document.querySelector(".menu");
 const corners = Array.from(document.getElementsByClassName("corner"));
 
-export const onMouseEnter = () => {
+const onMouseEnter = () => {
   menuCover.classList.remove("border_left_disappear");
   menuCover.classList.remove("notExisting");
   menuCover.classList.add("border-primary");
 };
 
-export const onMouseLeave = () => {
+const onMouseLeave = () => {
   if (!menuBtn.classList.contains("notExisting")) {
     menuCover.classList.add("border_left_disappear");
     menuCover.classList.remove("border-primary");
@@ -19,7 +20,7 @@ export const onMouseLeave = () => {
   }
 };
 
-export const onClick = () => {
+const onClick = () => {
   menuBtn.classList.add("notExisting");
   menuCover.classList.remove("border_left_disappear");
   menuCover.classList.remove("border-primary");
@@ -41,7 +42,7 @@ export const onClick = () => {
   }
 };
 
-export const onClose = () => {
+const onClose = () => {
   menuBtn.classList.remove("notExisting");
   menuCover.classList.add("border_left_disappear");
   menuCover.classList.add("border-primary");
@@ -60,3 +61,11 @@ export const onClose = () => {
     list[i].classList.add("notExisting");
   }
 };
+
+menuBtn.addEventListener("mouseenter", onMouseEnter);
+
+menuBtn.addEventListener("mouseleave", onMouseLeave);
+
+menuBtn.addEventListener("click", onClick);
+
+closeBtn.addEventListener("click", onClose);

@@ -8,7 +8,7 @@ const logoContainer = document.querySelector(
 
 let logos = [...logosRef];
 
-export const logoChanger = () => {
+const logoChanger = () => {
   logoContainer.innerHTML = "";
   // remove hardcoded visible logos
   logos.forEach((logo) => logo.classList.remove("first_iteration"));
@@ -25,3 +25,6 @@ export const logoChanger = () => {
     }, 150 * i);
   }
 };
+
+// logos change
+setInterval(logoChanger, 3000);

@@ -6,7 +6,7 @@ const burgerLines = Array.from(
 );
 const menuText = document.querySelector(".menu-btn__menu");
 
-export const menuIntersecting = () => {
+const menuIntersecting = () => {
   let options = {
     root: null,
     rootMargin: "-49% 0px",
@@ -28,3 +28,7 @@ export const menuIntersecting = () => {
     }
   }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  menuIntersecting();
+});
