@@ -1,0 +1,137 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  max-height: 100vh;
+  background-color: $blue;
+  text-align: center;
+
+  h1 {
+    margin-top: 2rem;
+    font-size: 4.5rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8rem auto;
+  width: 35rem;
+  height: 30rem;
+  label {
+    font-size: 2.3rem;
+  }
+
+  input[type="text"] {
+    padding: 1rem;
+    border-radius: 1rem;
+    border-style: none;
+    width: 90%;
+  }
+
+  input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    width: 60%;
+    font-size: 1.6rem;
+    background-color: $darkblue;
+    border-radius: 1rem;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.counter {
+  font-size: 35rem;
+}
+
+.game {
+  position: relative;
+  margin: 3rem 5rem 0rem 5rem;
+  height: 80vh;
+  display: flex;
+  gap: 30rem;
+
+  &_container {
+    background-color: $lightblue;
+    border-radius: 3rem;
+    flex: 50%;
+    position: relative;
+
+    .firstPlayerName,
+    .secondPlayerName {
+      margin-top: 4rem;
+      font-size: 3rem;
+    }
+
+    // .playing {
+    //   width: 5rem;
+    // }
+
+    .dice {
+      width: 15rem;
+      margin: 5rem auto;
+      .diceFirst,
+      .diceSecond {
+        width: 10rem;
+      }
+    }
+
+    .score_left {
+      @include score(10rem, 25rem);
+    }
+    .current_left {
+      @include score(10rem, 15rem);
+    }
+
+    .score_right {
+      @include score(10rem, 25rem);
+    }
+    .current_right {
+      @include score(10rem, 15rem);
+    }
+  }
+
+  .rollBtn {
+    @include button(60%);
+  }
+  .storeBtn {
+    @include button(70%);
+  }
+}
+
+.winner {
+  margin-top: 20rem;
+
+  .player-winner {
+    color: $white;
+  }
+
+  .playAgain {
+    margin-top: 5rem;
+    background-color: #165a72;
+    color: $white;
+    border-style: none;
+    border-radius: 1rem;
+    padding: 1rem 6rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+}
+
+// display none
+.hide {
+  display: none;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <h1>Dice Game &#127922</h1>
+      <form id="namesInput">
+        <label for="firstPlayer">First Player:</label><br>
+        <input type="text" id="firstPlayer" name="firstPlayer" placeholder="player1"><br>
+        <label for="secondPlayer">Second Player:</label><br>
+        <input type="text" id="secondPlayer" name="secondPlayer" placeholder="player2"><br>
+        <input type="submit" value="Start">
+      </form> 
+      <div class="counter hide">
+<p class="number">3</p>
+      </div>
+      <section class="game hide">
+        <div class="game_container">
+          <h2 class="firstPlayerName player_1 active"></h2>
+          <img src="./images/dice.png" alt="" class="play_indicator_first">
+        <div class="dice"><img class="diceFirst" src="./dice imgages/dice-1.png" alt=""></div>
+          <p class="score_left">Score : 0</p>
+        <p class="current_left">Current : 0</p>
+        </div>
+        <div class="game_container">
+          <h2 class="secondPlayerName player_2"></h2>
+          <img src="./images/dice.png" alt="" class="play_indicator_second hide">
+          
+          <div class="dice"><img class="diceSecond" src="./dice imgages/dice-1.png" alt=""></div>
+          <p class="score_right">Score : 0</p>
+          <p class="current_right">Current : 0</p>
+        </div>
+
+        <button type="button" class="rollBtn">Roll</button>
+        <button type="button" class="storeBtn">Store</button>
+      </section>
+      <div class="winner hide">
+        <h1 class="player-winner">Player One Won!</h1>
+        <button type="button" class="playAgain">Play Again</button>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>

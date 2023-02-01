@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  max-height: 100vh;
+  background-color: #2596be;
+  text-align: center;
+}
+body h1 {
+  margin-top: 2rem;
+  font-size: 4.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8rem auto;
+  width: 35rem;
+  height: 30rem;
+}
+form label {
+  font-size: 2.3rem;
+}
+form input[type=text] {
+  padding: 1rem;
+  border-radius: 1rem;
+  border-style: none;
+  width: 90%;
+}
+form input[type=submit] {
+  margin-top: 2rem;
+  padding: 0.8rem;
+  width: 60%;
+  font-size: 1.6rem;
+  background-color: #165a72;
+  border-radius: 1rem;
+  border-style: none;
+  cursor: pointer;
+  color: white;
+}
+
+.counter {
+  font-size: 35rem;
+}
+
+.game {
+  position: relative;
+  margin: 3rem 5rem 0rem 5rem;
+  height: 80vh;
+  display: flex;
+  gap: 30rem;
+}
+.game_container {
+  background-color: #a8d5e5;
+  border-radius: 3rem;
+  flex: 50%;
+  position: relative;
+}
+.game_container .firstPlayerName,
+.game_container .secondPlayerName {
+  margin-top: 4rem;
+  font-size: 3rem;
+}
+.game_container .dice {
+  width: 15rem;
+  margin: 5rem auto;
+}
+.game_container .dice .diceFirst,
+.game_container .dice .diceSecond {
+  width: 10rem;
+}
+.game_container .score_left {
+  position: absolute;
+  left: 10rem;
+  bottom: 25rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.game_container .current_left {
+  position: absolute;
+  left: 10rem;
+  bottom: 15rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.game_container .score_right {
+  position: absolute;
+  left: 10rem;
+  bottom: 25rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.game_container .current_right {
+  position: absolute;
+  left: 10rem;
+  bottom: 15rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.game .rollBtn {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  background-color: #165a72;
+  color: white;
+  transform: translate(-50%);
+  border-style: none;
+  border-radius: 1rem;
+  padding: 1rem 6rem;
+  font-size: 2.5rem;
+  box-shadow: 0 9px #a8d5e5;
+  cursor: pointer;
+}
+.game .rollBtn:active {
+  box-shadow: 0 5px #3ba1c5;
+  transform: translate(-50%, 4px);
+}
+.game .storeBtn {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  background-color: #165a72;
+  color: white;
+  transform: translate(-50%);
+  border-style: none;
+  border-radius: 1rem;
+  padding: 1rem 6rem;
+  font-size: 2.5rem;
+  box-shadow: 0 9px #a8d5e5;
+  cursor: pointer;
+}
+.game .storeBtn:active {
+  box-shadow: 0 5px #3ba1c5;
+  transform: translate(-50%, 4px);
+}
+
+.winner {
+  margin-top: 20rem;
+}
+.winner .player-winner {
+  color: white;
+}
+.winner .playAgain {
+  margin-top: 5rem;
+  background-color: #165a72;
+  color: white;
+  border-style: none;
+  border-radius: 1rem;
+  padding: 1rem 6rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
