@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  max-height: 100vh;
+  height: 100vh;
+  background-color: #2596be;
+  text-align: center;
+  position: relative;
+}
+body header {
+  border-bottom: 1px solid #165a72;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+body header p {
+  font-size: 2.5rem;
+}
+body header select {
+  border-style: none;
+  border-radius: 1rem;
+  width: 20rem;
+  font-size: 1.5rem;
+  background-color: #a8d5e5;
+}
+body .card_container {
+  margin: 5rem auto;
+  width: 100rem;
+  height: min-content;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .card_container .card {
+  border: 1px solid yellow;
+  width: 26rem;
+  height: 26rem;
+  margin-bottom: 4rem;
+}
+body table {
+  border-top: 1px solid #165a72;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  gap: 4rem;
+  bottom: 4rem;
+  left: 0;
+  width: 100%;
+  height: 15rem;
+}
+body table tr {
+  border: 2px solid blue;
+  font-size: 2.3rem;
+}
+body table tr th {
+  padding: 1rem 4rem 1rem 8rem;
+}
+body table tr td {
+  padding: 2rem 6rem 2rem 2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.not_visible {
+  visibility: hidden;
+}/*# sourceMappingURL=style.css.map */
