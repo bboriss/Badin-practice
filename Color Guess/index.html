@@ -9,19 +9,29 @@
   </head>
   <body>
     <header>
-      <div class="nameInput">
-        <p class="name">Name : <span class="nameTyped">Boris</span></p>
+      <div class="current_player_name hide">
+        <p>Name : <span></span></p>
       </div>
 
-      <div class="color_to_guess"><p>#oaeod</p></div>
+      <form id="newPlayer">
+        <label for="playerName">Player name :</label><br />
+        <input
+          type="text"
+          id="playerName"
+          name="playerName"
+          placeholder="player"
+        /><br />
+      </form>
 
-      <select name="newColor" id="newColor">
+      <div class="color_to_guess not_visible"><p>#oaeod</p></div>
+
+      <select name="newColor" id="newColor" disabled>
         <option disabled selected>Select color model</option>
         <option value="RGB">RGB</option>
         <option value="HEXA">HEXA</option>
       </select>
     </header>
-    <div class="card_container">
+    <div class="card_container not_visible">
       <div class="card"></div>
       <div class="card"></div>
       <div class="card"></div>
@@ -30,32 +40,13 @@
       <div class="card"></div>
     </div>
     <table style="width: 100%">
-      <tr>
+      <tr class="table_names">
         <th>Name :</th>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person</td>
-        <td>Person10</td>
       </tr>
-      <tr>
+      <tr class="table_scores">
         <th>Score :</th>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias</td>
-        <td>Tobias10</td>
       </tr>
     </table>
+    <script src="./app.js"></script>
   </body>
 </html>

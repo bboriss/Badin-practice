@@ -6,31 +6,3 @@ $lightblue: #a8d5e5;
 $activeblue: #3ba1c5;
 $graycolor: #909090;
 $white: white;
-
-@mixin button($top) {
-  position: absolute;
-  left: 50%;
-  top: $top;
-  background-color: #165a72;
-  color: $white;
-  transform: translate(-50%);
-  border-style: none;
-  border-radius: 1rem;
-  padding: 1rem 6rem;
-  font-size: 2.5rem;
-  box-shadow: 0 9px $lightblue;
-  cursor: pointer;
-
-  &:active {
-    box-shadow: 0 5px $activeblue;
-    transform: translate(-50%, 4px);
-  }
-}
-
-@mixin score($left, $bottom) {
-  position: absolute;
-  left: $left;
-  bottom: $bottom;
-  font-size: 2rem;
-  font-weight: 600;
-}

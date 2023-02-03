@@ -17,15 +17,23 @@ body {
   background-color: $blue;
   text-align: center;
   position: relative;
+  padding: 0 8rem;
 
   header {
-    border-bottom: 1px solid $darkblue;
+    border-bottom: 2px solid $darkblue;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 2rem;
+    // margin: 0 10rem;
 
     p {
       font-size: 2.5rem;
+    }
+
+    .color_to_guess {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0.8rem;
     }
 
     select {
@@ -35,44 +43,61 @@ body {
       font-size: 1.5rem;
       background-color: $lightblue;
     }
+
+    form {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 2rem;
+
+      input {
+        border-style: none;
+        border-radius: 1rem;
+        width: 20rem;
+        height: 2rem;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        background-color: $lightblue;
+      }
+    }
   }
 
   .card_container {
-    margin: 5rem auto;
+    margin: 2rem auto;
     width: 100rem;
     height: min-content;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: white;
+    padding: 5rem;
 
     .card {
-      border: 1px solid yellow;
       width: 26rem;
       height: 26rem;
-      margin-bottom: 4rem;
+      margin: 2rem 0;
+      cursor: pointer;
     }
   }
 
   table {
-    border-top: 1px solid $darkblue;
-    position: absolute;
+    border-top: 2px solid $darkblue;
     display: flex;
     justify-content: flex-start;
-    gap: 4rem;
-    bottom: 4rem;
-    left: 0;
-    width: 100%;
     height: 15rem;
+
     tr {
       border: 2px solid blue;
       font-size: 2.3rem;
 
       th {
-        padding: 1rem 4rem 1rem 8rem;
+        padding: 1rem 2rem 1rem 2rem;
+        min-width: 20rem;
       }
 
       td {
-        padding: 2rem 6rem 2rem 2rem;
+        padding: 2rem 4rem 2rem 2rem;
+        width: 18rem;
       }
     }
   }
