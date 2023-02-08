@@ -1,0 +1,165 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $black;
+  text-align: center;
+  position: relative;
+
+  h3 {
+    margin-top: 2rem;
+    font-size: 4.5rem;
+    color: $white;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem auto;
+
+    input {
+      margin-right: 5rem;
+      height: 4rem;
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem;
+      background-color: $white;
+    }
+
+    button {
+      padding: 0 2rem;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      color: $black;
+    }
+  }
+
+  .mealsContainer {
+    // border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 5rem auto;
+    height: min-content;
+
+    &_item {
+      background-color: $white;
+      border-radius: 2rem;
+      height: 45rem;
+      width: 35rem;
+      margin-bottom: 5rem;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        height: 70%;
+        object-fit: cover;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+      }
+      h5 {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+      }
+      button {
+        margin: 3.5rem auto;
+        width: 15rem;
+        border: none;
+        border-radius: 2rem;
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+          background-color: $white;
+          color: $black;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .modal {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    top: -2rem;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.8rem);
+
+    .mealContainer {
+      position: relative;
+      background: rgba(255, 255, 255, 0.5);
+      width: 40%;
+      height: 80%;
+      border-radius: 2rem;
+      // border: 1px solid red;
+
+      h3 {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        font-size: 4rem;
+        color: $black;
+      }
+
+      p {
+        height: 30rem;
+        overflow-y: scroll;
+        margin: 3rem;
+        margin-bottom: 15rem;
+        font-size: 1.5rem;
+      }
+
+      a {
+        font-size: 3rem;
+        text-decoration: none;
+        cursor: pointer;
+        color: $white;
+      }
+
+      .fa-close {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 2rem;
+        right: 2rem;
+        font-size: 3rem;
+        border-radius: 50%;
+        color: $black;
+      }
+    }
+  }
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+// display none
+.hide {
+  display: none !important;
+}

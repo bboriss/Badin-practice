@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #202020;
+  text-align: center;
+  position: relative;
+}
+body h3 {
+  margin-top: 2rem;
+  font-size: 4.5rem;
+  color: #faf9f6;
+}
+body form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem auto;
+}
+body form input {
+  margin-right: 5rem;
+  height: 4rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  background-color: #faf9f6;
+}
+body form button {
+  padding: 0 2rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  color: #202020;
+}
+body .mealsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 5rem auto;
+  height: min-content;
+}
+body .mealsContainer_item {
+  background-color: #faf9f6;
+  border-radius: 2rem;
+  height: 45rem;
+  width: 35rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+body .mealsContainer_item img {
+  height: 70%;
+  object-fit: cover;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+body .mealsContainer_item h5 {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+body .mealsContainer_item button {
+  margin: 3.5rem auto;
+  width: 15rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: #202020;
+  color: #faf9f6;
+}
+body .mealsContainer_item button:hover {
+  background-color: #faf9f6;
+  color: #202020;
+  cursor: pointer;
+}
+body .modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  top: -2rem;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.8rem);
+}
+body .modal .mealContainer {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  width: 40%;
+  height: 80%;
+  border-radius: 2rem;
+}
+body .modal .mealContainer h3 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-size: 4rem;
+  color: #202020;
+}
+body .modal .mealContainer p {
+  height: 30rem;
+  overflow-y: scroll;
+  margin: 3rem;
+  margin-bottom: 15rem;
+  font-size: 1.5rem;
+}
+body .modal .mealContainer a {
+  font-size: 3rem;
+  text-decoration: none;
+  cursor: pointer;
+  color: #faf9f6;
+}
+body .modal .mealContainer .fa-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  border-radius: 50%;
+  color: #202020;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.hide {
+  display: none !important;
+}/*# sourceMappingURL=style.css.map */
