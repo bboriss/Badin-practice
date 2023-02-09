@@ -12,7 +12,7 @@ const message = document.querySelector(".nothingFound");
 mealForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const termToSearch = mealInput.value;
-  termToSearch.length > 0 ? getData(termToSearch) : mealInput.focus();
+  termToSearch.length !== 0 ? getData(termToSearch) : mealInput.focus();
   mealForm.reset();
 });
 
