@@ -47,6 +47,11 @@ body {
     }
   }
 
+  .nothingFound {
+    font-size: 2rem;
+    color: $white;
+  }
+
   .mealsContainer {
     // border: 1px solid blue;
     display: flex;
@@ -97,12 +102,12 @@ body {
   }
 
   .modal {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    top: -2rem;
+    top: 0rem;
     width: 100vw;
     height: 100vh;
 
@@ -111,7 +116,7 @@ body {
 
     .mealContainer {
       position: relative;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 1);
       width: 40%;
       height: 80%;
       border-radius: 2rem;
@@ -126,7 +131,7 @@ body {
 
       p {
         height: 30rem;
-        overflow-y: scroll;
+        overflow-y: auto;
         margin: 3rem;
         margin-bottom: 15rem;
         font-size: 1.5rem;
@@ -136,7 +141,7 @@ body {
         font-size: 3rem;
         text-decoration: none;
         cursor: pointer;
-        color: $white;
+        color: $black;
       }
 
       .fa-close {
@@ -149,6 +154,7 @@ body {
         font-size: 3rem;
         border-radius: 50%;
         color: $black;
+        cursor: pointer;
       }
     }
   }
