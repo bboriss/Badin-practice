@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f1eee9;
+  text-align: center;
+}
+body header {
+  height: 7rem;
+  width: 100vw;
+  background-color: #666666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rem;
+}
+body header .logo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #feb253;
+}
+body header form {
+  display: flex;
+}
+body header form input {
+  height: 3rem;
+  padding: 1rem;
+}
+body header form button {
+  width: 3rem;
+  height: 3rem;
+  background-color: #feb253;
+  border: none;
+}
+body nav {
+  height: 5rem;
+  width: 100vw;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body nav ul {
+  display: flex;
+  gap: 12rem;
+  list-style-type: none;
+}
+body nav ul li {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #666666;
+}
+
+main {
+  margin: auto;
+  width: 55vw;
+}
+main .container {
+  width: 100%;
+  text-align: start;
+  padding-top: 2rem;
+}
+main .container h3 {
+  border-bottom: 1px solid #feb253;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #666666;
+}
+main .container .items {
+  border: 1px solid red;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .container .items .bestRatedItem,
+main .container .items .item {
+  border: 1px solid blue;
+  width: 22%;
+  height: 40rem;
+  text-align: center;
+  overflow-x: hidden;
+}
+main .container .items .bestRatedItem img,
+main .container .items .item img {
+  height: 70%;
+  object-fit: cover;
+}
+main .container .items .bestRatedItem h5,
+main .container .items .item h5 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+main .container .items .bestRatedItem .price_and_add,
+main .container .items .item .price_and_add {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  padding: 0 2rem 0 2rem;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.hide {
+  display: none !important;
+}/*# sourceMappingURL=style.css.map */
