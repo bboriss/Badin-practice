@@ -62,6 +62,16 @@ body nav ul li {
 body nav ul .nav_active {
   color: #feb253;
 }
+body nav label {
+  font-size: 1.8rem;
+  color: #666666;
+  position: absolute;
+  right: 42rem;
+}
+body nav input {
+  position: absolute;
+  right: 40rem;
+}
 
 main {
   margin: auto;

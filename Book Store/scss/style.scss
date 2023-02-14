@@ -71,6 +71,19 @@ body {
         color: $yellow;
       }
     }
+
+    label {
+      font-size: 1.8rem;
+      color: $gray;
+
+      position: absolute;
+      right: 42rem;
+    }
+
+    input {
+      position: absolute;
+      right: 40rem;
+    }
   }
 }
 

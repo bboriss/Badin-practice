@@ -12,6 +12,8 @@ const homeButton = document.getElementById("home_button");
 const booksButton = document.getElementById("books_button");
 // back button
 const backButton = document.getElementsByClassName("back_button")[0];
+// adult check
+const adultCheck = document.getElementById("adult");
 // containers
 const homePage = document.getElementById("homePage");
 const booksPage = document.getElementById("booksPage");
@@ -19,6 +21,15 @@ const detailsPage = document.getElementById("details");
 
 let allBooks = [];
 let allGenres = [];
+const adultGenres = [
+  "Adult",
+  "Abuse",
+  "Erotica",
+  "Gay Erotica",
+  "Asexual",
+  "Gay",
+  "LGBT",
+];
 let randomGenre;
 let averageRating;
 
@@ -39,11 +50,32 @@ const getData = async () => {
     const data = jsonData.record.results;
     // collect all genres
     data.forEach((book) => {
-      allBooks = [...allBooks, book];
-
       const genresArray = book.genre.split(",");
+
+      // filter if adult not selected
+      if (
+        !adultCheck.checked &&
+        genresArray.some((ai) => adultGenres.includes(ai))
+      ) {
+        return;
+      } else {
+        allBooks = [...allBooks, book];
+      }
+
       genresArray.forEach((genre) => {
-        if (!allGenres.includes(genre) && genre.length > 0) {
+        if (
+          !adultCheck.checked &&
+          !allGenres.includes(genre) &&
+          !adultGenres.includes(genre) &&
+          genre.length > 0
+        ) {
+          allGenres = [...allGenres, genre];
+        }
+        if (
+          adultCheck.checked &&
+          !allGenres.includes(genre) &&
+          genre.length > 0
+        ) {
           allGenres = [...allGenres, genre];
         }
       });
@@ -57,7 +89,7 @@ const getData = async () => {
       allBooks.reduce((total, book) => {
         return total + book.rating;
       }, 0) / allBooks.length;
-
+    console.log(allBooks);
     // fill the cards
     populateHome();
     populateBooksPage();
@@ -244,4 +276,29 @@ backButton.addEventListener("click", () => {
   homeButton.classList.contains("nav_active")
     ? homePage.classList.remove("hide")
     : booksPage.classList.remove("hide");
+});
+
+adultCheck.addEventListener("click", () => {
+  if (adultCheck.checked) {
+    allBooks = [];
+    allGenres = [];
+    mostReviewsItemsContainer.innerHTML = null;
+    bestRatedItemsContainer.innerHTML = null;
+    books.innerHTML = null;
+    genreOptions.innerHTML = `<option value="genre" selected="true" disabled="disabled">
+    Genre
+  </option>`;
+
+    getData();
+  } else {
+    allBooks = [];
+    allGenres = [];
+    mostReviewsItemsContainer.innerHTML = null;
+    bestRatedItemsContainer.innerHTML = null;
+    books.innerHTML = null;
+    genreOptions.innerHTML = `<option value="genre" selected="true" disabled="disabled">
+    Genre
+  </option>`;
+    getData();
+  }
 });
