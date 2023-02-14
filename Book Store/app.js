@@ -69,7 +69,7 @@ const populateCards = () => {
     book.genre.includes(randomGenre)
   );
 
-  const bestRatingToSort = [...filteredBooks];
+  const bestRatingToSort = [...allBooks];
   const mostReviewsToSort = [...filteredBooks];
 
   const bestRatingOrder = bestRatingToSort.sort((r1, r2) =>
