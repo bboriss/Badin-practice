@@ -130,7 +130,7 @@ const openDetailsPage = (e) => {
   )[0].innerText = `RATING: ${selectedBook.rating}`;
   document.getElementsByClassName(
     "details_description"
-  )[0].innerText = `RATING: ${selectedBook.desc}`;
+  )[0].innerText = `${selectedBook.desc}`;
 
   if (selectedBook.rating > averageRating) {
     document.getElementsByClassName("details_rating")[0].style.backgroundColor =
@@ -222,6 +222,9 @@ homeButton.addEventListener("click", () => {
 
 booksButton.addEventListener("click", () => {
   booksPageSelected();
+  books.innerHTML = null;
+  genreOptions.selectedIndex = 0;
+  populateBooksPage();
 });
 
 titleForm.addEventListener("submit", (e) => {
