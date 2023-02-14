@@ -10,7 +10,6 @@ const titleInput = document.getElementById("title");
 // nav buttons
 const homeButton = document.getElementById("home_button");
 const booksButton = document.getElementById("books_button");
-
 // back button
 const backButton = document.getElementsByClassName("back_button")[0];
 // containers
@@ -35,11 +34,13 @@ const getData = async () => {
         },
       }
     );
-
     const jsonData = await fetchData.json();
+    // get all data array
     const data = jsonData.record.results;
+    // collect all genres
     data.forEach((book) => {
       allBooks = [...allBooks, book];
+
       const genresArray = book.genre.split(",");
       genresArray.forEach((genre) => {
         if (!allGenres.includes(genre)) {
@@ -47,50 +48,33 @@ const getData = async () => {
         }
       });
     });
+    // take random genre
     randomGenre = allGenres[Math.floor(Math.random() * allGenres.length)];
     genre.innerText = randomGenre;
+    // take average rating from all books
     averageRating =
       allBooks.reduce((total, book) => {
         return total + book.rating;
       }, 0) / allBooks.length;
-    console.log("all books : ", allBooks);
-    console.log("average : ", averageRating);
+
     // fill the cards
-    populateCards();
+    populateHome();
     populateBooksPage();
   } catch (error) {
     console.log(error);
   }
 };
 
-const populateCards = () => {
+const populateHome = () => {
+  const bestRatingToSort = [...allBooks];
+
   // filter books with random genre
   const filteredBooks = allBooks.filter((book) =>
     book.genre.includes(randomGenre)
   );
 
-  const bestRatingToSort = [...allBooks];
-  const mostReviewsToSort = [...filteredBooks];
-
-  const bestRatingOrder = bestRatingToSort.sort((r1, r2) =>
-    r1.rating > r2.rating ? -1 : r1.rating < r2.rating ? 1 : 0
-  );
-
-  for (let i = 0; i < 4; i++) {
-    if (bestRatingOrder[i]) {
-      bookItemMaker(bestRatingOrder[i], bestRatedItemsContainer);
-    }
-  }
-
-  const mostReviewsOrder = mostReviewsToSort.sort((r1, r2) =>
-    r1.reviews > r2.reviews ? -1 : r1.reviews < r2.reviews ? 1 : 0
-  );
-
-  for (let i = 0; i < 4; i++) {
-    if (mostReviewsOrder[i]) {
-      bookItemMaker(mostReviewsOrder[i], mostReviewsItemsContainer);
-    }
-  }
+  sortingFunction(bestRatingToSort, bestRatedItemsContainer);
+  sortingFunction(filteredBooks, mostReviewsItemsContainer);
 };
 
 const populateBooksPage = () => {
@@ -117,38 +101,7 @@ const searchByTitle = (searchInput) => {
   filteredBySearchInput.forEach((b) => {
     bookItemMaker(b, books);
   });
-  console.log("filtered: ", filteredBySearchInput);
-};
-
-const bookItemMaker = (book, parentContainer) => {
-  const bestRatedItemWrapper = document.createElement("div");
-  const image = document.createElement("img");
-  const title = document.createElement("h5");
-  const priceAndAdd = document.createElement("div");
-  const price = document.createElement("p");
-  const addToCard = document.createElement("p");
-
-  bestRatedItemWrapper.classList.add("bestRatedItem");
-  title.classList.add("title");
-  priceAndAdd.classList.add("price_and_add");
-  price.classList.add("price");
-  addToCard.classList.add("shopping_card");
-
-  bestRatedItemWrapper.appendChild(image);
-  bestRatedItemWrapper.appendChild(title);
-  bestRatedItemWrapper.appendChild(priceAndAdd);
-  priceAndAdd.appendChild(price);
-  priceAndAdd.appendChild(addToCard);
-
-  bestRatedItemWrapper.setAttribute("data-id", book.title.slice(0, 10));
-  image.src = book.img;
-  title.innerText = book.title;
-  price.innerText = `$${book.rating}`;
-  addToCard.innerText = "🛒";
-
-  parentContainer.appendChild(bestRatedItemWrapper);
-
-  bestRatedItemWrapper.addEventListener("click", openDetailsPage);
+  console.log;
 };
 
 const openDetailsPage = (e) => {
@@ -190,19 +143,7 @@ const openDetailsPage = (e) => {
 
 getData();
 
-genreOptions.addEventListener("change", (e) => {
-  const selectedCategory = e.target.value;
-  const filteredByCategory = allBooks.filter((book) => {
-    return book.genre.includes(selectedCategory);
-  });
-  books.innerHTML = null;
-  filteredByCategory.forEach((b) => {
-    bookItemMaker(b, books);
-  });
-
-  console.log("filtered: ", filteredByCategory);
-});
-
+// helper functions
 const booksPageSelected = () => {
   homeButton.classList.remove("nav_active");
   homePage.classList.add("hide");
@@ -219,6 +160,62 @@ const homePageSelected = () => {
   detailsPage.classList.add("hide");
 };
 
+// function for sorting
+const sortingFunction = (arr, container) => {
+  const sorted = arr.sort((r1, r2) =>
+    r1.rating > r2.rating ? -1 : r1.rating < r2.rating ? 1 : 0
+  );
+
+  for (let i = 0; i < 4; i++) {
+    if (sorted[i]) {
+      bookItemMaker(sorted[i], container);
+    }
+  }
+};
+
+// function to populate book items container
+const bookItemMaker = (book, parentContainer) => {
+  const bestRatedItemWrapper = document.createElement("div");
+  const image = document.createElement("img");
+  const title = document.createElement("h5");
+  const priceAndAdd = document.createElement("div");
+  const price = document.createElement("p");
+  const addToCard = document.createElement("p");
+
+  bestRatedItemWrapper.classList.add("bestRatedItem");
+  title.classList.add("title");
+  priceAndAdd.classList.add("price_and_add");
+  price.classList.add("price");
+  addToCard.classList.add("shopping_card");
+
+  bestRatedItemWrapper.appendChild(image);
+  bestRatedItemWrapper.appendChild(title);
+  bestRatedItemWrapper.appendChild(priceAndAdd);
+  priceAndAdd.appendChild(price);
+  priceAndAdd.appendChild(addToCard);
+
+  bestRatedItemWrapper.setAttribute("data-id", book.title.slice(0, 10));
+  image.src = book.img;
+  title.innerText = book.title;
+  price.innerText = `$${book.rating}`;
+  addToCard.innerText = "🛒";
+
+  parentContainer.appendChild(bestRatedItemWrapper);
+
+  bestRatedItemWrapper.addEventListener("click", openDetailsPage);
+};
+
+genreOptions.addEventListener("change", (e) => {
+  const selectedCategory = e.target.value;
+  const filteredByCategory = allBooks.filter((book) => {
+    return book.genre.includes(selectedCategory);
+  });
+  books.innerHTML = null;
+  filteredByCategory.forEach((b) => {
+    bookItemMaker(b, books);
+  });
+});
+
 homeButton.addEventListener("click", () => {
   homePageSelected();
 });
@@ -230,9 +227,7 @@ booksButton.addEventListener("click", () => {
 titleForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const title = titleInput.value;
-  console.log("input : ", title);
   if (title.length !== 0) {
-    console.log("ulazi");
     searchByTitle(title);
   } else {
     titleInput.focus();
