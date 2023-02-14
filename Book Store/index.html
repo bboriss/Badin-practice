@@ -9,9 +9,9 @@
   </head>
   <body>
     <header>
-      <div class="logo">BOOK</div>
+      <img src="./MicrosoftTeams-image.png" alt="" />
 
-      <form id="titleInput">
+      <form id="titleForm">
         <input
           type="search"
           id="title"
@@ -23,66 +23,55 @@
     </header>
     <nav>
       <ul>
-        <li>Home</li>
-        <li>Books</li>
+        <li id="home_button" class="nav_active">Home</li>
+        <li id="books_button">Books</li>
       </ul>
     </nav>
-    <main>
-      <div class="container home">
+    <main id="homePage">
+      <div class="sortedContainer">
         <h3>Best rating</h3>
-        <div class="items">
-          <div class="bestRatedItem">
-            <img />
-            <div class="book_title">
-              <h5 class="title"></h5>
-              <div class="price_and_add">
-                <p class="price"></p>
-                <p class="shopping_card"></p>
-              </div>
-            </div>
-          </div>
-          <div class="bestRatedItem">
-            <img />
-            <div class="book_title">
-              <h5 class="title"></h5>
-              <div class="price_and_add">
-                <p class="price"></p>
-                <p class="shopping_card"></p>
-              </div>
-            </div>
-          </div>
-          <div class="bestRatedItem">
-            <img />
-            <div class="book_title">
-              <h5 class="title"></h5>
-              <div class="price_and_add">
-                <p class="price"></p>
-                <p class="shopping_card"></p>
-              </div>
-            </div>
-          </div>
-          <div class="bestRatedItem">
-            <img />
-            <div class="book_title">
-              <h5 class="title"></h5>
-              <div class="price_and_add">
-                <p class="price"></p>
-                <p class="shopping_card"></p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="bestRatedItems"></div>
       </div>
-      <div class="container">
-        <h3>Best selling books: <span class="randomGenre"></span></h3>
-        <div class="items">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
+      <div class="sortedContainer">
+        <h3>Most reviews by genre <span class="randomGenre"></span></h3>
+        <div class="mostReviewsItems"></div>
+      </div>
+    </main>
+    <main id="booksPage" class="hide">
+      <div class="booksContainer">
+        <h3>Books</h3>
+        <div class="books"></div>
+        <div class="categories">
+          <select name="category" id="category">
+            <option value="genre" selected="true" disabled="disabled">
+              Genre
+            </option>
+          </select>
         </div>
       </div>
     </main>
+    <main id="details" class="hide">
+      <div class="pic_and_details">
+        <img
+          class="details_img"
+          src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1359831056l/17158596.jpg"
+          alt=""
+        />
+        <div class="pic_and_details-details">
+          <h2 class="details_title"></h2>
+          <p class="details_author"></p>
+          <p class="details_genre"></p>
+          <p class="details_pages"></p>
+          <p class="details_rating"></p>
+        </div>
+      </div>
+      <div class="description">
+        <h2>Description</h2>
+        <p class="details_description"></p>
+      </div>
+      <button class="back_button">Back</button>
+    </main>
+
     <script src="./app.js"></script>
   </body>
 </html>

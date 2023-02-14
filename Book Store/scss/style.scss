@@ -27,9 +27,7 @@ body {
     padding: 0 40rem;
 
     .logo {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: $yellow;
+      margin-top: 0.5rem;
     }
 
     form {
@@ -66,17 +64,21 @@ body {
         font-size: 1.8rem;
         font-weight: 500;
         color: $gray;
+        cursor: pointer;
+      }
+
+      .nav_active {
+        color: $yellow;
       }
     }
   }
 }
 
 main {
-  // border: 2px solid red;
   margin: auto;
   width: 55vw;
 
-  .container {
+  .sortedContainer {
     width: 100%;
     text-align: start;
     padding-top: 2rem;
@@ -87,41 +89,139 @@ main {
       color: $gray;
     }
 
-    .items {
-      border: 1px solid red;
+    .bestRatedItems,
+    .mostReviewsItems {
       margin-top: 2rem;
       width: 100%;
       display: flex;
+      justify-content: flex-start;
+      gap: 3rem;
+    }
+  }
+
+  .bestRatedItem,
+  .bestSellingItem,
+  .book {
+    width: 22%;
+    height: 45rem;
+    text-align: center;
+    overflow-x: hidden;
+    background-color: $white;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    img {
+      height: 75%;
+      width: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    h5 {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      pointer-events: none;
+    }
+
+    .price_and_add {
+      width: 100%;
+      display: flex;
+      margin-top: 1rem;
+      padding: 0 2rem 0 2rem;
       justify-content: space-between;
-      .bestRatedItem,
-      .item {
-        border: 1px solid blue;
-        width: 22%;
-        height: 40rem;
-        text-align: center;
-        overflow-x: hidden;
+      font-size: 1.5rem;
+      pointer-events: none;
+    }
+  }
 
-        img {
-          height: 70%;
-          object-fit: cover;
-        }
+  .booksContainer {
+    text-align: start;
+    padding-top: 2rem;
+    position: relative;
+    h3 {
+      border-bottom: 1px solid $yellow;
+      padding-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: $gray;
+    }
+    .books {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
 
-        h5 {
-          margin-top: 1rem;
-          font-size: 1.3rem;
-        }
+    .categories {
+      position: absolute;
+      top: 2.2rem;
+      left: -25rem;
+      select {
+        width: 20rem;
+        height: 3rem;
+        background-color: $yellow;
+        border: none;
+        padding: 0.5rem;
 
-        .price_and_add {
-          width: 100%;
-          display: flex;
-          margin-top: 1rem;
-          padding: 0 2rem 0 2rem;
-          justify-content: space-between;
-          font-size: 1.5rem;
+        option {
+          background-color: $white;
         }
       }
     }
   }
+
+  .pic_and_details {
+    margin-top: 3rem;
+    display: flex;
+
+    img {
+      margin-right: 3rem;
+    }
+
+    &-details {
+      margin-top: 2rem;
+      flex: 1;
+      text-align: start;
+      h2 {
+        border-bottom: 1px solid $yellow;
+        font-size: 2rem;
+      }
+
+      p {
+        margin-top: 1.2rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+
+    .details_rating {
+      width: max-content;
+      padding: 0 0.5rem;
+    }
+  }
+  .description {
+    text-align: start;
+    h2 {
+      border-bottom: 1px solid $yellow;
+      margin-top: 2rem;
+      font-size: 1.8rem;
+    }
+
+    p {
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.back_button {
+  background-color: $yellow;
+  font-size: 2rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
 }
 
 // display none

@@ -25,9 +25,7 @@ body header {
   padding: 0 40rem;
 }
 body header .logo {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #feb253;
+  margin-top: 0.5rem;
 }
 body header form {
   display: flex;
@@ -59,56 +57,152 @@ body nav ul li {
   font-size: 1.8rem;
   font-weight: 500;
   color: #666666;
+  cursor: pointer;
+}
+body nav ul .nav_active {
+  color: #feb253;
 }
 
 main {
   margin: auto;
   width: 55vw;
 }
-main .container {
+main .sortedContainer {
   width: 100%;
   text-align: start;
   padding-top: 2rem;
 }
-main .container h3 {
+main .sortedContainer h3 {
   border-bottom: 1px solid #feb253;
   padding-bottom: 0.5rem;
   font-size: 1.5rem;
   color: #666666;
 }
-main .container .items {
-  border: 1px solid red;
+main .sortedContainer .bestRatedItems,
+main .sortedContainer .mostReviewsItems {
   margin-top: 2rem;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3rem;
 }
-main .container .items .bestRatedItem,
-main .container .items .item {
-  border: 1px solid blue;
+main .bestRatedItem,
+main .bestSellingItem,
+main .book {
   width: 22%;
-  height: 40rem;
+  height: 45rem;
   text-align: center;
   overflow-x: hidden;
+  background-color: #ffffff;
+  margin-bottom: 3rem;
+  cursor: pointer;
 }
-main .container .items .bestRatedItem img,
-main .container .items .item img {
-  height: 70%;
+main .bestRatedItem img,
+main .bestSellingItem img,
+main .book img {
+  height: 75%;
+  width: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
-main .container .items .bestRatedItem h5,
-main .container .items .item h5 {
+main .bestRatedItem h5,
+main .bestSellingItem h5,
+main .book h5 {
   margin-top: 1rem;
   font-size: 1.3rem;
+  pointer-events: none;
 }
-main .container .items .bestRatedItem .price_and_add,
-main .container .items .item .price_and_add {
+main .bestRatedItem .price_and_add,
+main .bestSellingItem .price_and_add,
+main .book .price_and_add {
   width: 100%;
   display: flex;
   margin-top: 1rem;
   padding: 0 2rem 0 2rem;
   justify-content: space-between;
   font-size: 1.5rem;
+  pointer-events: none;
+}
+main .booksContainer {
+  text-align: start;
+  padding-top: 2rem;
+  position: relative;
+}
+main .booksContainer h3 {
+  border-bottom: 1px solid #feb253;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #666666;
+}
+main .booksContainer .books {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+main .booksContainer .categories {
+  position: absolute;
+  top: 2.2rem;
+  left: -25rem;
+}
+main .booksContainer .categories select {
+  width: 20rem;
+  height: 3rem;
+  background-color: #feb253;
+  border: none;
+  padding: 0.5rem;
+}
+main .booksContainer .categories select option {
+  background-color: #ffffff;
+}
+main .pic_and_details {
+  margin-top: 3rem;
+  display: flex;
+}
+main .pic_and_details img {
+  margin-right: 3rem;
+}
+main .pic_and_details-details {
+  margin-top: 2rem;
+  flex: 1;
+  text-align: start;
+}
+main .pic_and_details-details h2 {
+  border-bottom: 1px solid #feb253;
+  font-size: 2rem;
+}
+main .pic_and_details-details p {
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+main .pic_and_details .details_rating {
+  width: max-content;
+  padding: 0 0.5rem;
+}
+main .description {
+  text-align: start;
+}
+main .description h2 {
+  border-bottom: 1px solid #feb253;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+}
+main .description p {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.back_button {
+  background-color: #feb253;
+  font-size: 2rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
 }
 
 .hide {
