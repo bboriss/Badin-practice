@@ -43,10 +43,11 @@ const getData = async () => {
 
       const genresArray = book.genre.split(",");
       genresArray.forEach((genre) => {
-        if (!allGenres.includes(genre)) {
+        if (!allGenres.includes(genre) && genre.length > 0) {
           allGenres = [...allGenres, genre];
         }
       });
+      allGenres.sort();
     });
     // take random genre
     randomGenre = allGenres[Math.floor(Math.random() * allGenres.length)];
@@ -197,7 +198,7 @@ const bookItemMaker = (book, parentContainer) => {
   bestRatedItemWrapper.setAttribute("data-id", book.title.slice(0, 10));
   image.src = book.img;
   title.innerText = book.title;
-  price.innerText = `$${book.rating}`;
+  price.innerText = `Rating: ${book.rating}`;
   addToCard.innerText = "🛒";
 
   parentContainer.appendChild(bestRatedItemWrapper);

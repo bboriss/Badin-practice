@@ -89,6 +89,7 @@ main .sortedContainer .mostReviewsItems {
 main .bestRatedItem,
 main .bestSellingItem,
 main .book {
+  position: relative;
   width: 22%;
   height: 45rem;
   text-align: center;
@@ -122,6 +123,8 @@ main .book .price_and_add {
   justify-content: space-between;
   font-size: 1.5rem;
   pointer-events: none;
+  position: absolute;
+  bottom: 2rem;
 }
 main .booksContainer {
   text-align: start;
