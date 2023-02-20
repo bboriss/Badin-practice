@@ -125,7 +125,7 @@ main {
     margin-bottom: 3rem;
     cursor: pointer;
     img {
-      height: 75%;
+      height: 65%;
       width: 100%;
       object-fit: cover;
       pointer-events: none;
@@ -239,6 +239,7 @@ main {
   border: none;
   padding: 0.5rem 1rem;
   margin-top: 3rem;
+  cursor: pointer;
 }
 
 // display none

@@ -96,7 +96,6 @@ const getData = async () => {
       allBooks.reduce((total, book) => {
         return total + book.rating;
       }, 0) / allBooks.length;
-    console.log(allBooks);
     // fill the cards
     populateHome();
     populateBooksPage();
@@ -129,7 +128,10 @@ const populateBooksPage = () => {
 
 const searchByTitle = (searchInput) => {
   const filteredBySearchInput = allBooks.filter((book) => {
-    return book.title.toLowerCase().includes(searchInput.toLowerCase());
+    return book.title
+      .toString()
+      .toLowerCase()
+      .includes(searchInput.toLowerCase());
   });
   if (filteredBySearchInput.length === 0) {
     alert("Sorry, we do not have that book, please try again.");
@@ -141,7 +143,6 @@ const searchByTitle = (searchInput) => {
   filteredBySearchInput.forEach((b) => {
     bookItemMaker(b, books);
   });
-  console.log;
 };
 
 const openDetailsPage = (e) => {
