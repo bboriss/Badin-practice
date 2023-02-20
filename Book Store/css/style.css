@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   background-color: #f1eee9;
   text-align: center;
+  overflow-x: hidden;
 }
 body header {
   height: 7rem;

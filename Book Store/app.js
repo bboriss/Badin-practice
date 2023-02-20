@@ -23,31 +23,38 @@ let allBooks = [];
 let allGenres = [];
 const adultGenres = [
   "Adult",
+  "Adult Fiction",
   "Abuse",
   "Erotica",
+  "Gay",
   "Gay Erotica",
+  "Gay For You",
+  "Gay Romance",
   "Asexual",
   "Gay",
   "LGBT",
+  "GLBT",
 ];
 let randomGenre;
 let averageRating;
 
 const getData = async () => {
   try {
-    const fetchData = await fetch(
-      "https://api.jsonbin.io/v3/b/63a0e753dfc68e59d56c71ec/latest",
-      {
-        method: "GET",
-        headers: {
-          "X-Master-Key":
-            "$2b$10$viPOiL/.5Te1ctsEnmquLuBHKGeK09Vp0SxT2m7wkH68/e1537nUK",
-        },
-      }
-    );
+    // const fetchData = await fetch(
+    //   "https://api.jsonbin.io/v3/b/63a0e753dfc68e59d56c71ec/latest",
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       "X-Master-Key":
+    //         "$2b$10$viPOiL/.5Te1ctsEnmquLuBHKGeK09Vp0SxT2m7wkH68/e1537nUK",
+    //     },
+    //   }
+    // );
+    const fetchData = await fetch("./dataBase.json");
     const jsonData = await fetchData.json();
+
     // get all data array
-    const data = jsonData.record.results;
+    const data = jsonData.results;
     // collect all genres
     data.forEach((book) => {
       const genresArray = book.genre.split(",");
@@ -138,10 +145,7 @@ const searchByTitle = (searchInput) => {
 };
 
 const openDetailsPage = (e) => {
-  const selectedBook = allBooks.find((b) =>
-    b.title.includes(e.target.dataset.id)
-  );
-  console.log(selectedBook);
+  const selectedBook = allBooks.find((b) => b.title == e.target.dataset.id);
   homePage.classList.add("hide");
   booksPage.classList.add("hide");
   detailsPage.classList.remove("hide");
@@ -227,7 +231,7 @@ const bookItemMaker = (book, parentContainer) => {
   priceAndAdd.appendChild(price);
   priceAndAdd.appendChild(addToCard);
 
-  bestRatedItemWrapper.setAttribute("data-id", book.title.slice(0, 10));
+  bestRatedItemWrapper.setAttribute("data-id", book.title);
   image.src = book.img;
   title.innerText = book.title;
   price.innerText = `Rating: ${book.rating}`;
