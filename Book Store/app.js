@@ -19,8 +19,13 @@ const homePage = document.getElementById("homePage");
 const booksPage = document.getElementById("booksPage");
 const detailsPage = document.getElementById("details");
 
+// All existing books
+let fetchedData = [];
+// Books and genres to show (filtered)
 let allBooks = [];
 let allGenres = [];
+
+// genres to remove if not adult
 const adultGenres = [
   "Adult",
   "Adult Fiction",
@@ -52,56 +57,69 @@ const getData = async () => {
     // );
     const fetchData = await fetch("./dataBase.json");
     const jsonData = await fetchData.json();
-
     // get all data array
     const data = jsonData.results;
-    // collect all genres
-    data.forEach((book) => {
-      const genresArray = book.genre.split(",");
-
-      // filter if adult not selected
-      if (
-        !adultCheck.checked &&
-        genresArray.some((ai) => adultGenres.includes(ai))
-      ) {
-        return;
-      } else {
-        allBooks = [...allBooks, book];
-      }
-
-      genresArray.forEach((genre) => {
-        if (
-          !adultCheck.checked &&
-          !allGenres.includes(genre) &&
-          !adultGenres.includes(genre) &&
-          genre.length > 0
-        ) {
-          allGenres = [...allGenres, genre];
-        }
-        if (
-          adultCheck.checked &&
-          !allGenres.includes(genre) &&
-          genre.length > 0
-        ) {
-          allGenres = [...allGenres, genre];
-        }
-      });
-      allGenres.sort();
-    });
-    // take random genre
-    randomGenre = allGenres[Math.floor(Math.random() * allGenres.length)];
-    genre.innerText = randomGenre;
-    // take average rating from all books
-    averageRating =
-      allBooks.reduce((total, book) => {
-        return total + book.rating;
-      }, 0) / allBooks.length;
-    // fill the cards
-    populateHome();
-    populateBooksPage();
+    // set local variable with all books
+    data.forEach((book) => (fetchedData = [...fetchedData, book]));
+    filterBooks();
   } catch (error) {
     console.log(error);
   }
+};
+
+const filterBooks = () => {
+  // collect all genres
+  fetchedData.forEach((book) => {
+    // all genres that one book have
+    const genresArray = book.genre.split(",");
+
+    // skip book if adult selected and includes adult genre
+    if (
+      !adultCheck.checked &&
+      genresArray.some((ai) => adultGenres.includes(ai))
+    ) {
+      return;
+    } else {
+      // add book to array for display
+      allBooks = [...allBooks, book];
+    }
+
+    // add genre of book depending on adult check
+    // and if already exist in array
+    genresArray.forEach((genre) => {
+      if (
+        !adultCheck.checked &&
+        !allGenres.includes(genre) &&
+        !adultGenres.includes(genre) &&
+        genre.length > 0
+      ) {
+        allGenres = [...allGenres, genre];
+      }
+      if (
+        adultCheck.checked &&
+        !allGenres.includes(genre) &&
+        genre.length > 0
+      ) {
+        allGenres = [...allGenres, genre];
+      }
+    });
+    allGenres.sort();
+  });
+
+  // take random genre
+  if (!randomGenre) {
+    randomGenre = allGenres[Math.floor(Math.random() * allGenres.length)];
+    genre.innerText = randomGenre;
+  }
+
+  // take average rating from all books
+  averageRating =
+    allBooks.reduce((total, book) => {
+      return total + book.rating;
+    }, 0) / allBooks.length;
+  // fill the cards
+  populateHome();
+  populateBooksPage();
 };
 
 const populateHome = () => {
@@ -233,7 +251,9 @@ const bookItemMaker = (book, parentContainer) => {
   priceAndAdd.appendChild(addToCard);
 
   bestRatedItemWrapper.setAttribute("data-id", book.title);
-  image.src = book.img;
+  image.src =
+    book.img ||
+    "https://images.unsplash.com/photo-1553060146-71667aa3f223?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80";
   title.innerText = book.title;
   price.innerText = `Rating: ${book.rating}`;
   addToCard.innerText = "🛒";
@@ -293,8 +313,8 @@ adultCheck.addEventListener("click", () => {
     genreOptions.innerHTML = `<option value="genre" selected="true" disabled="disabled">
     Genre
   </option>`;
-
-    getData();
+    filterBooks();
+    // getData();
   } else {
     allBooks = [];
     allGenres = [];
@@ -304,6 +324,7 @@ adultCheck.addEventListener("click", () => {
     genreOptions.innerHTML = `<option value="genre" selected="true" disabled="disabled">
     Genre
   </option>`;
-    getData();
+    filterBooks();
+    // getData();
   }
 });
