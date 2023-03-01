@@ -1,0 +1,349 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  text-align: center;
+
+  header {
+    height: 8rem;
+    padding: 0 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .menu-icon {
+      width: 2.8rem;
+      height: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &_line {
+        height: 0.4rem;
+        background-color: $darkgray;
+      }
+
+      &:hover .menu-icon_line {
+        background-color: $orange;
+      }
+    }
+
+    .logo {
+      width: 7rem;
+    }
+  }
+}
+
+.section-1 {
+  background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/309faa36ea91567795827977/ghghhghg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+  min-height: 85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.5rem;
+    text-shadow: 1px 1px 9px $lightpurple;
+    width: 40rem;
+    color: white;
+    margin-top: 25rem;
+  }
+
+  .nav-links {
+    width: 65%;
+    height: 10rem;
+    margin-top: -2rem;
+    border: 1px solid red;
+    box-shadow: 5px 5px 20px 0 rgba(168, 119, 80, 0.4);
+    background-image: linear-gradient(#b47aec, #702bb1);
+    border: none;
+    border-radius: 5rem;
+
+    @include flex_container();
+
+    ul {
+      @include flex_container();
+      flex-wrap: wrap;
+      row-gap: 1rem;
+      width: 75%;
+
+      li {
+        @include flex_container();
+        list-style: none;
+        font-size: 2rem;
+        height: 2rem;
+        font-weight: 500;
+        color: $white;
+        border-right: 1px solid $white;
+        padding-right: 1rem;
+        margin-left: 1rem;
+      }
+
+      li:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .link-to-images {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 1200;
+    color: $white;
+    text-shadow: 1px 1px 9px $lightpurple;
+    position: relative;
+    top: 5rem;
+
+    span {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  .spiral-img {
+    @include position_img(15rem, 22%, 10rem, null);
+  }
+
+  .circle-img {
+    @include position_img(15rem, 52%, 10rem, null);
+  }
+
+  .img-3 {
+    @include position_img(22rem, 25%, null, 0);
+  }
+
+  .img-4 {
+    @include position_img(15rem, 45%, null, 0);
+  }
+}
+
+.section-2 {
+  text-align: center;
+  h2 {
+    width: 35rem;
+    color: $purple;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 5rem auto 0 auto;
+    animation: section2-title 1s linear;
+  }
+
+  .card_container {
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin: 8rem 0 0;
+      padding-left: 2rem;
+
+      img {
+        width: 12rem;
+        margin-bottom: 1rem;
+        animation: card-img 0.7s linear;
+      }
+      .title-and-text-wrapper {
+        .card_title {
+          color: $purple;
+          font-family: "Poppins", sans-serif;
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: 0.3rem;
+          animation: card-text 0.9s linear;
+        }
+
+        .card_text {
+          font-family: "Poppins", sans-serif;
+          font-size: 1.6rem;
+          font-weight: 100;
+          text-align: start;
+          margin-top: 2rem;
+          animation: card-text 1s linear;
+        }
+      }
+    }
+  }
+
+  .link-to-images {
+    margin-top: 5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    animation: link-to-images 1s linear;
+
+    span {
+      border-bottom: 1px solid $orange;
+    }
+  }
+}
+
+@keyframes section2-title {
+  from {
+    opacity: 0;
+    font-size: 4rem;
+  }
+}
+@keyframes section2-title_resp {
+  from {
+    opacity: 0;
+    font-size: 7rem;
+  }
+}
+
+@keyframes card-img {
+  from {
+    opacity: 0;
+    position: relative;
+    left: -5rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    left: 0rem;
+  }
+}
+
+@keyframes card-text {
+  from {
+    position: relative;
+    left: 20rem;
+  }
+  to {
+    position: relative;
+    left: 0rem;
+  }
+}
+
+@keyframes link-to-images {
+  from {
+    opacity: 0;
+    position: relative;
+    bottom: -5rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    bottom: 0rem;
+  }
+}
+// RESPONSIVE
+
+@include media-md {
+  body {
+    header {
+      height: 8vh;
+      padding: 0 18%;
+    }
+  }
+
+  .section-1 {
+    min-height: 92vh;
+    .title {
+      font-size: 9rem;
+      text-shadow: 5px 5px 15px $lightpurple;
+      width: 60rem;
+      margin-top: 0rem;
+    }
+
+    .nav-links {
+      width: 40%;
+      height: 7rem;
+      margin-top: 5rem;
+
+      ul {
+        @include flex_container();
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        width: 75%;
+
+        li {
+          @include flex_container();
+          list-style: none;
+          font-size: 2rem;
+          height: 2rem;
+          font-weight: 500;
+          color: $white;
+          border-right: 1px solid $white;
+          padding-right: 1rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .spiral-img {
+      @include position_img(14rem, 22%, 10rem, null);
+    }
+
+    .circle-img {
+      @include position_img(15rem, 72%, 10rem, null);
+    }
+
+    .img-3 {
+      @include position_img(22rem, 18%, null, 8rem);
+    }
+
+    .img-4 {
+      @include position_img(15rem, 70%, null, 10rem);
+    }
+  }
+
+  //   <--- SECTION 2 --->
+
+  .section-2 {
+    h2 {
+      width: 90rem;
+      color: $purple;
+      font-family: "Montserrat", sans-serif;
+      font-size: 4.5rem;
+      animation: section2-title_resp 1s linear;
+    }
+
+    .card_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20%;
+
+      .card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        margin: 8rem 2rem 0 0;
+        padding-left: 2rem;
+
+        img {
+          width: 12rem;
+          margin-bottom: 1rem;
+          animation: card-img 0.7s linear;
+        }
+      }
+    }
+
+    .link-to-images {
+      margin-top: 5rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      animation: link-to-images 1s linear;
+
+      span {
+        border-bottom: 1px solid $orange;
+      }
+    }
+  }
+}

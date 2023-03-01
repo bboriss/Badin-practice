@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap");
+
+// colors
+$purple: #702bb1;
+$lightpurple: #bb8ce8;
+$orange: orange;
+$gray: #f2f2f2;
+$darkgray: #111111;
+$white: #ffffff;
+
+@mixin flex_container() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin position_img($width, $left, $top, $bottom) {
+  position: absolute;
+  width: $width;
+  left: $left;
+  top: $top;
+  bottom: $bottom;
+}
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
