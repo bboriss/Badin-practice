@@ -1,4 +1,125 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap");
+@keyframes section1-title {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+@keyframes section1-spiral {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    left: -4rem;
+  }
+}
+@keyframes section1-circle {
+  from {
+    opacity: 0;
+    scale: 0.3;
+    transform: rotate(180deg);
+  }
+}
+@keyframes section1-img4 {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    left: 90%;
+  }
+}
+@keyframes section1-link {
+  from {
+    opacity: 0;
+    top: 15rem;
+    visibility: visible;
+  }
+}
+@keyframes section2-title {
+  from {
+    opacity: 0;
+    scale: 1.2;
+  }
+}
+@keyframes section2-title_resp {
+  from {
+    opacity: 0;
+    font-size: 7rem;
+  }
+}
+@keyframes card-img {
+  from {
+    opacity: 0;
+    position: relative;
+    left: -5rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    left: 0rem;
+  }
+}
+@keyframes card-text {
+  from {
+    position: relative;
+    left: 20rem;
+  }
+  to {
+    position: relative;
+    left: 0rem;
+  }
+}
+@keyframes link-to-images {
+  from {
+    opacity: 0;
+    position: relative;
+    bottom: -5rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    bottom: 0rem;
+  }
+}
+@keyframes section-3-circles {
+  from {
+    opacity: 0;
+    scale: 0.8;
+    left: 150rem;
+  }
+}
+@keyframes girl-pic {
+  from {
+    opacity: 0;
+    left: -100rem;
+  }
+}
+@keyframes girl-pic-background {
+  from {
+    opacity: 0;
+    scale: 0.2;
+  }
+}
+@keyframes section-3-gray-card {
+  from {
+    position: relative;
+    top: -30rem;
+  }
+  to {
+    position: relative;
+    top: 0rem;
+  }
+}
+@keyframes section-3-purple-card {
+  from {
+    opacity: 0;
+    position: relative;
+    top: 30rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    top: 0rem;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,6 +179,7 @@ body header .logo {
   width: 40rem;
   color: white;
   margin-top: 25rem;
+  animation: section1-title 1s linear;
 }
 .section-1 .nav-links {
   width: 65%;
@@ -68,6 +190,7 @@ body header .logo {
   background-image: linear-gradient(#b47aec, #702bb1);
   border: none;
   border-radius: 5rem;
+  animation: section1-title 1s linear;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,11 +222,11 @@ body header .logo {
 .section-1 .link-to-images {
   font-family: "Open Sans", sans-serif;
   font-size: 2rem;
-  font-weight: 1200;
   color: #ffffff;
   text-shadow: 1px 1px 9px #bb8ce8;
   position: relative;
   top: 5rem;
+  animation: section1-link 1.6s linear;
 }
 .section-1 .link-to-images span {
   border-bottom: 1px solid #ffffff;
@@ -113,28 +236,32 @@ body header .logo {
   width: 15rem;
   left: 22%;
   top: 10rem;
+  animation: section1-spiral 1s linear;
 }
 .section-1 .circle-img {
   position: absolute;
   width: 15rem;
   left: 52%;
   top: 10rem;
+  animation: section1-circle 1s linear;
 }
 .section-1 .img-3 {
   position: absolute;
   width: 22rem;
   left: 25%;
   bottom: 0;
+  animation: section1-spiral 1s linear;
 }
 .section-1 .img-4 {
   position: absolute;
   width: 15rem;
   left: 45%;
   bottom: 0;
+  animation: section1-img4 1s linear;
 }
 
 .section-2 {
-  text-align: center;
+  padding-left: 3rem;
 }
 .section-2 h2 {
   width: 35rem;
@@ -183,52 +310,80 @@ body header .logo {
   border-bottom: 1px solid orange;
 }
 
-@keyframes section2-title {
-  from {
-    opacity: 0;
-    font-size: 4rem;
-  }
+.section-3 {
+  padding-left: 3rem;
 }
-@keyframes section2-title_resp {
-  from {
-    opacity: 0;
-    font-size: 7rem;
-  }
+.section-3 .circle-left {
+  width: 7.2rem;
+  height: 7.2rem;
+  background: linear-gradient(to right, #ecbff9, #ffcca4);
+  border-radius: 100%;
+  position: relative;
+  left: 15%;
+  top: 22rem;
+  animation: section-3-circles 1s linear;
 }
-@keyframes card-img {
-  from {
-    opacity: 0;
-    position: relative;
-    left: -5rem;
-  }
-  to {
-    opacity: 1;
-    position: relative;
-    left: 0rem;
-  }
+.section-3 .circle-right {
+  width: 10.3rem;
+  height: 10.3rem;
+  background: linear-gradient(to right, #ecbff9, #ffcca4);
+  border-radius: 100%;
+  position: relative;
+  left: 65%;
+  top: 6rem;
+  animation: section-3-circles 1s linear;
 }
-@keyframes card-text {
-  from {
-    position: relative;
-    left: 20rem;
-  }
-  to {
-    position: relative;
-    left: 0rem;
-  }
+.section-3 .girl-pic-background {
+  width: 307px;
+  height: 298px;
+  position: relative;
+  left: 0%;
+  top: 10rem;
+  animation: girl-pic-background 1s linear;
 }
-@keyframes link-to-images {
-  from {
-    opacity: 0;
-    position: relative;
-    bottom: -5rem;
-  }
-  to {
-    opacity: 1;
-    position: relative;
-    bottom: 0rem;
-  }
+.section-3 .girl-pic {
+  width: 307px;
+  height: 298px;
+  position: relative;
+  left: -5%;
+  top: -21rem;
+  animation: girl-pic 1s linear;
 }
+.section-3_card-container {
+  position: relative;
+  top: -15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-3_card-container_card {
+  width: 35rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+  background-color: #f2f2f2;
+  animation: section-3-gray-card 1s linear;
+}
+.section-3_card-container_card h3 {
+  color: #702bb1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 1000;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.section-3_card-container_card p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.section-3_card-container_card:nth-child(even) {
+  background-image: linear-gradient(#ffcca4, #ecbff9);
+  animation: section-3-purple-card 1s linear;
+}
+.section-3_card-container_card:nth-child(even) p {
+  color: #702bb1;
+}
+
 @media screen and (min-width: 768px) {
   body header {
     height: 8vh;
@@ -304,12 +459,13 @@ body header .logo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 20%;
+    padding: 0 10%;
   }
   .section-2 .card_container .card {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    width: max-content;
     gap: 1rem;
     margin: 8rem 2rem 0 0;
     padding-left: 2rem;
@@ -327,5 +483,39 @@ body header .logo {
   }
   .section-2 .link-to-images span {
     border-bottom: 1px solid orange;
+  }
+  .section-3 .circle-left {
+    width: 11.5rem;
+    height: 11.5rem;
+    left: 66%;
+    top: 52rem;
+  }
+  .section-3 .circle-right {
+    width: 18.6rem;
+    height: 18.6rem;
+    left: 66%;
+    top: 0rem;
+  }
+  .section-3 .girl-pic-background {
+    width: 754px;
+    height: 685px;
+    left: 12%;
+    top: -18rem;
+  }
+  .section-3 .girl-pic {
+    width: 664px;
+    height: 664px;
+    left: -29%;
+    top: -16rem;
+  }
+  .section-3_card-container {
+    top: -27rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .section-3_card-container_card {
+    width: 28rem;
+    padding: 3rem 4rem;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,134 @@
+@keyframes section1-title {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+
+@keyframes section1-spiral {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    left: -4rem;
+  }
+}
+
+@keyframes section1-circle {
+  from {
+    opacity: 0;
+    scale: 0.3;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes section1-img4 {
+  from {
+    opacity: 0;
+    scale: 0.5;
+    left: 90%;
+  }
+}
+
+@keyframes section1-link {
+  from {
+    opacity: 0;
+    top: 15rem;
+    visibility: visible;
+  }
+}
+
+@keyframes section2-title {
+  from {
+    opacity: 0;
+    scale: 1.2;
+  }
+}
+@keyframes section2-title_resp {
+  from {
+    opacity: 0;
+    font-size: 7rem;
+  }
+}
+
+@keyframes card-img {
+  from {
+    opacity: 0;
+    position: relative;
+    left: -5rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    left: 0rem;
+  }
+}
+
+@keyframes card-text {
+  from {
+    position: relative;
+    left: 20rem;
+  }
+  to {
+    position: relative;
+    left: 0rem;
+  }
+}
+
+@keyframes link-to-images {
+  from {
+    opacity: 0;
+    position: relative;
+    bottom: -5rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    bottom: 0rem;
+  }
+}
+
+@keyframes section-3-circles {
+  from {
+    opacity: 0;
+    scale: 0.8;
+    left: 150rem;
+  }
+}
+
+@keyframes girl-pic {
+  from {
+    opacity: 0;
+    left: -100rem;
+  }
+}
+
+@keyframes girl-pic-background {
+  from {
+    opacity: 0;
+    scale: 0.2;
+  }
+}
+
+@keyframes section-3-gray-card {
+  from {
+    position: relative;
+    top: -30rem;
+  }
+  to {
+    position: relative;
+    top: 0rem;
+  }
+}
+
+@keyframes section-3-purple-card {
+  from {
+    opacity: 0;
+    position: relative;
+    top: 30rem;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    top: 0rem;
+  }
+}
