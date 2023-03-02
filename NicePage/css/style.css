@@ -284,6 +284,11 @@ body header .logo {
   margin-bottom: 1rem;
   animation: card-img 0.7s linear;
 }
+.section-2 .card_container .card .title-and-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .section-2 .card_container .card .title-and-text-wrapper .card_title {
   color: #702bb1;
   font-family: "Poppins", sans-serif;
@@ -382,6 +387,81 @@ body header .logo {
 }
 .section-3_card-container_card:nth-child(even) p {
   color: #702bb1;
+}
+
+.section-4 {
+  background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/309faa36ea91567795827977/ghghhghg.jpg");
+}
+.section-4 .circle {
+  width: 9.7rem;
+  position: relative;
+  top: 0rem;
+}
+.section-4 .spiral {
+  width: 141px;
+  position: relative;
+  left: 15rem;
+  top: -3rem;
+}
+.section-4 .cube {
+  width: 20rem;
+  position: relative;
+  left: -3rem;
+  top: 21rem;
+}
+.section-4_card {
+  width: 25rem;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  margin-left: 8rem;
+  margin-top: 15rem;
+  padding: 2rem;
+  text-align: start;
+}
+.section-4_card h3 {
+  color: #702bb1;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.section-4_card p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.section-4_card h4 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.section-4_card h4 span {
+  border-bottom: 1px solid black;
+}
+.section-4_card .button {
+  width: 15rem;
+  height: 5rem;
+  color: #ffffff;
+  border-radius: 2rem;
+  background-color: #702bb1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+.section-4 .ring {
+  width: 17rem;
+  position: relative;
+  top: -10rem;
+  left: 0rem;
+}
+.section-4 .semiRing {
+  width: 12.8rem;
+  position: relative;
+  top: 10rem;
+  left: 0rem;
+  margin-bottom: 10rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -517,5 +597,74 @@ body header .logo {
   .section-3_card-container_card {
     width: 28rem;
     padding: 3rem 4rem;
+  }
+  .section-4 .circle {
+    width: 12rem;
+    top: -8rem;
+    left: -25rem;
+  }
+  .section-4 .spiral {
+    width: 216px;
+    left: 49rem;
+    top: 20rem;
+  }
+  .section-4 .cube {
+    width: 24rem;
+    left: -16rem;
+    top: 19rem;
+  }
+  .section-4_card {
+    width: 48rem;
+    background-color: #ffffff;
+    border-radius: 3rem;
+    margin-left: 52rem;
+    margin-top: 15rem;
+    padding: 3rem;
+  }
+  .section-4_card h3 {
+    color: #702bb1;
+    font-family: "Montserrat", sans-serif;
+    font-size: 5rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
+  .section-4_card p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .section-4_card h4 {
+    font-size: 1.6rem;
+    font-weight: 300;
+  }
+  .section-4_card h4 span {
+    border-bottom: 1px solid black;
+  }
+  .section-4_card .button {
+    width: 15rem;
+    height: 5rem;
+    color: #ffffff;
+    border-radius: 2rem;
+    background-color: #702bb1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12rem;
+  }
+  .section-4 .ring {
+    width: 29rem;
+    position: relative;
+    top: -10rem;
+    left: -4rem;
+  }
+  .section-4 .semiRing {
+    width: 21.7rem;
+    position: relative;
+    top: -20rem;
+    left: 25rem;
+    margin-bottom: 10rem;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -167,6 +167,9 @@ body {
         animation: card-img 0.7s linear;
       }
       .title-and-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         .card_title {
           color: $purple;
           font-family: "Poppins", sans-serif;
@@ -276,6 +279,86 @@ body {
         color: $purple;
       }
     }
+  }
+}
+
+.section-4 {
+  background-image: url("https://images01.nicepage.com/c461c07a441a5d220e8feb1a/309faa36ea91567795827977/ghghhghg.jpg");
+
+  .circle {
+    width: 9.7rem;
+    position: relative;
+    top: 0rem;
+  }
+
+  .spiral {
+    width: 141px;
+    position: relative;
+    left: 15rem;
+    top: -3rem;
+  }
+  .cube {
+    width: 20rem;
+    position: relative;
+    left: -3rem;
+    top: 21rem;
+  }
+
+  &_card {
+    width: 25rem;
+    background-color: $white;
+    border-radius: 2rem;
+    margin-left: 8rem;
+    margin-top: 15rem;
+    padding: 2rem;
+    text-align: start;
+    h3 {
+      color: $purple;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    h4 {
+      font-size: 1.6rem;
+      font-weight: 300;
+      span {
+        border-bottom: 1px solid black;
+      }
+    }
+    .button {
+      width: 15rem;
+      height: 5rem;
+      color: $white;
+      border-radius: 2rem;
+      background-color: $purple;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .ring {
+    width: 17rem;
+    position: relative;
+    top: -10rem;
+    left: 0rem;
+  }
+
+  .semiRing {
+    width: 12.8rem;
+    position: relative;
+    top: 10rem;
+    left: 0rem;
+    margin-bottom: 10rem;
   }
 }
 
@@ -424,6 +507,83 @@ body {
         width: 28rem;
         padding: 3rem 4rem;
       }
+    }
+  }
+
+  .section-4 {
+    .circle {
+      width: 12rem;
+      top: -8rem;
+      left: -25rem;
+    }
+
+    .spiral {
+      width: 216px;
+      left: 49rem;
+      top: 20rem;
+    }
+    .cube {
+      width: 24rem;
+      left: -16rem;
+      top: 19rem;
+    }
+
+    &_card {
+      width: 48rem;
+      background-color: $white;
+      border-radius: 3rem;
+      margin-left: 52rem;
+      margin-top: 15rem;
+      padding: 3rem;
+      // text-align: start;
+      h3 {
+        color: $purple;
+        font-family: "Montserrat", sans-serif;
+        font-size: 5rem;
+        margin-top: 6rem;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+      h4 {
+        font-size: 1.6rem;
+        font-weight: 300;
+        span {
+          border-bottom: 1px solid black;
+        }
+      }
+      .button {
+        width: 15rem;
+        height: 5rem;
+        color: $white;
+        border-radius: 2rem;
+        background-color: $purple;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 12rem;
+      }
+    }
+
+    .ring {
+      width: 29rem;
+      position: relative;
+      top: -10rem;
+      left: -4rem;
+    }
+
+    .semiRing {
+      width: 21.7rem;
+      position: relative;
+      top: -20rem;
+      left: 25rem;
+      margin-bottom: 10rem;
     }
   }
 }
