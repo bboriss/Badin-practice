@@ -120,6 +120,106 @@
     top: 0rem;
   }
 }
+@keyframes section-4-circle {
+  from {
+    opacity: 0;
+    position: relative;
+    left: -100rem;
+  }
+}
+@keyframes section-4-spiral {
+  from {
+    left: 80rem;
+    opacity: 0;
+    position: relative;
+  }
+}
+@keyframes section-4-cube {
+  from {
+    scale: 0.6;
+    opacity: 0;
+    position: relative;
+  }
+}
+@keyframes section-4-card {
+  from {
+    position: relative;
+    left: -30rem;
+    opacity: 0;
+  }
+  to {
+    position: relative;
+    left: 0rem;
+    opacity: 1;
+  }
+}
+@keyframes section-4-ring {
+  from {
+    top: 10rem;
+    opacity: 0;
+    position: relative;
+  }
+}
+@keyframes section-4-semiRing {
+  from {
+    opacity: 0;
+    scale: 0.3;
+    transform: rotate(180deg);
+  }
+}
+@keyframes section-5-circle {
+  from {
+    opacity: 0;
+    scale: 1.5;
+    left: -5rem;
+  }
+}
+@keyframes section-5-semiRing {
+  from {
+    left: 150rem;
+    top: -10rem;
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+@keyframes section-5-card {
+  from {
+    left: 130rem;
+    opacity: 0;
+  }
+}
+@keyframes section-5-cube {
+  from {
+    scale: 0.6;
+    opacity: 0;
+    transform: rotate(360deg);
+    left: 10rem;
+  }
+}
+@keyframes section-5-spiral {
+  from {
+    top: 100rem;
+    opacity: 0;
+  }
+}
+@keyframes section-6-card-1 {
+  from {
+    position: relative;
+    top: -50rem;
+    left: -50rem;
+    rotate: -180deg;
+    opacity: 0;
+  }
+  to {
+    position: static;
+  }
+}
+@keyframes section-6-card-2 {
+  from {
+    top: 100rem;
+    opacity: 0;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -395,19 +495,23 @@ body header .logo {
 .section-4 .circle {
   width: 9.7rem;
   position: relative;
-  top: 0rem;
+  top: -1rem;
+  left: 4rem;
+  animation: section-4-circle 1s linear;
 }
 .section-4 .spiral {
   width: 141px;
   position: relative;
   left: 15rem;
   top: -3rem;
+  animation: section-4-spiral 1s linear;
 }
 .section-4 .cube {
   width: 20rem;
   position: relative;
   left: -3rem;
   top: 21rem;
+  animation: section-4-cube 1s linear;
 }
 .section-4_card {
   width: 25rem;
@@ -417,6 +521,7 @@ body header .logo {
   margin-top: 15rem;
   padding: 2rem;
   text-align: start;
+  animation: section-4-card 1s linear;
 }
 .section-4_card h3 {
   color: #702bb1;
@@ -453,15 +558,152 @@ body header .logo {
 .section-4 .ring {
   width: 17rem;
   position: relative;
-  top: -10rem;
+  top: -14rem;
   left: 0rem;
+  animation: section-4-ring 1s linear;
 }
 .section-4 .semiRing {
   width: 12.8rem;
   position: relative;
   top: 10rem;
-  left: 0rem;
-  margin-bottom: 10rem;
+  left: 4rem;
+  margin-bottom: 15rem;
+  animation: section-4-semiRing 1s linear;
+}
+
+.section-5 {
+  background-color: #fff6ef;
+  height: 105vh;
+  position: relative;
+}
+.section-5 .cover {
+  background-image: linear-gradient(#d3b1f4, #fbc6d9);
+  background-repeat: no-repeat;
+  height: 46rem;
+}
+.section-5 .circle {
+  width: 15rem;
+  position: absolute;
+  top: 5rem;
+  left: 35rem;
+  animation: section-5-circle 1s linear;
+}
+.section-5 .semiRing {
+  width: 18rem;
+  position: absolute;
+  top: 14rem;
+  left: 16rem;
+  animation: section-5-semiRing 1s linear;
+  z-index: 1;
+}
+.section-5_card {
+  width: 31rem;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  margin: 8rem auto;
+  margin-top: 15rem;
+  padding: 2rem;
+  padding-top: 12rem;
+  text-align: start;
+  position: absolute;
+  top: 9rem;
+  left: 14rem;
+  animation: section-5-card 1s linear;
+}
+.section-5_card h3 {
+  color: #702bb1;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.section-5_card p {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+.section-5_card h4 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.section-5_card h4 span {
+  border-bottom: 1px solid black;
+}
+.section-5_card .button {
+  width: 15rem;
+  height: 5rem;
+  color: #ffffff;
+  border-radius: 2rem;
+  background-color: #702bb1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+.section-5 .cube {
+  width: 14rem;
+  position: absolute;
+  left: 12rem;
+  top: 79rem;
+  animation: section-5-cube 1s linear;
+  z-index: 12;
+}
+.section-5 .spiral {
+  width: 20rem;
+  position: absolute;
+  left: 28rem;
+  top: 88rem;
+  animation: section-5-spiral 1s linear;
+}
+
+.section-6 {
+  background-image: url("//images01.nicepage.com/c461c07a441a5d220e8feb1a/59f78df306b35d06af5af9e6/jhjjj-min.jpg");
+  background-position: 7.53% 50%;
+  background-repeat: no-repeat;
+  padding-top: 18rem;
+  height: 100vh;
+}
+.section-6 .cards-wrapper .card-1 {
+  margin: auto;
+  background-color: #ffffff;
+  color: #702bb1;
+  width: 70vw;
+  height: 18rem;
+  text-align: start;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding: 3rem 2rem 4rem 2rem;
+  margin-bottom: 1px;
+  animation: section-6-card-1 1s linear;
+}
+.section-6 .cards-wrapper .card-2 {
+  margin: auto;
+  background-color: #ffffff;
+  width: 70vw;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  padding: 3rem 2rem 3rem 2rem;
+  line-height: 2.5rem;
+  text-align: start;
+}
+.section-6 .cards-wrapper .card-2 h4 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-top: 3rem;
+}
+.section-6 .cards-wrapper .card-2 h4 span {
+  border-bottom: 1px solid orange;
+}
+.section-6 .cards-wrapper .card-2 .icons {
+  display: flex;
+  margin-top: 2rem;
+  gap: 3rem;
+}
+.section-6 .cards-wrapper .card-2 .icons img {
+  width: 2.3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -622,37 +864,9 @@ body header .logo {
     padding: 3rem;
   }
   .section-4_card h3 {
-    color: #702bb1;
-    font-family: "Montserrat", sans-serif;
     font-size: 5rem;
     margin-top: 6rem;
     margin-bottom: 2rem;
-  }
-  .section-4_card p {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-  }
-  .section-4_card h4 {
-    font-size: 1.6rem;
-    font-weight: 300;
-  }
-  .section-4_card h4 span {
-    border-bottom: 1px solid black;
-  }
-  .section-4_card .button {
-    width: 15rem;
-    height: 5rem;
-    color: #ffffff;
-    border-radius: 2rem;
-    background-color: #702bb1;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 12rem;
   }
   .section-4 .ring {
     width: 29rem;
@@ -666,5 +880,64 @@ body header .logo {
     top: -20rem;
     left: 25rem;
     margin-bottom: 10rem;
+  }
+  .section-5 {
+    height: 110vh;
+  }
+  .section-5 .circle {
+    width: 28rem;
+    position: absolute;
+    top: 32rem;
+    left: 35rem;
+  }
+  .section-5 .semiRing {
+    width: 23rem;
+    position: absolute;
+    top: 14rem;
+    left: 100rem;
+  }
+  .section-5_card {
+    width: 50rem;
+    padding-top: 21rem;
+    top: 9rem;
+    left: 95rem;
+  }
+  .section-5 .cube {
+    width: 18rem;
+    left: 30rem;
+    top: 79rem;
+  }
+  .section-5 .spiral {
+    width: 30rem;
+    left: 100rem;
+    top: 88rem;
+  }
+  .section-6 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 18rem;
+    height: 100vh;
+  }
+  .section-6 .cards-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50vh;
+  }
+  .section-6 .cards-wrapper .card-1 {
+    width: 30vw;
+    height: 30rem;
+    text-align: start;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 6rem;
+    text-align: left;
+    margin-bottom: 0px;
+    margin: 0;
+  }
+  .section-6 .cards-wrapper .card-2 {
+    width: 30vw;
+    text-align: start;
+    margin: 0;
   }
 }/*# sourceMappingURL=style.css.map */

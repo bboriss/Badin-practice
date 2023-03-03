@@ -132,3 +132,120 @@
     top: 0rem;
   }
 }
+
+@keyframes section-4-circle {
+  from {
+    opacity: 0;
+    position: relative;
+    left: -100rem;
+  }
+}
+
+@keyframes section-4-spiral {
+  from {
+    left: 80rem;
+    opacity: 0;
+    position: relative;
+  }
+}
+
+@keyframes section-4-cube {
+  from {
+    scale: 0.6;
+    opacity: 0;
+    position: relative;
+  }
+}
+
+@keyframes section-4-card {
+  from {
+    position: relative;
+    left: -30rem;
+    opacity: 0;
+  }
+  to {
+    position: relative;
+    left: 0rem;
+    opacity: 1;
+  }
+}
+
+@keyframes section-4-ring {
+  from {
+    top: 10rem;
+    opacity: 0;
+    position: relative;
+  }
+}
+
+@keyframes section-4-semiRing {
+  from {
+    opacity: 0;
+    scale: 0.3;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes section-5-circle {
+  from {
+    opacity: 0;
+    scale: 1.5;
+    left: -5rem;
+  }
+}
+
+@keyframes section-5-semiRing {
+  from {
+    left: 150rem;
+    top: -10rem;
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+
+@keyframes section-5-card {
+  from {
+    left: 130rem;
+    opacity: 0;
+  }
+}
+
+@keyframes section-5-cube {
+  from {
+    scale: 0.6;
+    opacity: 0;
+    transform: rotate(360deg);
+    left: 10rem;
+  }
+}
+
+@keyframes section-5-spiral {
+  from {
+    top: 100rem;
+    opacity: 0;
+  }
+}
+
+@keyframes section-6-card-1 {
+  from {
+    position: relative;
+    top: -50rem;
+    left: -50rem;
+    rotate: -180deg;
+    opacity: 0;
+  }
+  to {
+    position: static;
+    // top: -50rem;
+    // left: -50rem;
+    // rotate: -180deg;
+    // opacity: 0;
+  }
+}
+
+@keyframes section-6-card-2 {
+  from {
+    top: 100rem;
+    opacity: 0;
+  }
+}
