@@ -204,19 +204,17 @@
 }
 @keyframes section-6-card-1 {
   from {
-    position: relative;
-    top: -50rem;
-    left: -50rem;
-    rotate: -180deg;
+    margin-right: 50rem;
+    left: -70rem;
+    rotate: -90deg;
     opacity: 0;
-  }
-  to {
-    position: static;
   }
 }
 @keyframes section-6-card-2 {
   from {
-    top: 100rem;
+    margin-left: 50rem;
+    left: 70rem;
+    rotate: 90deg;
     opacity: 0;
   }
 }
@@ -688,6 +686,7 @@ body header .logo {
   padding: 3rem 2rem 3rem 2rem;
   line-height: 2.5rem;
   text-align: start;
+  animation: section-6-card-2 1s linear;
 }
 .section-6 .cards-wrapper .card-2 h4 {
   font-size: 1.6rem;
@@ -704,6 +703,78 @@ body header .logo {
 }
 .section-6 .cards-wrapper .card-2 .icons img {
   width: 2.3rem;
+}
+
+.section-7 {
+  background-color: #ffffff;
+  position: relative;
+}
+.section-7 .ring {
+  width: 17rem;
+  position: absolute;
+  top: 8rem;
+  left: 60vw;
+}
+.section-7 .semiRing {
+  width: 17rem;
+  position: absolute;
+  top: 20rem;
+  left: 10vw;
+  z-index: 1;
+}
+.section-7 .form-background {
+  position: absolute;
+  width: 40rem;
+  transform: rotate(90deg);
+  top: 28rem;
+  left: 12rem;
+}
+.section-7 .form-container {
+  background-color: #ffffff;
+  width: 100vw;
+  position: absolute;
+  top: 28rem;
+  z-index: 1;
+  padding: 4rem;
+}
+.section-7 .form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section-7 .form-container form label {
+  font-size: 1.6rem;
+}
+.section-7 .form-container form input {
+  padding: 0.8rem;
+  border: 2px solid #fbc6d9;
+  border-radius: 2rem;
+  height: 5rem;
+  width: 100%;
+  background-color: #fff9fb;
+  margin-bottom: 1.4rem;
+}
+.section-7 .form-container form textarea {
+  padding: 0.8rem;
+  border: 2px solid #fbc6d9;
+  border-radius: 2rem;
+  height: 10rem;
+  width: 100%;
+  background-color: #fff9fb;
+  margin-bottom: 2rem;
+}
+.section-7 .form-container form ::placeholder {
+  font-size: 1.8rem;
+}
+.section-7 .form-container form .check-wrapper input {
+  height: auto;
+  width: auto;
+}
+.section-7 .form-container form .check-wrapper label {
+  font-size: 1.6rem;
+}
+.section-7 .form-container form .check-wrapper label span {
+  color: #702bb1;
 }
 
 @media screen and (min-width: 768px) {

@@ -228,24 +228,18 @@
 
 @keyframes section-6-card-1 {
   from {
-    position: relative;
-    top: -50rem;
-    left: -50rem;
-    rotate: -180deg;
+    margin-right: 50rem;
+    left: -70rem;
+    rotate: -90deg;
     opacity: 0;
-  }
-  to {
-    position: static;
-    // top: -50rem;
-    // left: -50rem;
-    // rotate: -180deg;
-    // opacity: 0;
   }
 }
 
 @keyframes section-6-card-2 {
   from {
-    top: 100rem;
+    margin-left: 50rem;
+    left: 70rem;
+    rotate: 90deg;
     opacity: 0;
   }
 }

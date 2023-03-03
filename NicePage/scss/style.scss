@@ -496,6 +496,7 @@ body {
       padding: 3rem 2rem 3rem 2rem;
       line-height: 2.5rem;
       text-align: start;
+      animation: section-6-card-2 1s linear;
 
       h4 {
         font-size: 1.6rem;
@@ -513,6 +514,91 @@ body {
 
         img {
           width: 2.3rem;
+        }
+      }
+    }
+  }
+}
+
+.section-7 {
+  background-color: $white;
+  position: relative;
+
+  .ring {
+    width: 17rem;
+    position: absolute;
+    top: 8rem;
+    left: 60vw;
+    // animation: section-4-ring 1s linear;
+  }
+
+  .semiRing {
+    width: 17rem;
+    position: absolute;
+    top: 20rem;
+    left: 10vw;
+    z-index: 1;
+    // animation: section-5-semiRing 1s linear;
+  }
+
+  .form-background {
+    position: absolute;
+    width: 40rem;
+    transform: rotate(90deg);
+    top: 28rem;
+    left: 12rem;
+  }
+
+  .form-container {
+    background-color: $white;
+    width: 100vw;
+    position: absolute;
+    top: 28rem;
+    z-index: 1;
+    padding: 4rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      label {
+        font-size: 1.6rem;
+      }
+
+      input {
+        padding: 0.8rem;
+        border: 2px solid $pink;
+        border-radius: 2rem;
+        height: 5rem;
+        width: 100%;
+        background-color: $lightpink;
+        margin-bottom: 1.4rem;
+      }
+      textarea {
+        padding: 0.8rem;
+        border: 2px solid $pink;
+        border-radius: 2rem;
+        height: 10rem;
+        width: 100%;
+        background-color: $lightpink;
+        margin-bottom: 2rem;
+      }
+
+      ::placeholder {
+        font-size: 1.8rem;
+      }
+
+      .check-wrapper {
+        input {
+          height: auto;
+          width: auto;
+        }
+        label {
+          font-size: 1.6rem;
+          span {
+            color: $purple;
+          }
         }
       }
     }
