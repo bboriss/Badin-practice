@@ -10,6 +10,7 @@
 html {
   font-size: 10px;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -529,16 +530,16 @@ body {
     position: absolute;
     top: 8rem;
     left: 60vw;
-    // animation: section-4-ring 1s linear;
+    animation: section-7-ring 1s linear;
   }
 
-  .semiRing {
+  .semiRing1 {
     width: 17rem;
     position: absolute;
     top: 20rem;
     left: 10vw;
     z-index: 1;
-    // animation: section-5-semiRing 1s linear;
+    animation: section-7-semiRing1 1s linear;
   }
 
   .form-background {
@@ -547,13 +548,14 @@ body {
     transform: rotate(90deg);
     top: 28rem;
     left: 12rem;
+    animation: section-7-form-background 1s linear;
   }
 
   .form-container {
     background-color: $white;
     width: 100vw;
     position: absolute;
-    top: 28rem;
+    top: 37rem;
     z-index: 1;
     padding: 4rem;
 
@@ -586,7 +588,8 @@ body {
       }
 
       ::placeholder {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        font-family: "Montserrat", sans-serif;
       }
 
       .check-wrapper {
@@ -601,7 +604,56 @@ body {
           }
         }
       }
+      button {
+        width: 25rem;
+        height: 5rem;
+        color: $white;
+        background-color: $purple;
+        font-size: 1.6rem;
+        letter-spacing: 0.2rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 2rem;
+        margin: auto;
+        margin-top: 1rem;
+      }
+      .link-to-images {
+        margin-top: 5rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-bottom: 40rem;
+
+        span {
+          border-bottom: 1px solid black;
+        }
+      }
     }
+  }
+
+  .spiral {
+    width: 13rem;
+    position: absolute;
+    left: 5rem;
+    top: 95rem;
+    z-index: 2;
+    animation: section-7-spiral 1s linear;
+  }
+
+  .circle {
+    width: 17rem;
+    position: absolute;
+    z-index: 2;
+    top: 95rem;
+    animation: section-7-circle 1s linear;
+  }
+
+  .semiRing {
+    width: 14rem;
+    position: absolute;
+    top: 110rem;
+    left: 12rem;
+    z-index: 2;
+    animation: section-7-semiRing 1s linear;
   }
 }
 
@@ -868,4 +920,74 @@ body {
       }
     }
   }
+
+  .section-7 {
+    height: 130vh;
+    .ring {
+      width: 24rem;
+      // position: absolute;
+      top: 9rem;
+      left: 60vw;
+      animation: section-7-ring 1s linear;
+    }
+
+    .semiRing1 {
+      width: 31rem;
+      // position: absolute;
+      top: 8rem;
+      left: 15vw;
+      z-index: 1;
+      animation: section-7-semiRing1 1s linear;
+    }
+
+    .form-background {
+      width: 80rem;
+      transform: rotate(190deg);
+      top: 28rem;
+      left: 42rem;
+      animation: section-7-form-background 1s linear;
+    }
+
+    .form-container {
+      background-color: $white;
+      width: 40vw;
+      left: 40rem;
+      border-radius: 1rem;
+      top: 37rem;
+      z-index: 1;
+
+      form {
+        .link-to-images {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+
+    .spiral {
+      width: 26rem;
+      left: 35rem;
+      top: 100rem;
+      z-index: 2;
+      animation: section-7-spiral 1s linear;
+    }
+
+    .circle {
+      width: 30rem;
+      z-index: 0;
+      top: 85rem;
+      animation: section-7-circle 1s linear;
+    }
+
+    .semiRing {
+      width: 18rem;
+      top: 50rem;
+      left: 130rem;
+      z-index: 2;
+      animation: section-7-semiRing 1s linear;
+    }
+  }
+}
+
+.hidden {
+  visibility: hidden;
 }

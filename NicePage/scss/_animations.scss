@@ -243,3 +243,47 @@
     opacity: 0;
   }
 }
+
+@keyframes section-7-ring {
+  from {
+    top: 30rem;
+    opacity: 0;
+  }
+}
+
+@keyframes section-7-semiRing1 {
+  from {
+    left: -10rem;
+    opacity: 0;
+  }
+}
+
+@keyframes section-7-form-background {
+  from {
+    top: 40rem;
+    opacity: 0;
+  }
+}
+
+@keyframes section-7-spiral {
+  from {
+    left: -20rem;
+    scale: 1.3;
+    opacity: 0;
+  }
+}
+
+@keyframes section-7-circle {
+  from {
+    scale: 0.3;
+    opacity: 0;
+  }
+}
+
+@keyframes section-7-semiRing {
+  from {
+    scale: 0.3;
+    opacity: 0;
+    rotate: 270deg;
+  }
+}
